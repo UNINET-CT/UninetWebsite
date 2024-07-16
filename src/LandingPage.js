@@ -1,8 +1,6 @@
 import * as React from 'react';
 import { Box, Typography, Container } from '@mui/material';
 import constellation from './constellation.gif';  // Ensure this path is correct
-import banner from './banner2.mp4'
-
 
 const LandingPage = () => {
   return (
