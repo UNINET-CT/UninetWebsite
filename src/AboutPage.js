@@ -25,7 +25,7 @@ function AboutPage() {
           {/* Right side: Paragraph */}
           <Box flex={2}>
             <Typography variant="body1" color="textSecondary">
-            Founded in 2022 to develop innovative solutions in networking and computational challenges in operations and industry, Uninet leverages tools from optimization and system science to develop intelligent satellite software.​ Technical Expertise​ Software-defined and virtualized networks​ Multi-access edge cloud computing​ Resource allocation and optimization​ Artificial intelligence and deep learning in systems and computing
+            Founded in 2022 to develop innovative solutions in networking and computational challenges in operations and industry, Uninet leverages tools from optimization and system science to develop intelligent satellite software.​ Our technical expertise includes, but not limited to:​ Software-defined and virtualized networks​, multi-access edge cloud computing​, resource allocation and optimization​, artificial intelligence and deep learning in systems and computing.
             </Typography>
           </Box>
         </Box>

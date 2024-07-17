@@ -14,7 +14,7 @@ const LandingPage = () => {
       </Box> */}
 
       {/* Text Content below the video */}
-      <Container maxWidth="lg">
+      <Container maxWidth="xl">
         <Box display="flex" justifyContent="space-between" alignItems="center" p={4}>
           {/* Left side: Header */}
           <Box flex={1} mr={2}> {/* Margin right for spacing between the columns */}
@@ -24,7 +24,7 @@ const LandingPage = () => {
           </Box>
           
           {/* Right side: Paragraph */}
-          <Box flex={1}>
+          <Box flex={2}>
             <Typography variant="body1" color="textSecondary">
               Uninet builds smart algorithms that enhance efficiency and reliability for the Internet of Space Things. Our advanced software solutions ensure low-latency communication and optimal resource management, driving innovation in satellite management. <a href='/'>Learn more.</a>
             </Typography>
@@ -33,11 +33,28 @@ const LandingPage = () => {
       </Container>
 
   
-
+      <Container maxWidth="xl">
+        <Box display="flex" justifyContent="space-between" alignItems="center" p={4}>
+          {/* Left side: Header */}
+          <Box flex={1} mr={2}> {/* Margin right for spacing between the columns */}
+            <Typography variant="h3" component="h1" gutterBottom>
+              Low-latency Dynamic Routing
+            </Typography>
+          </Box>
+          
+          {/* Right side: Paragraph */}
+          <Box flex={2}>
+            <Typography variant="body1" color="textSecondary">
+              Our state-of-the-art satellite routing algorithms optimize over dynamic constellation topologies. We ensure fast, load-balanced routing decisions to get your data where it needs to go.
+            </Typography>
+          </Box>
+          <Box flex={1.5}>
+            <img src={constellation} alt="Descriptive Alt Text" style={{ width: '100%', maxWidth: '800px' }} />
+          </Box>
+        </Box>
+      </Container>
       {/* Image Section */}
-      <Box display="flex" justifyContent="center" alignItems="center" p={4}>
-        <img src={constellation} alt="Descriptive Alt Text" style={{ width: '100%', maxWidth: '800px' }} />
-      </Box>
+      
     </>
   );
 }

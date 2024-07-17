@@ -39,14 +39,17 @@ const Navbar = () => {
         </Box>
 
         <Box sx={{ display: 'flex', justifyContent: 'center', width: '100%' }}>
-          <Link to="/" style={{ textDecoration: 'none', margin: '0 20px' }}>
-            <Typography variant="h5" color="text.primary" component="span">Home</Typography>
+          <Link to="/" style={{ textDecoration: 'none', margin: '0 30px' }}>
+            <Typography variant="h5" color="text.primary" component="span">Launchpad</Typography>
           </Link>
-          <Link to="/about" style={{ textDecoration: 'none', margin: '0 20px' }}>
+          <Link to="/" style={{ textDecoration: 'none', margin: '0 30px' }}>
+            <Typography variant="h5" color="text.primary" component="span">Explore Our Tech</Typography>
+          </Link>
+          <Link to="/about" style={{ textDecoration: 'none', margin: '0 30px' }}>
             <Typography variant="h5" color="text.primary" component="span">Who We Are</Typography>
           </Link>
-          <Link to="/contact" style={{ textDecoration: 'none', margin: '0 20px' }}>
-            <Typography variant="h5" color="text.primary" component="span">Contact Our Team</Typography>
+          <Link to="/contact" style={{ textDecoration: 'none', margin: '0 30px' }}>
+            <Typography variant="h5" color="text.primary" component="span">Connect With Us</Typography>
           </Link>
         </Box>
       </Toolbar>
