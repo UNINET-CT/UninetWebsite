@@ -1,6 +1,6 @@
 import React from 'react';
 import { Box, Typography, Link, Grid, List, ListItem, Divider } from '@mui/material';
-import { Facebook, Twitter, LinkedIn } from '@mui/icons-material';
+import { Twitter, LinkedIn } from '@mui/icons-material';
 
 const Footer = () => {
   return (

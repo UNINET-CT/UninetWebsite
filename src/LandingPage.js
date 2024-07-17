@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { Box, Typography, Container, Button } from '@mui/material';
+import { Box, Typography, Container } from '@mui/material';
 import AOS from 'aos';
 import 'aos/dist/aos.css'; // Import the CSS for AOS
 import constellation from './constellation.gif';  // Ensure this path is correct
