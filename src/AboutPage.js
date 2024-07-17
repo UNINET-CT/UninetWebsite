@@ -26,6 +26,7 @@ function AboutPage() {
           <Box flex={2}>
             <Typography variant="body1" color="textSecondary">
             Founded in 2022 to develop innovative solutions in networking and computational challenges in operations and industry, Uninet leverages tools from optimization and system science to develop intelligent satellite software.​ Our technical expertise includes, but not limited to:​ Software-defined and virtualized networks​, multi-access edge cloud computing​, resource allocation and optimization​, artificial intelligence and deep learning in systems and computing.
+            <p>We are extending state-of-the-art terrestrial 5G resource allocation technology and algorithms to non-terrestrial networks of low-Earth orbiting satellites.</p>
             </Typography>
           </Box>
         </Box>

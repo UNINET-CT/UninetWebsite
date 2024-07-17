@@ -29,9 +29,8 @@ const Footer = () => {
         <Grid item xs={12} sm={4} sx={{ textAlign: 'center' }}>
           <Typography variant="h6" gutterBottom sx={{ color: '#a7adba' }}>Follow Us</Typography>
           <Box>
-            <Link href="https://www.facebook.com" target="_blank" rel="noopener" sx={{ marginX: 1 }}><Facebook sx={{ color: 'primary.main' }} /></Link>
             <Link href="https://www.twitter.com" target="_blank" rel="noopener" sx={{ marginX: 1 }}><Twitter sx={{ color: 'primary.main' }} /></Link>
-            <Link href="https://www.linkedin.com" target="_blank" rel="noopener" sx={{ marginX: 1 }}><LinkedIn sx={{ color: 'primary.main' }} /></Link>
+            <Link href="https://www.linkedin.com/company/uninet-llc" target="_blank" rel="noopener" sx={{ marginX: 1 }}><LinkedIn sx={{ color: 'primary.main' }} /></Link>
           </Box>
         </Grid>
       </Grid>
