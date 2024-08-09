@@ -9,6 +9,7 @@ import banner from './banner2.mp4';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Footer from './Footer';
 import './styles.css'; // Import the CSS file
+import TechPage from './TechPage';
 
 
 function App() {
@@ -81,10 +82,11 @@ function App() {
                 </Box>
               </div>
               <LandingPage />
-              <Footer />
+              {/* <Footer /> */}
             </div>
           } />
           <Route path="/about" element={<AboutPage />} />
+          <Route path="/tech" element={<TechPage />} />
           <Route path="/contact" element={<ContactPage />} />
           {/* Additional routes as needed */}
         </Routes>

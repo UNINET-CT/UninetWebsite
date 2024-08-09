@@ -25,6 +25,9 @@ const theme = createTheme({
       //textShadow: '0px 3px 6px rgba(106, 69, 149, 0.6)', // Darker and more pronounced shadow
       fontWeight: 'bold',
     },
+    h2: {
+      fontWeight: 'bold',
+    },
     button: {
         textTransform: 'none',
         fontSize: '1.2rem', // Sets a larger font size for all buttons

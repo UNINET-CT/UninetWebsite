@@ -29,8 +29,8 @@ const Navbar = () => {
         <ListItem button component={Link} to="/about" sx={{ color: 'white' }}>
           <ListItemText primary="About" />
         </ListItem>
-        <ListItem button component={Link} to="/services" sx={{ color: 'white' }}>
-          <ListItemText primary="Services" />
+        <ListItem button component={Link} to="/tech" sx={{ color: 'white' }}>
+          <ListItemText primary="Tech" />
         </ListItem>
         <ListItem button component={Link} to="/contact" sx={{ color: 'white' }}>
           <ListItemText primary="Contact" />
@@ -99,11 +99,11 @@ const Navbar = () => {
         `}
       </style>
 
-      <AppBar position="fixed" sx={{ width: '100%', background: 'rgba(0, 0, 0, 0.8)', boxShadow: 'none', padding: '10px 0' }}>
+      <AppBar position="fixed" sx={{ width: '100%', background: '#2A2A2A', boxShadow: 'none', padding: '0px 0' }}>
         <Toolbar sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
           
           {/* Logo */}
-          <Box sx={{ ml: 3 }}>
+          <Box sx={{ ml: 5 }}>
             <Link to="/" style={{ textDecoration: 'none' }}>
               <Box
                 component="img"
@@ -116,16 +116,16 @@ const Navbar = () => {
 
           {/* Centered Links for Desktop */}
           <Box sx={{ display: { xs: 'none', md: 'flex' }, justifyContent: 'center', flexGrow: 1 }}>
-            <Link to="/" style={{ textDecoration: 'none', margin: '0 20px' }}>
+            <Link to="/" style={{ textDecoration: 'none', margin: '0 20px', color: 'white' }}>
               <Typography variant="h6" component="span" className="learn-more-link">Launchpad</Typography>
             </Link>
-            <Link to="/services" style={{ textDecoration: 'none', margin: '0 20px' }}>
+            <Link to="/tech" style={{ textDecoration: 'none', margin: '0 20px', color: 'white' }}>
               <Typography variant="h6" component="span" className="learn-more-link">Explore Our Tech</Typography>
             </Link>
-            <Link to="/about" style={{ textDecoration: 'none', margin: '0 20px' }}>
+            <Link to="/about" style={{ textDecoration: 'none', margin: '0 20px', color: 'white' }}>
               <Typography variant="h6" component="span" className="learn-more-link">Who We Are</Typography>
             </Link>
-            <Link to="/contact" style={{ textDecoration: 'none', margin: '0 20px' }}>
+            <Link to="/contact" style={{ textDecoration: 'none', margin: '0 20px', color: 'white' }}>
               <Typography variant="h6" component="span" className="learn-more-link">Connect With Us</Typography>
             </Link>
           </Box>
@@ -139,7 +139,7 @@ const Navbar = () => {
               onClick={handleDrawerToggle}
               sx={{
                 backgroundColor: '#967bb6', // Purple background
-                borderRadius: '50%', // Rounded corners
+                borderRadius: '10%', // Rounded corners
                 padding: '8px',
                 '&:hover': {
                   backgroundColor: '#7a539b', // Darker purple on hover

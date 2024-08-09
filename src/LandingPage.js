@@ -6,6 +6,7 @@ import 'aos/dist/aos.css'; // Import the CSS for AOS
 // import nasa_img from './nasa.jpg';  // Make sure the path to your logo is correct
 import stars from './stars.jpg';  // Make sure the path to your logo is correct
 import background_video from './background.mp4';
+import Footer from './Footer';
 
 
 const LandingPage = () => {
@@ -121,7 +122,7 @@ const LandingPage = () => {
                   fontSize: isMobile ? '2rem' : '2.5rem',
                 }}
               >
-                We Are Uninet
+                We Build Smart Algorithms for Smarter Satellites
               </Typography>
             </Box>
 
@@ -183,9 +184,9 @@ const LandingPage = () => {
                 left: 0,
                 right: 0,
                 bottom: 0,
-                background: 'rgba(0, 0, 0, 0.85)',
+                background: 'rgba(0, 0, 0, 0.5)',
                 borderRadius: '8px',
-                boxShadow: '0 4px 15px rgba(0, 0, 0, 0.7)',
+                boxShadow: '0 4px 15px rgba(0, 0, 0, 0.5)',
                 zIndex: 1,
               }}
             />
@@ -208,7 +209,7 @@ const LandingPage = () => {
                   fontSize: isMobile ? '2rem' : '2.5rem',
                 }}
               >
-                We Design Smart Algorithms for Smarter Satellite Operations
+                State-of-the-art Optimization
               </Typography>
             </Box>
 
@@ -222,13 +223,33 @@ const LandingPage = () => {
               >
                 Our state-of-the-art satellite routing algorithms optimize over dynamic constellation topologies. We ensure fast, load-balanced routing decisions to get your data where it needs to go.
                 <p>
-                  <a href='/' className="learn-more-link" style={{ color: 'white' }}>
+                  <a href='/tech' className="learn-more-link" style={{ color: 'white' }}>
                     <b>Learn more about our tech.</b>
                   </a>
                 </p>
               </Typography>
             </Box>
           </Box>
+        </Container>
+      </div>
+      <div className="scroll-section">
+      <Container
+          maxWidth={false}
+          style={{
+            position: 'relative',
+            width: '100vw',
+            height: '100vh',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            padding: 0,
+            margin: 0,
+            overflow: 'hidden',
+            backgroundColor: "black"
+          }}
+        >
+          
+        <Footer></Footer>
         </Container>
       </div>
     </>
