@@ -2,8 +2,8 @@ import React, { useEffect } from 'react';
 import { Box, Typography, Container, useMediaQuery } from '@mui/material';
 import AOS from 'aos';
 import 'aos/dist/aos.css'; // Import the CSS for AOS
-import constellation from './constellation.gif';  // Ensure this path is correct
-import nasa_img from './nasa.jpg';  // Make sure the path to your logo is correct
+// import constellation from './constellation.gif';  // Ensure this path is correct
+// import nasa_img from './nasa.jpg';  // Make sure the path to your logo is correct
 import stars from './stars.jpg';  // Make sure the path to your logo is correct
 import background_video from './background.mp4';
 
