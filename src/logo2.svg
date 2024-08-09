@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="66.211975mm"
+   height="12.733074mm"
+   viewBox="0 0 66.211975 12.733074"
+   version="1.1"
+   id="svg903"
+   inkscape:export-filename="logo2.svg"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview905"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     showgrid="false" />
+  <defs
+     id="defs900">
+    <rect
+       x="196.27946"
+       y="156.24211"
+       width="508.38876"
+       height="163.90752"
+       id="rect1026" />
+  </defs>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-52.95749,-44.348715)">
+    <text
+       xml:space="preserve"
+       transform="scale(0.26458333)"
+       id="text1024"
+       style="font-size:64px;font-family:'a Atmospheric';-inkscape-font-specification:'a Atmospheric';white-space:pre;shape-inside:url(#rect1026);fill:#d4aa00"><tspan
+         x="196.2793"
+         y="215.42969"
+         id="tspan2013"><tspan
+           style="font-family:'a Astro Space';-inkscape-font-specification:'a Astro Space';fill:#b800b8"
+           id="tspan2011">UNINET</tspan></tspan></text>
+  </g>
+</svg>

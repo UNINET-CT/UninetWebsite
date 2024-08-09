@@ -30,7 +30,7 @@ function App() {
                 width: '100vw',
                 height: '100vh',
                 overflow: 'hidden',
-                paddingBottom: '2rem'
+                paddingBottom: '0rem'
               }}>
                 {/* Fullscreen Video Banner */}
                 <video ref={videoRef} autoPlay muted loop style={{ width: '100%', height: '100%', objectFit: 'cover' }}>
@@ -51,7 +51,7 @@ function App() {
                   zIndex: 2
                 }}>
                   <Typography variant="h2" component="h2" sx={{ color: 'white', textShadow: '2px 2px 8px rgba(0,0,0,0.7)' }}>
-                    <b>Optimizing Satellite Networks for Tomorrow</b>
+                    <b>Optimizing Satellite Operations for Tomorrow</b>
                   </Typography>
                 </Box>
               </Box>

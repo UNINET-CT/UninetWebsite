@@ -75,6 +75,6 @@ build/
 # Local Netlify folder
 .netlify
 
-.cache
+*.cache
 
 node_modules/
