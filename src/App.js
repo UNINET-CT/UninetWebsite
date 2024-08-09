@@ -7,7 +7,7 @@ import ContactPage from './ContactPage';
 import theme from './theme';
 import banner from './banner2.mp4';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Footer from './Footer';
+// import Footer from './Footer';
 import './styles.css'; // Import the CSS file
 import TechPage from './TechPage';
 
