@@ -37,20 +37,21 @@ function App() {
                   overflow: 'hidden',
                   paddingBottom: 0,
                 }}>
-                  {/* Fullscreen Video Banner */}
                   <video
-                    ref={videoRef}
                     autoPlay
                     muted
                     loop
                     style={{
+                      position: 'absolute',
+                      top: 0,
+                      left: 0,
                       width: '100%',
                       height: '100%',
-                      objectFit: 'cover',  // Adjust objectFit for mobile
+                      objectFit: 'cover',
+                      zIndex: -2,
                     }}
                   >
                     <source src={banner} type="video/mp4" />
-                    Your browser does not support the video tag.
                   </video>
 
                   {/* Text Overlay */}
