@@ -4,6 +4,8 @@ import { Twitter, LinkedIn } from '@mui/icons-material';
 
 const Footer = () => {
   return (
+    <div className="scroll-section">
+
     <Box component="footer" sx={{
       bgcolor: 'background.paper',
       padding: 3,
@@ -41,6 +43,7 @@ const Footer = () => {
         © {new Date().getFullYear()} Uninet, LLC
       </Typography>
     </Box>
+    </div>
   );
 };
 
