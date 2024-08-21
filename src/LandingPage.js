@@ -1,13 +1,10 @@
 import React, { useEffect } from 'react';
-import { Box, Typography, Container, useMediaQuery } from '@mui/material';
+import { Box, Typography, Container, useMediaQuery, Card, CardContent, Button, Divider } from '@mui/material';
 import AOS from 'aos';
 import 'aos/dist/aos.css'; // Import the CSS for AOS
-// import constellation from './constellation.gif';  // Ensure this path is correct
-// import nasa_img from './nasa.jpg';  // Make sure the path to your logo is correct
 import stars from './stars.jpg';  // Make sure the path to your logo is correct
 import background_video from './background.mp4';
 import Footer from './Footer';
-
 
 const LandingPage = () => {
   useEffect(() => {
@@ -48,213 +45,288 @@ const LandingPage = () => {
           }
         `}
       </style>
-      <div className="scroll-section">
+
+      <div className='scroll-section'>
         <Container
           maxWidth={false}
-          style={{
+          sx={{
             position: 'relative',
             width: '100vw',
-            height: '100vh',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
-            padding: 0,
+            padding: { xs: '16px 0', sm: '64px 0' },
             margin: 0,
             overflow: 'hidden',
           }}
         >
-          <video
-            autoPlay
-            muted
-            loop
-            style={{
-              position: 'absolute',
-              top: 0,
-              left: 0,
+          <Box sx={{
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+            minHeight: '100vh',
+            padding: '0px',
+            flexDirection: 'column', // Stack heading and cards vertically
+          }}>
+            {/* Heading and Paragraph Container */}
+            <Box sx={{
+              display: 'flex',
+              flexDirection: isMobile ? 'column' : 'row', // Stack vertically on mobile
+              justifyContent: isMobile ? 'center' : 'flex-start',
+              alignItems: isMobile ? 'center' : 'flex-start',
+              maxWidth: '1200px',
               width: '100%',
-              height: '100%',
-              objectFit: 'cover',
-              zIndex: -2,
-            }}
-          >
-            <source src={background_video} type="video/mp4" />
-          </video>
-          <Box
-            display="flex"
-            flexDirection={isMobile ? 'column' : 'row'}
-            justifyContent="space-between"
-            alignItems="center"
-            p={4}
-            style={{
-              width: isMobile ? '90%' : '80%',
+              marginBottom: '32px',
+              padding: { xs: '0 8px', sm: '0 16px' },
               textAlign: isMobile ? 'center' : 'left',
-              zIndex: 2,
-              position: 'relative',
-            }}
-          >
-            <Box
-              style={{
-                position: 'absolute',
-                top: 0,
-                left: 0,
-                right: 0,
-                bottom: 0,
-                background: 'rgba(0, 0, 0, 0.85)',
-                borderRadius: '8px',
-                boxShadow: '0 4px 15px rgba(0, 0, 0, 0.7)',
-                zIndex: -1,
-              }}
-            />
-            <Box
-              flex={1}
-              mb={isMobile ? 2 : 0}
-              display="flex"
-              justifyContent="center"
-              alignItems="center"
-            >
+              paddingTop: { xs: '16px', sm: '32px' }, // Adds padding above the Box (16px on mobile, 32px on desktop)
+
+            }}>
               <Typography
-                variant={isMobile ? 'h4' : 'h3'}
+                variant={isMobile ? 'h4' : 'h3Purple'}
                 component="h1"
                 gutterBottom
-                style={{
-                  color: 'white',
+                sx={{
+                  flex: 1,
+                  color: '#967bb6',
                   fontWeight: 'bold',
-                  fontSize: isMobile ? '2rem' : '2.5rem',
+                  fontSize: isMobile ? '1.8rem' : '2.5rem',
+                  textAlign: isMobile ? 'center' : 'left',
+                  maxWidth: isMobile ? '80%' : '100%', // Limits the width on mobile
+                  margin: isMobile ? '1rem auto' : '2rem auto', // Centers the text on mobile
                 }}
               >
-                We Build Smart Algorithms for Smarter Satellites
+                We Are Uninet
               </Typography>
-            </Box>
 
-            <Box flex={1}>
               <Typography
                 variant="body1"
-                style={{
-                  color: 'white',
-                  fontSize: isMobile ? '1rem' : '1.2rem',
+                sx={{
+                  flex: 2,
+                  maxWidth: isMobile ? '80%' : '100%', // Adds margin on the sides for mobile
+                  margin: isMobile ? '0 auto' : '0', // Centers the text block on mobile
+                  textAlign: isMobile ? 'left' : 'left', // Center-align text on mobile
+                  padding: isMobile ? '0 16px' : '0', // Adds side padding on mobile
                 }}
               >
                 Founded in 2022, Uninet builds smart algorithms that enhance efficiency and reliability for the Internet of Space Things. Our advanced software solutions ensure low-latency communication and optimal resource management, driving innovation in satellite management.
+                <p>Our mission is to design software that brings next-generation networking technology from terrestrial to non-terrestrial networks (NTNs).</p>
                 <p>
-                  <a href='/about' className="learn-more-link" style={{ color: 'white' }}>
-                    <b>More about the team.</b>
+                  <a href='/tech' className="learn-more-link" style={{ color: 'black' }}>
+                    <b>Learn more about us.</b>
                   </a>
                 </p>
               </Typography>
             </Box>
-          </Box>
-        </Container>
-      </div>
 
-      <div className="scroll-section">
-        <Container
-          maxWidth={false}
-          style={{
-            position: 'relative',
-            width: '100vw',
-            height: '100vh',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            padding: 0,
-            margin: 0,
-            overflow: 'hidden',
-            backgroundImage: `url(${stars})`,
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-          }}
-        >
-          <Box
-            display="flex"
-            flexDirection={isMobile ? 'column' : 'row'}
-            justifyContent="space-between"
-            alignItems="center"
-            p={4}
-            style={{
-              width: isMobile ? '90%' : '80%',
+            <Divider sx={{ my: 4, bgcolor: '#2A2A2A', height: '1px', width: '100%', opacity: '25%' }} />
+
+            <Box sx={{
+              display: 'flex',
+              flexDirection: isMobile ? 'column' : 'row', // Stack vertically on mobile
+              justifyContent: isMobile ? 'center' : 'flex-start',
+              alignItems: isMobile ? 'center' : 'flex-start',
+              maxWidth: '1200px',
+              width: '100%',
+              marginBottom: '32px',
+              padding: { xs: '0 8px', sm: '0 16px' },
               textAlign: isMobile ? 'center' : 'left',
-              zIndex: 2,
-              position: 'relative',
-            }}
-          >
-            <Box
-              style={{
-                position: 'absolute',
-                top: 0,
-                left: 0,
-                right: 0,
-                bottom: 0,
-                background: 'rgba(0, 0, 0, 0.5)',
-                borderRadius: '8px',
-                boxShadow: '0 4px 15px rgba(0, 0, 0, 0.5)',
-                zIndex: 1,
-              }}
-            />
+              paddingTop: { xs: '16px', sm: '32px' }, // Adds padding above the Box (16px on mobile, 32px on desktop)
 
-            <Box
-              flex={1}
-              mb={isMobile ? 2 : 0}
-              display="flex"
-              justifyContent="center"
-              alignItems="center"
-              zIndex={2}
-            >
+            }}>
               <Typography
-                variant={isMobile ? 'h4' : 'h3'}
+                variant={isMobile ? 'h4' : 'h3Purple'}
                 component="h1"
                 gutterBottom
-                style={{
-                  color: 'white',
+                sx={{
+                  flex: 1,
+                  color: '#967bb6',
                   fontWeight: 'bold',
-                  fontSize: isMobile ? '2rem' : '2.5rem',
+                  fontSize: isMobile ? '1.8rem' : '2.5rem',
+                  textAlign: isMobile ? 'center' : 'left',
+                  maxWidth: isMobile ? '80%' : '100%', // Limits the width on mobile
+                  margin: isMobile ? '1rem auto' : '2rem auto', // Centers the text on mobile
                 }}
               >
-                State-of-the-art Optimization
+                Expertise in R&D
               </Typography>
-            </Box>
 
-            <Box flex={1} zIndex={2}>
               <Typography
                 variant="body1"
-                style={{
-                  color: 'white',
-                  fontSize: isMobile ? '1rem' : '1.2rem',
+                sx={{
+                  flex: 2,
+                  maxWidth: isMobile ? '80%' : '100%', // Adds margin on the sides for mobile
+                  margin: isMobile ? '0 auto' : '0', // Centers the text block on mobile
+                  textAlign: isMobile ? 'left' : 'left', // Center-align text on mobile
+                  padding: isMobile ? '0 16px' : '0', // Adds side padding on mobile
                 }}
               >
-                Our state-of-the-art satellite routing algorithms optimize over dynamic constellation topologies. We ensure fast, load-balanced routing decisions to get your data where it needs to go.
+                Founded in 2022, Uninet builds smart algorithms that enhance efficiency and reliability for the Internet of Space Things. Our advanced software solutions ensure low-latency communication and optimal resource management, driving innovation in satellite management.
+                <p>Our mission is to design software that brings next-generation networking technology from terrestrial to non-terrestrial networks (NTNs).</p>
                 <p>
-                  <a href='/tech' className="learn-more-link" style={{ color: 'white' }}>
-                    <b>Learn more about our tech.</b>
+                  <a href='/tech' className="learn-more-link" style={{ color: 'black' }}>
+                    <b>Learn more about us.</b>
                   </a>
                 </p>
               </Typography>
             </Box>
+
+            <Divider sx={{ my: 4, bgcolor: '#2A2A2A', height: '1px', width: '100%', opacity: '25%' }} />
+
+
+            {/* Second Section */}
+            <Box sx={{
+              display: 'flex',
+              flexDirection: isMobile ? 'column' : 'row',
+              justifyContent: isMobile ? 'center' : 'flex-start',
+              alignItems: isMobile ? 'center' : 'flex-start',
+              maxWidth: '1200px',
+              width: '100%',
+              marginBottom: '32px',
+              padding: { xs: '0 8px', sm: '0 16px' },
+              textAlign: isMobile ? 'center' : 'left',
+              paddingTop: { xs: '16px', sm: '32px' }, // Adds padding above the Box (16px on mobile, 32px on desktop)
+
+            }}>
+              <Typography
+                variant={isMobile ? 'h4' : 'h3Purple'}
+                component="h1"
+                gutterBottom
+                sx={{
+                  flex: 1,
+                  color: '#967bb6',
+                  fontWeight: 'bold',
+                  fontSize: isMobile ? '1.8rem' : '2.5rem',
+                  textAlign: isMobile ? 'center' : 'left',
+                  maxWidth: isMobile ? '80%' : '100%', // Limits the width on mobile
+                  margin: isMobile ? '1rem auto' : '2rem auto', // Centers the text on mobile
+                }}
+              >
+                Our Technology
+              </Typography>
+              <Typography variant="body1" sx={{ flex: 2,
+                  maxWidth: isMobile ? '80%' : '100%', // Adds margin on the sides for mobile
+                  margin: isMobile ? '0 auto' : '0', // Centers the text block on mobile
+                  textAlign: isMobile ? 'left' : 'left', // Center-align text on mobile
+                  padding: isMobile ? '0 16px' : '0',  }}>
+                The proliferation of mega-constellations of low-Earth orbiting (LEO) satellites will make network coverage and edge cloud resources more accessible than ever, even in some of the most isolated locations. Networks of satellites, their arrays of sensors, and their onboard processing capabilities will enable transformative Internet of Things (IoT) applications, including autonomous remote sensing, surveillance, and asset tracking.
+                <p>Workflows for some of these IoT applications can demand substantial amounts of bandwidth, computation, and storage resources and require strict quality of service (QoS) requirements in terms of low latency and high resilience. As a result, sophisticated resource scheduling algorithms are necessary to balance the demands of the applications and the network’s supply of available hardware. </p>
+                <p>To address the challenges of resource allocation in NTNs, Uninet is researching, developing, and testing solutions that improve and enable routing, scheduling, and orchestration in the space domain. </p>
+              </Typography>
+            </Box>
+
+            {/* Cards Container */}
+            <Box sx={{
+              display: 'flex',
+              justifyContent: 'center', // Center cards on mobile
+              alignItems: 'flex-start',
+              gap: '24px',
+              flexWrap: 'wrap',
+              maxWidth: '100%',
+              padding: { xs: '2rem 8px', sm: '2rem 16px' },
+            }}>
+              {/* First Card */}
+              <Card sx={{
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'space-between',
+                width: '100%',
+                maxWidth: '400px',
+                borderRadius: '16px',
+              }}>
+                <CardContent>
+                  <Typography gutterBottom variant="h5" component="div" sx={{ color: 'black', textAlign: 'center' }}>
+                    High-throughput & Low-latency Routing
+                  </Typography>
+                  <Typography variant="body2" color="text.secondary">
+                    Uninet is developing dynamic, distributed algorithms for routing network traffic between satellites and ground stations. Uninet’s low-complexity backpressure-style algorithms can balance maximal throughput and minimal end-to-end latency according to the QoS requirements of individual flows.
+                  </Typography>
+                </CardContent>
+                <Box sx={{ display: 'flex', justifyContent: 'center', paddingBottom: '16px' }}>
+                  <Button
+                    variant="contained"
+                    sx={{
+                      backgroundColor: '#967bb6',
+                      '&:hover': {
+                        backgroundColor: '#845a96',
+                      }
+                    }}
+                  >
+                    Learn More
+                  </Button>
+                </Box>
+              </Card>
+
+              {/* Second Card */}
+              <Card sx={{
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'space-between',
+                width: '100%',
+                maxWidth: '400px',
+                borderRadius: '16px',
+              }}>
+                <CardContent>
+                  <Typography gutterBottom variant="h5" component="div" sx={{ color: 'black', textAlign: 'center' }}>
+                    Edge Cloud Scheduling for IoT
+                  </Typography>
+                  <Typography variant="body2" color="text.secondary">
+                    Uninet is developing a task scheduler for remote sensing applications that run on the satellite edge. Our algorithms dynamically minimize the overall makespan of submitted tasks and satisfy energy, bandwidth, and computation resource constraints.
+                  </Typography>
+                </CardContent>
+                <Box sx={{ display: 'flex', justifyContent: 'center', paddingBottom: '16px' }}>
+                  <Button
+                    variant="contained"
+                    sx={{
+                      backgroundColor: '#967bb6',
+                      '&:hover': {
+                        backgroundColor: '#845a96',
+                      }
+                    }}
+                  >
+                    Learn More
+                  </Button>
+                </Box>
+              </Card>
+
+              {/* Third Card */}
+              <Card sx={{
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'space-between',
+                width: '100%',
+                maxWidth: '400px',
+                borderRadius: '16px',
+              }}>
+                <CardContent>
+                  <Typography gutterBottom variant="h5" component="div" sx={{ color: 'black', textAlign: 'center' }}>
+                    Network Slice Orchestration for Complex Workflows
+                  </Typography>
+                  <Typography variant="body2" color="text.secondary">
+                    “Service chains” of sensing applications that fuse data collected by multiple satellites pose more complex scheduling problems. Uninet uses state-of-the-art optimization methods from terrestrial 5G network slicing to minimize computation and bandwidth resource usage and satisfy capacity constraints.
+                  </Typography>
+                </CardContent>
+                <Box sx={{ display: 'flex', justifyContent: 'center', paddingBottom: '16px' }}>
+                  <Button
+                    variant="contained"
+                    sx={{
+                      backgroundColor: '#967bb6',
+                      '&:hover': {
+                        backgroundColor: '#845a96',
+                      }
+                    }}
+                  >
+                    Learn More
+                  </Button>
+                </Box>
+              </Card>
+            </Box>
           </Box>
         </Container>
       </div>
-      <div className="scroll-section">
-      <Container
-          maxWidth={false}
-          style={{
-            position: 'relative',
-            width: '100vw',
-            height: '100vh',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            padding: 0,
-            margin: 0,
-            overflow: 'hidden',
-            backgroundColor: "black"
-          }}
-        >
-          
-        <Footer></Footer>
-        </Container>
-      </div>
+      <Footer />
     </>
   );
 }
 
 export default LandingPage;
-

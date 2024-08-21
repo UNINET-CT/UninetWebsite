@@ -12,7 +12,7 @@ const theme = createTheme({
   typography: {
     fontFamily: 'Lato, Arial, sans-serif',
     h3: {
-        background: 'white', //'-webkit-linear-gradient(45deg, #6a4595, #9a77cf)', // Deeper gradient from dark lavender to a lighter shade
+        background: 'black', //'-webkit-linear-gradient(45deg, #6a4595, #9a77cf)', // Deeper gradient from dark lavender to a lighter shade
         WebkitBackgroundClip: 'text',
         WebkitTextFillColor: 'transparent',
         //textShadow: '0px 3px 6px rgba(106, 69, 149, 0.6)', // Darker and more pronounced shadow
@@ -36,8 +36,11 @@ const theme = createTheme({
       },
     body1: {
         fontSize: '1.3rem', // Sets a larger font size for all buttons
-        color: 'white',
+        color: 'black',
 
+    },
+    body2: {
+      fontSize: '1.1rem'
     }
   },
 });
