@@ -50,8 +50,6 @@ const LandingPage = () => {
         <Container
           maxWidth={false}
           sx={{
-            position: 'relative',
-            width: '100vw',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
@@ -67,7 +65,9 @@ const LandingPage = () => {
             minHeight: '100vh',
             padding: '0px',
             flexDirection: 'column', // Stack heading and cards vertically
-          }}>
+            
+          }}
+          >
             {/* Heading and Paragraph Container */}
             <Box sx={{
               display: 'flex',
@@ -112,7 +112,7 @@ const LandingPage = () => {
                 Founded in 2022, Uninet builds smart algorithms that enhance efficiency and reliability for the Internet of Space Things. Our advanced software solutions ensure low-latency communication and optimal resource management, driving innovation in satellite management.
                 <p>Our mission is to design software that brings next-generation networking technology from terrestrial to non-terrestrial networks (NTNs).</p>
                 <p>
-                  <a href='/tech' className="learn-more-link" style={{ color: 'black' }}>
+                  <a href='/about' className="learn-more-link" style={{ color: 'black' }}>
                     <b>Learn more about us.</b>
                   </a>
                 </p>
@@ -161,13 +161,8 @@ const LandingPage = () => {
                   padding: isMobile ? '0 16px' : '0', // Adds side padding on mobile
                 }}
               >
-                Founded in 2022, Uninet builds smart algorithms that enhance efficiency and reliability for the Internet of Space Things. Our advanced software solutions ensure low-latency communication and optimal resource management, driving innovation in satellite management.
-                <p>Our mission is to design software that brings next-generation networking technology from terrestrial to non-terrestrial networks (NTNs).</p>
-                <p>
-                  <a href='/tech' className="learn-more-link" style={{ color: 'black' }}>
-                    <b>Learn more about us.</b>
-                  </a>
-                </p>
+                At Uninet, our R&D team brings together a wealth of knowledge and experience, working closely to solve complex challenges in networking technology. We pride ourselves on being agile, delivering solutions quickly and efficiently while adapting to the needs of each project. 
+                <p>By collaborating and drawing on our collective strengths, we’re able to create innovative technologies that advance both terrestrial and space-based networks.</p>
               </Typography>
             </Box>
 
@@ -209,10 +204,11 @@ const LandingPage = () => {
                   margin: isMobile ? '0 auto' : '0', // Centers the text block on mobile
                   textAlign: isMobile ? 'left' : 'left', // Center-align text on mobile
                   padding: isMobile ? '0 16px' : '0',  }}>
-                The proliferation of mega-constellations of low-Earth orbiting (LEO) satellites will make network coverage and edge cloud resources more accessible than ever, even in some of the most isolated locations. Networks of satellites, their arrays of sensors, and their onboard processing capabilities will enable transformative Internet of Things (IoT) applications, including autonomous remote sensing, surveillance, and asset tracking.
-                <p>Workflows for some of these IoT applications can demand substantial amounts of bandwidth, computation, and storage resources and require strict quality of service (QoS) requirements in terms of low latency and high resilience. As a result, sophisticated resource scheduling algorithms are necessary to balance the demands of the applications and the network’s supply of available hardware. </p>
-                <p>To address the challenges of resource allocation in NTNs, Uninet is researching, developing, and testing solutions that improve and enable routing, scheduling, and orchestration in the space domain. </p>
-              </Typography>
+                The rise of LEO satellite mega-constellations will greatly enhance network coverage and edge cloud resources, enabling transformative IoT applications like autonomous sensing and asset tracking. These applications require significant bandwidth, computation, and storage with strict QoS demands. 
+                
+                <p>To meet these needs, Uninet is developing advanced algorithms for routing, scheduling, and orchestration in the space domain.</p>
+                
+                </Typography>
             </Box>
 
             {/* Cards Container */}
@@ -233,26 +229,31 @@ const LandingPage = () => {
                 width: '100%',
                 maxWidth: '400px',
                 borderRadius: '16px',
+                minHeight: '400px',
+                background: '-webkit-linear-gradient(45deg, #6A0D91, #9a77cf)'
+
               }}>
                 <CardContent>
-                  <Typography gutterBottom variant="h5" component="div" sx={{ color: 'black', textAlign: 'center' }}>
-                    High-throughput & Low-latency Routing
+                  <Typography gutterBottom variant="h5" component="div" sx={{ color: 'white', textAlign: 'center' }}>
+                    <b>High-throughput & Low-latency Routing</b>
                   </Typography>
-                  <Typography variant="body2" color="text.secondary">
-                    Uninet is developing dynamic, distributed algorithms for routing network traffic between satellites and ground stations. Uninet’s low-complexity backpressure-style algorithms can balance maximal throughput and minimal end-to-end latency according to the QoS requirements of individual flows.
+                  <Typography variant="body2" sx={{ color: 'white'}}>
+                    Uninet is developing dynamic, distributed algorithms for routing network traffic between satellites and ground stations.
                   </Typography>
                 </CardContent>
                 <Box sx={{ display: 'flex', justifyContent: 'center', paddingBottom: '16px' }}>
                   <Button
                     variant="contained"
                     sx={{
-                      backgroundColor: '#967bb6',
+                      backgroundColor: '#E5E5E5', // Neutral base color
+                      color: '#6A0D91', // Text color that matches the gradient for better contrast
                       '&:hover': {
-                        backgroundColor: '#845a96',
+                        backgroundColor: '#CCCCCC', // Slightly darker shade of the neutral color
+                        color: '#ffffff', // Change text color to white on hover for better contrast
                       }
                     }}
                   >
-                    Learn More
+                    Learn More                 
                   </Button>
                 </Box>
               </Card>
@@ -265,26 +266,31 @@ const LandingPage = () => {
                 width: '100%',
                 maxWidth: '400px',
                 borderRadius: '16px',
+                minHeight: '400px',
+                background: '-webkit-linear-gradient(45deg, #6A0D91, #9a77cf)'
+
               }}>
                 <CardContent>
-                  <Typography gutterBottom variant="h5" component="div" sx={{ color: 'black', textAlign: 'center' }}>
-                    Edge Cloud Scheduling for IoT
+                  <Typography gutterBottom variant="h5" component="div" sx={{ color: 'white', textAlign: 'center' }}>
+                    <b>Edge Cloud Scheduling for IoT</b>
                   </Typography>
-                  <Typography variant="body2" color="text.secondary">
-                    Uninet is developing a task scheduler for remote sensing applications that run on the satellite edge. Our algorithms dynamically minimize the overall makespan of submitted tasks and satisfy energy, bandwidth, and computation resource constraints.
+                  <Typography variant="body2" sx={{ color: 'white'}}>
+                    Uninet is developing a task scheduler for remote sensing applications that run on the satellite edge.
                   </Typography>
                 </CardContent>
                 <Box sx={{ display: 'flex', justifyContent: 'center', paddingBottom: '16px' }}>
                   <Button
                     variant="contained"
                     sx={{
-                      backgroundColor: '#967bb6',
+                      backgroundColor: '#E5E5E5', // Neutral base color
+                      color: '#6A0D91', // Text color that matches the gradient for better contrast
                       '&:hover': {
-                        backgroundColor: '#845a96',
+                        backgroundColor: '#CCCCCC', // Slightly darker shade of the neutral color
+                        color: '#ffffff', // Change text color to white on hover for better contrast
                       }
                     }}
                   >
-                    Learn More
+                    Learn More                 
                   </Button>
                 </Box>
               </Card>
@@ -297,26 +303,31 @@ const LandingPage = () => {
                 width: '100%',
                 maxWidth: '400px',
                 borderRadius: '16px',
+                minHeight: '400px',
+                background: '-webkit-linear-gradient(45deg, #6A0D91, #9a77cf)'
+
               }}>
                 <CardContent>
-                  <Typography gutterBottom variant="h5" component="div" sx={{ color: 'black', textAlign: 'center' }}>
-                    Network Slice Orchestration for Complex Workflows
+                  <Typography gutterBottom variant="h5" component="div" sx={{ color: 'white', textAlign: 'center' }}>
+                    <b>Network Slice Orchestration for Complex Workflows</b>
                   </Typography>
-                  <Typography variant="body2" color="text.secondary">
-                    “Service chains” of sensing applications that fuse data collected by multiple satellites pose more complex scheduling problems. Uninet uses state-of-the-art optimization methods from terrestrial 5G network slicing to minimize computation and bandwidth resource usage and satisfy capacity constraints.
+                  <Typography variant="body2" sx={{ color: 'white'}}>
+                    Uninet uses state-of-the-art optimization methods from terrestrial 5G network slicing to minimize computation and bandwidth resource usage and satisfy capacity constraints.
                   </Typography>
                 </CardContent>
                 <Box sx={{ display: 'flex', justifyContent: 'center', paddingBottom: '16px' }}>
                   <Button
                     variant="contained"
                     sx={{
-                      backgroundColor: '#967bb6',
+                      backgroundColor: '#E5E5E5', // Neutral base color
+                      color: '#6A0D91', // Text color that matches the gradient for better contrast
                       '&:hover': {
-                        backgroundColor: '#845a96',
+                        backgroundColor: '#CCCCCC', // Slightly darker shade of the neutral color
+                        color: '#ffffff', // Change text color to white on hover for better contrast
                       }
                     }}
                   >
-                    Learn More
+                    Learn More                 
                   </Button>
                 </Box>
               </Card>

@@ -1,54 +1,110 @@
 import React from 'react';
 import { Box, Typography, Container, useMediaQuery } from '@mui/material';
 import Navbar from './Navbar';
+import Footer from './Footer';
+import imageSrc from "./nasa.jpg"
 
 function AboutPage() {
   const isMobile = useMediaQuery('(max-width:600px)');
 
   return (
     <div>
-      <div style={{ marginBottom: '150px' }}>  
-        <Navbar />
-      </div>
-      
-      <Container maxWidth="lg">
-        <Box 
-          display="flex" 
-          flexDirection={isMobile ? 'column' : 'row'}  // Stack columns vertically on mobile
-          justifyContent="space-between" 
-          alignItems="flex-start" // Align items to the top on mobile for a better look
-          p={isMobile ? 2 : 4}  // Adjust padding for mobile
+      <Navbar />
+      {/* Banner Section */}
+      <Box
+        sx={{
+          width: '100%',
+          height: { xs: '200px', sm: '300px', md: '400px', lg: '500px' }, // Adjust height for different screen sizes
+          backgroundImage: `url(${imageSrc})`,
+          backgroundSize: { xs: '150%', sm: '120%', md: 'cover' }, // Zoom out on smaller screens, cover on larger screens
+          backgroundPosition: 'center', // Center the image on all screen sizes
+          backgroundRepeat: 'no-repeat',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          color: 'white',
+        }}
+      >
+        <Container
+          sx={{
+            textAlign: 'center',
+            padding: { xs: '16px', sm: '24px' },
+          }}
         >
-          {/* Left side: Header */}
-          <Box 
-            flex={1} 
-            mb={isMobile ? 2 : 0}  // Margin bottom on mobile to separate the sections
-            mr={isMobile ? 0 : 2}  // Remove right margin on mobile
+          <Typography
+            variant={isMobile ? 'h4' : 'h2'}
+            component="h1"
+            sx={{
+              fontWeight: 'bold',
+              marginBottom: '16px',
+            }}
           >
-            <Typography 
-              variant={isMobile ? 'h4' : 'h2'}  // Adjust font size for mobile
-              component="h1" 
-              color="black"
-              gutterBottom
-            >
-              We are Uninet
-            </Typography>
-          </Box>
+            We Are Uninet
+          </Typography>
+        </Container>
+      </Box>
+
+      {/* Content Section */}
+      <Container maxWidth="lg" sx={{ marginTop: 4, minHeight: '50vh' }}> {/* Ensure content section has enough height */}
+        {/* First Section */}
+        
+        <Box
+          sx={{
+            display: 'flex',
+            flexDirection: isMobile ? 'column' : 'row',
+            justifyContent: isMobile ? 'center' : 'flex-start',
+            alignItems: 'flex-start',  // Aligns top of image and header
+            marginBottom: '32px',
+            padding: { xs: '0 8px', sm: '0 16px' },
+            textAlign: isMobile ? 'center' : 'left',
+            paddingTop: { xs: '16px', sm: '32px' },
+          }}
+        >
+        
           
-          {/* Right side: Paragraph */}
-          <Box flex={1}>
-            <Typography 
-              variant="body1" 
-              color="textSecondary"
-              sx={{ fontSize: isMobile ? '0.9rem' : '1rem' }}  // Adjust font size for readability on mobile
+          <Box sx={{ flex: 1 }}>
+            <Typography
+              variant={isMobile ? 'h4' : 'h3'}
+              component="h2"
+              gutterBottom
+              sx={{
+                fontWeight: 'bold',
+                fontSize: isMobile ? '1.8rem' : '2.5rem',
+                textAlign: isMobile ? 'center' : 'center',
+                maxWidth: isMobile ? '80%' : '100%',
+                //margin: isMobile ? '1rem auto' : '2rem auto',
+                background: '-webkit-linear-gradient(45deg, #6A0D91, #9a77cf)',
+                WebkitBackgroundClip: 'text',
+                WebkitTextFillColor: 'transparent',
+                marginBottom: '32px',
+
+              }}
             >
-              Founded in 2022 to develop innovative solutions in networking and computational challenges in operations and industry, Uninet leverages tools from optimization and system science to develop intelligent satellite software.​ Our technical expertise includes, but is not limited to:​ Software-defined and virtualized networks​, multi-access edge cloud computing​, resource allocation and optimization​, artificial intelligence and deep learning in systems and computing.
-              <p>We are extending state-of-the-art terrestrial 5G resource allocation technology and algorithms to non-terrestrial networks of low-Earth orbiting satellites.</p>
-              <p>Uninet is currently participating in the NSF SBIR Phase 1.</p>
+              Pioneering next-generation satellite software
+            </Typography>
+            <Typography
+              variant="body1"
+              sx={{
+                maxWidth: isMobile ? '80%' : '100%',
+                margin: isMobile ? '0 auto' : '0',
+                textAlign: 'left',
+                padding: isMobile ? '0 16px' : '0',
+              }}
+            >
+
+            Founded in 2022, Uninet is a small R&D-focused business at the forefront of innovation in networking and computational technology. We specialize in creating intelligent satellite software by leveraging advanced optimization and systems science. Our expertise includes software-defined and virtualized networks, multi-access edge cloud computing, resource allocation, and the application of AI and deep learning in complex systems.
+            <p>We're extending the reach of terrestrial 5G technology to low-Earth orbiting satellites, developing pioneering solutions for non-terrestrial networks. As part of our commitment to innovation, we're proud to be participating in the NSF SBIR Phase 1 program.</p>
+            <p>Our R&D team is a blend of deep expertise and hands-on experience, working together to solve the toughest challenges in networking technology. We're committed to delivering products that meet our customers' needs, staying flexible and efficient to ensure we bring the right solutions to the table. </p>
             </Typography>
           </Box>
         </Box>
+
+      
+        
       </Container>
+
+      {/* Footer */}
+      <Footer />
     </div>
   );
 }
