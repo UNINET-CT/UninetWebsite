@@ -3,7 +3,6 @@ import { Box, Typography, Container, useMediaQuery, Divider } from '@mui/materia
 import Navbar from './Navbar';
 import imageSrc from './dish.jpg';
 import Footer from './Footer';
-import network from './network.jpg'
 import constellation from './constellation.gif'
 import edge from "./edge.png"
 import edge_schedule from "./edge_schedule.png"
@@ -13,17 +12,15 @@ function TechPage() {
 
   return (
     <div>
-      {/* Navbar */}
       <Navbar />
 
-      {/* Banner Section */}
       <Box
         sx={{
           width: '100%',
-          height: { xs: '200px', sm: '300px', md: '400px', lg: '500px' }, // Adjust height for different screen sizes
+          height: { xs: '200px', sm: '300px', md: '400px', lg: '500px' }, 
           backgroundImage: `url(${imageSrc})`,
-          backgroundSize: { xs: '150%', sm: '120%', md: 'cover' }, // Zoom out on smaller screens, cover on larger screens
-          backgroundPosition: 'center', // Center the image on all screen sizes
+          backgroundSize: { xs: '150%', sm: '120%', md: 'cover' }, 
+          backgroundPosition: 'center', 
           backgroundRepeat: 'no-repeat',
           display: 'flex',
           alignItems: 'center',
@@ -50,16 +47,13 @@ function TechPage() {
         </Container>
       </Box>
 
-      {/* Content Section */}
-      <Container maxWidth="lg" sx={{ marginTop: 4, minHeight: '50vh' }}> {/* Ensure content section has enough height */}
-        {/* First Section */}
-        
+      <Container maxWidth="lg" sx={{ marginTop: 4, minHeight: '50vh' }}> 
         <Box
           sx={{
             display: 'flex',
             flexDirection: isMobile ? 'column' : 'row',
             justifyContent: isMobile ? 'center' : 'flex-start',
-            alignItems: 'flex-start',  // Aligns top of image and header
+            alignItems: 'flex-start',  
             marginBottom: '32px',
             padding: { xs: '0 8px', sm: '0 16px' },
             textAlign: isMobile ? 'center' : 'left',
@@ -68,7 +62,7 @@ function TechPage() {
         >
           <Box
             component="img"
-            src={edge} // Image source passed as a prop
+            src={edge} 
             alt="Illustration of network challenges in space"
             sx={{
               flex: isMobile ? '0 1 auto' : '0 0 40%',
@@ -76,7 +70,7 @@ function TechPage() {
               margin: isMobile ? '0 auto 16px' : '0 32px 0 0',
               borderRadius: '8px',
               boxShadow: 3,
-              alignSelf: 'flex-start', // Ensures the image is aligned with the top of the header
+              alignSelf: 'flex-start', 
             }}
           />
           <Box sx={{ flex: 1 }}>
@@ -121,7 +115,7 @@ function TechPage() {
             display: 'flex',
             flexDirection: isMobile ? 'column' : 'row',
             justifyContent: isMobile ? 'center' : 'flex-start',
-            alignItems: 'flex-start',  // Aligns top of image and header
+            alignItems: 'flex-start',  
             marginBottom: '32px',
             padding: { xs: '0 8px', sm: '0 16px' },
             textAlign: isMobile ? 'center' : 'left',
@@ -164,7 +158,7 @@ function TechPage() {
           
           <Box
             component="img"
-            src={constellation} // Image source passed as a prop
+            src={constellation} 
             alt="Illustration of network challenges in space"
             sx={{
               flex: isMobile ? '0 1 auto' : '0 0 40%',
@@ -172,7 +166,7 @@ function TechPage() {
               margin: isMobile ? '0 auto 16px' : '0 32px 0 0',
               borderRadius: '8px',
               //boxShadow: 3,
-              alignSelf: 'flex-start', // Ensures the image is aligned with the top of the header
+              alignSelf: 'flex-start', 
             }}
           />
 
@@ -186,7 +180,7 @@ function TechPage() {
             display: 'flex',
             flexDirection: isMobile ? 'column' : 'row',
             justifyContent: isMobile ? 'center' : 'flex-start',
-            alignItems: 'flex-start',  // Aligns top of image and header
+            alignItems: 'flex-start',  
             marginBottom: '32px',
             padding: { xs: '0 8px', sm: '0 16px' },
             textAlign: isMobile ? 'center' : 'left',
@@ -195,7 +189,7 @@ function TechPage() {
         >
           <Box
             component="img"
-            src={edge_schedule} // Image source passed as a prop
+            src={edge_schedule} 
             alt="Illustration of network challenges in space"
             sx={{
               flex: isMobile ? '0 1 auto' : '0 0 40%',
@@ -203,7 +197,7 @@ function TechPage() {
               margin: isMobile ? '0 auto 16px' : '0 32px 0 0',
               borderRadius: '8px',
               //boxShadow: 3,
-              alignSelf: 'flex-start', // Ensures the image is aligned with the top of the header
+              alignSelf: 'flex-start', 
             }}
           />
           <Box sx={{ flex: 1 }}>
@@ -242,12 +236,10 @@ function TechPage() {
           </Box>
           
           
-
         </Box>
 
         
         <Divider sx={{ my: 4, bgcolor: '#2A2A2A', height: '1px', width: '100%', opacity: '25%' }} />
-        {/* Second Section */}
         <Box
           display="flex"
           flexDirection={isMobile ? 'column' : 'row'}
@@ -265,11 +257,11 @@ function TechPage() {
                 fontWeight: 'bold',
                 fontSize: isMobile ? '1.8rem' : '2.5rem',
                 textAlign: isMobile ? 'center' : 'left',
-                maxWidth: isMobile ? '80%' : '100%', // Limits the width on mobile
-                margin: isMobile ? '1rem auto' : '2rem auto', // Centers the text on mobile
-                background: '-webkit-linear-gradient(45deg, #6A0D91, #9a77cf)', // Gradient background
-                WebkitBackgroundClip: 'text', // Apply gradient to text
-                WebkitTextFillColor: 'transparent', // Make the text itself transparent to show the gradient
+                maxWidth: isMobile ? '80%' : '100%', 
+                margin: isMobile ? '1rem auto' : '2rem auto', 
+                background: '-webkit-linear-gradient(45deg, #6A0D91, #9a77cf)',
+                WebkitBackgroundClip: 'text', 
+                WebkitTextFillColor: 'transparent',
               }}
             >
               Software-as-a-service for Satellite-as-a-service providers.
@@ -281,8 +273,8 @@ function TechPage() {
               variant="body1"
               sx={{
                 flex: 1,
-                maxWidth: isMobile ? '80%' : '100%', // Adds margin on the sides for mobile
-                margin: isMobile ? '0 auto' : '0', // Centers the text block on mobile
+                maxWidth: isMobile ? '80%' : '100%',
+                margin: isMobile ? '0 auto' : '0', 
                 textAlign: isMobile ? 'left' : 'left',
                 padding: isMobile ? '0 16px' : '0',
               }}
@@ -294,7 +286,6 @@ function TechPage() {
         </Box>
 
         <Divider sx={{ my: 4, bgcolor: '#2A2A2A', height: '1px', width: '100%', opacity: '25%' }} />
-        {/* Second Section */}
         <Box
           display="flex"
           flexDirection={isMobile ? 'column' : 'row'}
@@ -312,11 +303,11 @@ function TechPage() {
                 fontWeight: 'bold',
                 fontSize: isMobile ? '1.8rem' : '2.5rem',
                 textAlign: isMobile ? 'center' : 'left',
-                maxWidth: isMobile ? '80%' : '100%', // Limits the width on mobile
-                margin: isMobile ? '1rem auto' : '2rem auto', // Centers the text on mobile
-                background: '-webkit-linear-gradient(45deg, #6A0D91, #9a77cf)', // Gradient background
-                WebkitBackgroundClip: 'text', // Apply gradient to text
-                WebkitTextFillColor: 'transparent', // Make the text itself transparent to show the gradient
+                maxWidth: isMobile ? '80%' : '100%',
+                margin: isMobile ? '1rem auto' : '2rem auto', 
+                background: '-webkit-linear-gradient(45deg, #6A0D91, #9a77cf)', 
+                WebkitBackgroundClip: 'text', 
+                WebkitTextFillColor: 'transparent', 
               }}
             >
             Network Slice Orchestration for Complex Workflows
@@ -328,8 +319,8 @@ function TechPage() {
               variant="body1"
               sx={{
                 flex: 1,
-                maxWidth: isMobile ? '80%' : '100%', // Adds margin on the sides for mobile
-                margin: isMobile ? '0 auto' : '0', // Centers the text block on mobile
+                maxWidth: isMobile ? '80%' : '100%', 
+                margin: isMobile ? '0 auto' : '0', 
                 textAlign: isMobile ? 'left' : 'left',
                 padding: isMobile ? '0 16px' : '0',
               }}
@@ -341,12 +332,7 @@ function TechPage() {
           </Box>
           
         </Box>
-
-        
-        
       </Container>
-
-      {/* Footer */}
       <Footer />
     </div>
   );

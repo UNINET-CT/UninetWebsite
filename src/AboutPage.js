@@ -10,14 +10,13 @@ function AboutPage() {
   return (
     <div>
       <Navbar />
-      {/* Banner Section */}
       <Box
         sx={{
           width: '100%',
-          height: { xs: '200px', sm: '300px', md: '400px', lg: '500px' }, // Adjust height for different screen sizes
+          height: { xs: '200px', sm: '300px', md: '400px', lg: '500px' }, 
           backgroundImage: `url(${imageSrc})`,
-          backgroundSize: { xs: '150%', sm: '120%', md: 'cover' }, // Zoom out on smaller screens, cover on larger screens
-          backgroundPosition: 'center', // Center the image on all screen sizes
+          backgroundSize: { xs: '150%', sm: '120%', md: 'cover' }, 
+          backgroundPosition: 'center', 
           backgroundRepeat: 'no-repeat',
           display: 'flex',
           alignItems: 'center',
@@ -44,16 +43,13 @@ function AboutPage() {
         </Container>
       </Box>
 
-      {/* Content Section */}
-      <Container maxWidth="lg" sx={{ marginTop: 4, minHeight: '50vh' }}> {/* Ensure content section has enough height */}
-        {/* First Section */}
-        
+      <Container maxWidth="lg" sx={{ marginTop: 4, minHeight: '50vh' }}>
         <Box
           sx={{
             display: 'flex',
             flexDirection: isMobile ? 'column' : 'row',
             justifyContent: isMobile ? 'center' : 'flex-start',
-            alignItems: 'flex-start',  // Aligns top of image and header
+            alignItems: 'flex-start',  
             marginBottom: '32px',
             padding: { xs: '0 8px', sm: '0 16px' },
             textAlign: isMobile ? 'center' : 'left',
@@ -98,12 +94,7 @@ function AboutPage() {
             </Typography>
           </Box>
         </Box>
-
-      
-        
       </Container>
-
-      {/* Footer */}
       <Footer />
     </div>
   );

@@ -2,8 +2,6 @@ import React, { useEffect } from 'react';
 import { Box, Typography, Container, useMediaQuery, Card, CardContent, Button, Divider } from '@mui/material';
 import AOS from 'aos';
 import 'aos/dist/aos.css'; // Import the CSS for AOS
-import stars from './stars.jpg';  // Make sure the path to your logo is correct
-import background_video from './background.mp4';
 import Footer from './Footer';
 
 const LandingPage = () => {
@@ -79,7 +77,7 @@ const LandingPage = () => {
               marginBottom: '32px',
               padding: { xs: '0 8px', sm: '0 16px' },
               textAlign: isMobile ? 'center' : 'left',
-              paddingTop: { xs: '16px', sm: '32px' }, // Adds padding above the Box (16px on mobile, 32px on desktop)
+              paddingTop: { xs: '16px', sm: '32px' }, 
 
             }}>
               <Typography
@@ -92,7 +90,7 @@ const LandingPage = () => {
                   fontWeight: 'bold',
                   fontSize: isMobile ? '1.8rem' : '2.5rem',
                   textAlign: isMobile ? 'center' : 'left',
-                  maxWidth: isMobile ? '80%' : '100%', // Limits the width on mobile
+                  maxWidth: isMobile ? '80%' : '100%',
                   margin: isMobile ? '1rem auto' : '2rem auto', // Centers the text on mobile
                 }}
               >
@@ -103,10 +101,10 @@ const LandingPage = () => {
                 variant="body1"
                 sx={{
                   flex: 2,
-                  maxWidth: isMobile ? '80%' : '100%', // Adds margin on the sides for mobile
-                  margin: isMobile ? '0 auto' : '0', // Centers the text block on mobile
-                  textAlign: isMobile ? 'left' : 'left', // Center-align text on mobile
-                  padding: isMobile ? '0 16px' : '0', // Adds side padding on mobile
+                  maxWidth: isMobile ? '80%' : '100%', 
+                  margin: isMobile ? '0 auto' : '0', 
+                  textAlign: isMobile ? 'left' : 'left', 
+                  padding: isMobile ? '0 16px' : '0', 
                 }}
               >
                 Founded in 2022, Uninet builds smart algorithms that enhance efficiency and reliability for the Internet of Space Things. Our advanced software solutions ensure low-latency communication and optimal resource management, driving innovation in satellite management.
@@ -123,7 +121,7 @@ const LandingPage = () => {
 
             <Box sx={{
               display: 'flex',
-              flexDirection: isMobile ? 'column' : 'row', // Stack vertically on mobile
+              flexDirection: isMobile ? 'column' : 'row', 
               justifyContent: isMobile ? 'center' : 'flex-start',
               alignItems: isMobile ? 'center' : 'flex-start',
               maxWidth: '1200px',
@@ -131,7 +129,7 @@ const LandingPage = () => {
               marginBottom: '32px',
               padding: { xs: '0 8px', sm: '0 16px' },
               textAlign: isMobile ? 'center' : 'left',
-              paddingTop: { xs: '16px', sm: '32px' }, // Adds padding above the Box (16px on mobile, 32px on desktop)
+              paddingTop: { xs: '16px', sm: '32px' }, 
 
             }}>
               <Typography
@@ -144,8 +142,8 @@ const LandingPage = () => {
                   fontWeight: 'bold',
                   fontSize: isMobile ? '1.8rem' : '2.5rem',
                   textAlign: isMobile ? 'center' : 'left',
-                  maxWidth: isMobile ? '80%' : '100%', // Limits the width on mobile
-                  margin: isMobile ? '1rem auto' : '2rem auto', // Centers the text on mobile
+                  maxWidth: isMobile ? '80%' : '100%', 
+                  margin: isMobile ? '1rem auto' : '2rem auto', 
                 }}
               >
                 Expertise in R&D
@@ -155,10 +153,10 @@ const LandingPage = () => {
                 variant="body1"
                 sx={{
                   flex: 2,
-                  maxWidth: isMobile ? '80%' : '100%', // Adds margin on the sides for mobile
-                  margin: isMobile ? '0 auto' : '0', // Centers the text block on mobile
-                  textAlign: isMobile ? 'left' : 'left', // Center-align text on mobile
-                  padding: isMobile ? '0 16px' : '0', // Adds side padding on mobile
+                  maxWidth: isMobile ? '80%' : '100%', 
+                  margin: isMobile ? '0 auto' : '0', 
+                  textAlign: isMobile ? 'left' : 'left', 
+                  padding: isMobile ? '0 16px' : '0', 
                 }}
               >
                 At Uninet, our R&D team brings together a wealth of knowledge and experience, working closely to solve complex challenges in networking technology. We pride ourselves on being agile, delivering solutions quickly and efficiently while adapting to the needs of each project. 
@@ -168,8 +166,6 @@ const LandingPage = () => {
 
             <Divider sx={{ my: 4, bgcolor: '#2A2A2A', height: '1px', width: '100%', opacity: '25%' }} />
 
-
-            {/* Second Section */}
             <Box sx={{
               display: 'flex',
               flexDirection: isMobile ? 'column' : 'row',
@@ -180,7 +176,7 @@ const LandingPage = () => {
               marginBottom: '32px',
               padding: { xs: '0 8px', sm: '0 16px' },
               textAlign: isMobile ? 'center' : 'left',
-              paddingTop: { xs: '16px', sm: '32px' }, // Adds padding above the Box (16px on mobile, 32px on desktop)
+              paddingTop: { xs: '16px', sm: '32px' }, 
 
             }}>
               <Typography
@@ -193,16 +189,16 @@ const LandingPage = () => {
                   fontWeight: 'bold',
                   fontSize: isMobile ? '1.8rem' : '2.5rem',
                   textAlign: isMobile ? 'center' : 'left',
-                  maxWidth: isMobile ? '80%' : '100%', // Limits the width on mobile
-                  margin: isMobile ? '1rem auto' : '2rem auto', // Centers the text on mobile
+                  maxWidth: isMobile ? '80%' : '100%', 
+                  margin: isMobile ? '1rem auto' : '2rem auto',
                 }}
               >
                 Our Technology
               </Typography>
               <Typography variant="body1" sx={{ flex: 2,
-                  maxWidth: isMobile ? '80%' : '100%', // Adds margin on the sides for mobile
-                  margin: isMobile ? '0 auto' : '0', // Centers the text block on mobile
-                  textAlign: isMobile ? 'left' : 'left', // Center-align text on mobile
+                  maxWidth: isMobile ? '80%' : '100%', 
+                  margin: isMobile ? '0 auto' : '0', 
+                  textAlign: isMobile ? 'left' : 'left',
                   padding: isMobile ? '0 16px' : '0',  }}>
                 The rise of LEO satellite mega-constellations will greatly enhance network coverage and edge cloud resources, enabling transformative IoT applications like autonomous sensing and asset tracking. These applications require significant bandwidth, computation, and storage with strict QoS demands. 
                 
@@ -211,17 +207,16 @@ const LandingPage = () => {
                 </Typography>
             </Box>
 
-            {/* Cards Container */}
             <Box sx={{
               display: 'flex',
-              justifyContent: 'center', // Center cards on mobile
+              justifyContent: 'center', 
               alignItems: 'flex-start',
               gap: '24px',
               flexWrap: 'wrap',
               maxWidth: '100%',
               padding: { xs: '2rem 8px', sm: '2rem 16px' },
             }}>
-              {/* First Card */}
+             
               <Card sx={{
                 display: 'flex',
                 flexDirection: 'column',
@@ -245,11 +240,11 @@ const LandingPage = () => {
                   <Button
                     variant="contained"
                     sx={{
-                      backgroundColor: '#E5E5E5', // Neutral base color
-                      color: '#6A0D91', // Text color that matches the gradient for better contrast
+                      backgroundColor: '#E5E5E5', 
+                      color: '#6A0D91', 
                       '&:hover': {
-                        backgroundColor: '#CCCCCC', // Slightly darker shade of the neutral color
-                        color: '#ffffff', // Change text color to white on hover for better contrast
+                        backgroundColor: '#CCCCCC', 
+                        color: '#ffffff', 
                       }
                     }}
                   >
@@ -258,7 +253,6 @@ const LandingPage = () => {
                 </Box>
               </Card>
 
-              {/* Second Card */}
               <Card sx={{
                 display: 'flex',
                 flexDirection: 'column',
@@ -282,11 +276,11 @@ const LandingPage = () => {
                   <Button
                     variant="contained"
                     sx={{
-                      backgroundColor: '#E5E5E5', // Neutral base color
-                      color: '#6A0D91', // Text color that matches the gradient for better contrast
+                      backgroundColor: '#E5E5E5', 
+                      color: '#6A0D91', 
                       '&:hover': {
-                        backgroundColor: '#CCCCCC', // Slightly darker shade of the neutral color
-                        color: '#ffffff', // Change text color to white on hover for better contrast
+                        backgroundColor: '#CCCCCC', 
+                        color: '#ffffff', 
                       }
                     }}
                   >
@@ -295,7 +289,6 @@ const LandingPage = () => {
                 </Box>
               </Card>
 
-              {/* Third Card */}
               <Card sx={{
                 display: 'flex',
                 flexDirection: 'column',
@@ -319,11 +312,11 @@ const LandingPage = () => {
                   <Button
                     variant="contained"
                     sx={{
-                      backgroundColor: '#E5E5E5', // Neutral base color
-                      color: '#6A0D91', // Text color that matches the gradient for better contrast
+                      backgroundColor: '#E5E5E5', 
+                      color: '#6A0D91', 
                       '&:hover': {
-                        backgroundColor: '#CCCCCC', // Slightly darker shade of the neutral color
-                        color: '#ffffff', // Change text color to white on hover for better contrast
+                        backgroundColor: '#CCCCCC', 
+                        color: '#ffffff', 
                       }
                     }}
                   >
