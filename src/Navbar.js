@@ -116,17 +116,17 @@ const Navbar = () => {
 
           {/* Centered Links for Desktop */}
           <Box sx={{ display: { xs: 'none', md: 'flex' }, justifyContent: 'center', flexGrow: 1 }}>
-            <Link to="/" style={{ textDecoration: 'none', margin: '0 20px', color: 'white' }}>
-              <Typography variant="h6" component="span" className="learn-more-link">Launchpad</Typography>
+            <Link to="/" style={{ textDecoration: 'none', margin: '0 100px', color: 'white' }}>
+              <Typography variant="h6" component="span" className="learn-more-link">Home</Typography>
             </Link>
-            <Link to="/tech" style={{ textDecoration: 'none', margin: '0 20px', color: 'white' }}>
-              <Typography variant="h6" component="span" className="learn-more-link">Explore Our Tech</Typography>
+            <Link to="/tech" style={{ textDecoration: 'none', margin: '0 100px', color: 'white' }}>
+              <Typography variant="h6" component="span" className="learn-more-link">Technology</Typography>
             </Link>
-            <Link to="/about" style={{ textDecoration: 'none', margin: '0 20px', color: 'white' }}>
-              <Typography variant="h6" component="span" className="learn-more-link">Who We Are</Typography>
+            <Link to="/about" style={{ textDecoration: 'none', margin: '0 100px', color: 'white' }}>
+              <Typography variant="h6" component="span" className="learn-more-link">About Us</Typography>
             </Link>
-            <Link to="/contact" style={{ textDecoration: 'none', margin: '0 20px', color: 'white' }}>
-              <Typography variant="h6" component="span" className="learn-more-link">Connect With Us</Typography>
+            <Link to="/contact" style={{ textDecoration: 'none', margin: '0 100px', color: 'white' }}>
+              <Typography variant="h6" component="span" className="learn-more-link">Contact Us</Typography>
             </Link>
           </Box>
 

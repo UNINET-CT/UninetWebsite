@@ -38,7 +38,7 @@ function AboutPage() {
               marginBottom: '16px',
             }}
           >
-            We Are Uninet
+            We are Uninet
           </Typography>
         </Container>
       </Box>

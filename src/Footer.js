@@ -19,10 +19,16 @@ const Footer = () => {
         <Grid container spacing={3} justifyContent="center">
           <Grid item xs={12} sm={6} md={5} lg={4} sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center' }}>
             <Typography variant="h6" gutterBottom sx={{ color: '#a7adba', width: '100%' }}>Quick Links</Typography>
+            <Link href="/" sx={{ color: 'inherit', textDecoration: 'none', mb: 1 }}>
+              Home
+            </Link>
+            <Link href="/tech" sx={{ color: 'inherit', textDecoration: 'none', mb: 1 }}>
+              Technology
+            </Link>
             <Link href="/about" sx={{ color: 'inherit', textDecoration: 'none', mb: 1 }}>
               About Us
             </Link>
-            <Link href="/services" sx={{ color: 'inherit', textDecoration: 'none' }}>
+            <Link href="/contact" sx={{ color: 'inherit', textDecoration: 'none' }}>
               Contact Us
             </Link>
           </Grid>
@@ -40,7 +46,7 @@ const Footer = () => {
 
         <Divider sx={{ my: 4, bgcolor: 'primary.light' }} />
 
-        <Typography variant="body2" color="text.secondary" align="center" sx={{ mt: 2 }}>
+        <Typography variant="body2" color="white" align="center" sx={{ mt: 2 }}>
           © {new Date().getFullYear()} Uninet, LLC
         </Typography>
       </Box>

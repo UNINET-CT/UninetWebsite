@@ -6,6 +6,7 @@ import Footer from './Footer';
 import constellation from './constellation.gif'
 import edge from "./edge.png"
 import edge_schedule from "./edge_schedule.png"
+import chain from "./chain.png"
 
 function TechPage() {
   const isMobile = useMediaQuery('(max-width:600px)');
@@ -42,7 +43,7 @@ function TechPage() {
               marginBottom: '16px',
             }}
           >
-            Uninet Technology Overview
+            Uninet technology overview
           </Typography>
         </Container>
       </Box>
@@ -238,53 +239,6 @@ function TechPage() {
           
         </Box>
 
-        
-        <Divider sx={{ my: 4, bgcolor: '#2A2A2A', height: '1px', width: '100%', opacity: '25%' }} />
-        <Box
-          display="flex"
-          flexDirection={isMobile ? 'column' : 'row'}
-          justifyContent="space-between"
-          alignItems="flex-start"
-          p={isMobile ? 2 : 4}
-        >
-          <Box flex={2} mb={isMobile ? 2 : 0} mr={isMobile ? 0 : 2}>
-            <Typography
-              variant={isMobile ? 'h4' : 'h3'}
-              component="h2"
-              gutterBottom
-              sx={{
-                flex: 1,
-                fontWeight: 'bold',
-                fontSize: isMobile ? '1.8rem' : '2.5rem',
-                textAlign: isMobile ? 'center' : 'left',
-                maxWidth: isMobile ? '80%' : '100%', 
-                margin: isMobile ? '1rem auto' : '2rem auto', 
-                background: '-webkit-linear-gradient(45deg, #6A0D91, #9a77cf)',
-                WebkitBackgroundClip: 'text', 
-                WebkitTextFillColor: 'transparent',
-              }}
-            >
-              Software-as-a-service for Satellite-as-a-service providers.
-            </Typography>
-          </Box>
-
-          <Box flex={2}>
-            <Typography
-              variant="body1"
-              sx={{
-                flex: 1,
-                maxWidth: isMobile ? '80%' : '100%',
-                margin: isMobile ? '0 auto' : '0', 
-                textAlign: isMobile ? 'left' : 'left',
-                padding: isMobile ? '0 16px' : '0',
-              }}
-            >
-              Uninet's SaaS solutions empower satellite providers to deploy and manage advanced networking with ease, ensuring high performance and reliability.
-              <p>By leveraging a microservices architecture, Uninet's SDN algorithms offer scalability and fault tolerance, seamlessly integrating across multiple satellites and networking platforms.</p>
-              </Typography>
-          </Box>
-        </Box>
-
         <Divider sx={{ my: 4, bgcolor: '#2A2A2A', height: '1px', width: '100%', opacity: '25%' }} />
         <Box
           display="flex"
@@ -330,8 +284,72 @@ function TechPage() {
             
              </Typography>
           </Box>
+
+          
           
         </Box>
+        <Box
+          component="img"
+          src={chain}
+          alt="Illustration of network challenges in space"
+          sx={{
+            flex: isMobile ? '0 1 auto' : '0 0 40%',
+            maxWidth: isMobile ? '80%' : '80%',
+            margin: isMobile ? '0 auto 16px' : '0 auto 0',
+            borderRadius: '8px',
+            alignSelf: 'center', 
+            display: 'block', 
+            marginLeft: 'auto',
+            marginRight: 'auto', 
+          }}
+        />
+
+<Divider sx={{ my: 4, bgcolor: '#2A2A2A', height: '1px', width: '100%', opacity: '25%' }} />
+        <Box
+          display="flex"
+          flexDirection={isMobile ? 'column' : 'row'}
+          justifyContent="space-between"
+          alignItems="flex-start"
+          p={isMobile ? 2 : 4}
+        >
+          <Box flex={2} mb={isMobile ? 2 : 0} mr={isMobile ? 0 : 2}>
+            <Typography
+              variant={isMobile ? 'h4' : 'h3'}
+              component="h2"
+              gutterBottom
+              sx={{
+                flex: 1,
+                fontWeight: 'bold',
+                fontSize: isMobile ? '1.8rem' : '2.5rem',
+                textAlign: isMobile ? 'center' : 'left',
+                maxWidth: isMobile ? '80%' : '100%', 
+                margin: isMobile ? '1rem auto' : '2rem auto', 
+                background: '-webkit-linear-gradient(45deg, #6A0D91, #9a77cf)',
+                WebkitBackgroundClip: 'text', 
+                WebkitTextFillColor: 'transparent',
+              }}
+            >
+              Software-as-a-service for Satellite-as-a-service providers.
+            </Typography>
+          </Box>
+
+          <Box flex={2}>
+            <Typography
+              variant="body1"
+              sx={{
+                flex: 1,
+                maxWidth: isMobile ? '80%' : '100%',
+                margin: isMobile ? '0 auto' : '0', 
+                textAlign: isMobile ? 'left' : 'left',
+                padding: isMobile ? '0 16px' : '0',
+              }}
+            >
+              Uninet's SaaS solutions empower satellite providers to deploy and manage advanced networking with ease, ensuring high performance and reliability.
+              <p>By leveraging a microservices architecture, Uninet's SDN algorithms offer scalability and fault tolerance, seamlessly integrating across multiple satellites and networking platforms.</p>
+              </Typography>
+          </Box>
+        </Box>
+
       </Container>
       <Footer />
     </div>

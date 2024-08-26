@@ -1,8 +1,14 @@
 import React, { useEffect } from 'react';
-import { Box, Typography, Container, useMediaQuery, Card, CardContent, Button, Divider } from '@mui/material';
+import { Box, Typography, Container, useMediaQuery, Card, CardContent, Divider } from '@mui/material';
 import AOS from 'aos';
 import 'aos/dist/aos.css'; // Import the CSS for AOS
 import Footer from './Footer';
+import programmer from './programmer.jpg'
+import routingIcon from './routing_icon.png'
+import scheduleIcon from './schedule_icon.png'
+import cloudIcon from './cloud_icon.png'
+
+
 
 const LandingPage = () => {
   useEffect(() => {
@@ -91,7 +97,7 @@ const LandingPage = () => {
                   fontSize: isMobile ? '1.8rem' : '2.5rem',
                   textAlign: isMobile ? 'center' : 'left',
                   maxWidth: isMobile ? '80%' : '100%',
-                  margin: isMobile ? '1rem auto' : '2rem auto', // Centers the text on mobile
+                  margin: isMobile ? '1rem auto' : '2rem auto', 
                 }}
               >
                 We Are Uninet
@@ -108,7 +114,7 @@ const LandingPage = () => {
                 }}
               >
                 Founded in 2022, Uninet builds smart algorithms that enhance efficiency and reliability for the Internet of Space Things. Our advanced software solutions ensure low-latency communication and optimal resource management, driving innovation in satellite management.
-                <p>Our mission is to design software that brings next-generation networking technology from terrestrial to non-terrestrial networks (NTNs).</p>
+                <p>Our mission is to design customer-focused software that brings next-generation networking technology from terrestrial to non-terrestrial networks (NTNs).</p>
                 <p>
                   <a href='/about' className="learn-more-link" style={{ color: 'black' }}>
                     <b>Learn more about us.</b>
@@ -132,6 +138,21 @@ const LandingPage = () => {
               paddingTop: { xs: '16px', sm: '32px' }, 
 
             }}>
+              <Box
+                component="img"
+                src={programmer} 
+                alt="Programmer on computer"
+                sx={{
+                  flex: isMobile ? '0 1 auto' : '0 0 40%',
+                  maxWidth: isMobile ? '80%' : '35%',
+                  margin: isMobile ? '0 auto 16px' : '0 32px 0 0',
+                  borderRadius: '8px',
+                  //boxShadow: 3,
+                  alignSelf: 'flex-start', 
+                }}
+              />
+                        <Box sx={{ flex: 1 }}>
+
               <Typography
                 variant={isMobile ? 'h4' : 'h3Purple'}
                 component="h1"
@@ -162,6 +183,7 @@ const LandingPage = () => {
                 At Uninet, our R&D team brings together a wealth of knowledge and experience, working closely to solve complex challenges in networking technology. We pride ourselves on being agile, delivering solutions quickly and efficiently while adapting to the needs of each project. 
                 <p>By collaborating and drawing on our collective strengths, we’re able to create innovative technologies that advance both terrestrial and space-based networks.</p>
               </Typography>
+              </Box>
             </Box>
 
             <Divider sx={{ my: 4, bgcolor: '#2A2A2A', height: '1px', width: '100%', opacity: '25%' }} />
@@ -203,128 +225,118 @@ const LandingPage = () => {
                 The rise of LEO satellite mega-constellations will greatly enhance network coverage and edge cloud resources, enabling transformative IoT applications like autonomous sensing and asset tracking. These applications require significant bandwidth, computation, and storage with strict QoS demands. 
                 
                 <p>To meet these needs, Uninet is developing advanced algorithms for routing, scheduling, and orchestration in the space domain.</p>
-                
+                <p>
+                  <a href='/tech' className="learn-more-link" style={{ color: 'black' }}>
+                    <b>Discover our technology.</b>
+                  </a>
+                </p>
                 </Typography>
             </Box>
 
             <Box sx={{
-              display: 'flex',
-              justifyContent: 'center', 
-              alignItems: 'flex-start',
-              gap: '24px',
-              flexWrap: 'wrap',
-              maxWidth: '100%',
-              padding: { xs: '2rem 8px', sm: '2rem 16px' },
+                display: 'flex',
+                justifyContent: 'center', 
+                alignItems: 'flex-start',
+                gap: '24px',
+                flexWrap: 'wrap',
+                maxWidth: '100%',
+                padding: { xs: '2rem 8px', sm: '2rem 16px' },
             }}>
-             
-              <Card sx={{
-                display: 'flex',
-                flexDirection: 'column',
-                justifyContent: 'space-between',
-                width: '100%',
-                maxWidth: '400px',
-                borderRadius: '16px',
-                minHeight: '400px',
-                background: '-webkit-linear-gradient(45deg, #6A0D91, #9a77cf)'
 
-              }}>
-                <CardContent>
-                  <Typography gutterBottom variant="h5" component="div" sx={{ color: 'white', textAlign: 'center' }}>
-                    <b>High-throughput & Low-latency Routing</b>
-                  </Typography>
-                  <Typography variant="body2" sx={{ color: 'white'}}>
-                    Uninet is developing dynamic, distributed algorithms for routing network traffic between satellites and ground stations.
-                  </Typography>
-                </CardContent>
-                <Box sx={{ display: 'flex', justifyContent: 'center', paddingBottom: '16px' }}>
-                  <Button
-                    variant="contained"
-                    sx={{
-                      backgroundColor: '#E5E5E5', 
-                      color: '#6A0D91', 
-                      '&:hover': {
-                        backgroundColor: '#CCCCCC', 
-                        color: '#ffffff', 
-                      }
-                    }}
-                  >
-                    Learn More                 
-                  </Button>
-                </Box>
-              </Card>
+                {[
+                    {
+                        title: "High-throughput & Low-latency Routing",
+                        description: "Uninet is developing dynamic, distributed algorithms for routing network traffic between satellites and ground stations.",
+                        icon: routingIcon,
+                    },
+                    {
+                        title: "Edge Cloud Scheduling for IoT",
+                        description: "Uninet is developing a task scheduler for remote sensing applications that run on the satellite edge.",
+                        icon: scheduleIcon, 
+                    },
+                    {
+                        title: "Network Slice Orchestration for Complex Workflows",
+                        description: "Uninet uses state-of-the-art optimization methods from terrestrial 5G network slicing to minimize computation and bandwidth resource usage and satisfy capacity constraints.",
+                        icon: cloudIcon, 
+                    },
+                ].map((card, index) => (
+                    <Card key={index} sx={{
+                        display: 'flex',
+                        flexDirection: 'column',
+                        justifyContent: 'space-between',
+                        alignItems: 'center',
+                        width: '100%',
+                        maxWidth: '400px',
+                        borderRadius: '16px',
+                        height: '500px',  // Set a fixed height for all cards
+                        background: 'linear-gradient(45deg, #6A0D91, #9a77cf)',
+                        boxShadow: '0 4px 20px rgba(0, 0, 0, 0.1)',
+                        padding: '24px',
+                        boxSizing: 'border-box',
+                    }}>
+                        <CardContent sx={{ 
+                            width: '100%', 
+                            textAlign: 'center', 
+                            display: 'flex', 
+                            flexDirection: 'column', 
+                            flexGrow: 1, 
+                            justifyContent: 'space-between',
+                        }}>
+                            <Typography 
+                                gutterBottom 
+                                variant="h5" 
+                                component="div" 
+                                sx={{ 
+                                    color: 'white', 
+                                    fontWeight: 'bold', 
+                                }}
+                            >
+                                {card.title}
+                            </Typography>
+                            
+                            <Box 
+                                component="img" 
+                                src={card.icon}
+                                alt={`${card.title} icon`}
+                                sx={{
+                                    width: '128px',
+                                    height: '128px',
+                                    margin: '16px auto',  // Center the icon with margin
+                                }}
+                            />
 
-              <Card sx={{
-                display: 'flex',
-                flexDirection: 'column',
-                justifyContent: 'space-between',
-                width: '100%',
-                maxWidth: '400px',
-                borderRadius: '16px',
-                minHeight: '400px',
-                background: '-webkit-linear-gradient(45deg, #6A0D91, #9a77cf)'
-
-              }}>
-                <CardContent>
-                  <Typography gutterBottom variant="h5" component="div" sx={{ color: 'white', textAlign: 'center' }}>
-                    <b>Edge Cloud Scheduling for IoT</b>
-                  </Typography>
-                  <Typography variant="body2" sx={{ color: 'white'}}>
-                    Uninet is developing a task scheduler for remote sensing applications that run on the satellite edge.
-                  </Typography>
-                </CardContent>
-                <Box sx={{ display: 'flex', justifyContent: 'center', paddingBottom: '16px' }}>
-                  <Button
-                    variant="contained"
-                    sx={{
-                      backgroundColor: '#E5E5E5', 
-                      color: '#6A0D91', 
-                      '&:hover': {
-                        backgroundColor: '#CCCCCC', 
-                        color: '#ffffff', 
-                      }
-                    }}
-                  >
-                    Learn More                 
-                  </Button>
-                </Box>
-              </Card>
-
-              <Card sx={{
-                display: 'flex',
-                flexDirection: 'column',
-                justifyContent: 'space-between',
-                width: '100%',
-                maxWidth: '400px',
-                borderRadius: '16px',
-                minHeight: '400px',
-                background: '-webkit-linear-gradient(45deg, #6A0D91, #9a77cf)'
-
-              }}>
-                <CardContent>
-                  <Typography gutterBottom variant="h5" component="div" sx={{ color: 'white', textAlign: 'center' }}>
-                    <b>Network Slice Orchestration for Complex Workflows</b>
-                  </Typography>
-                  <Typography variant="body2" sx={{ color: 'white'}}>
-                    Uninet uses state-of-the-art optimization methods from terrestrial 5G network slicing to minimize computation and bandwidth resource usage and satisfy capacity constraints.
-                  </Typography>
-                </CardContent>
-                <Box sx={{ display: 'flex', justifyContent: 'center', paddingBottom: '16px' }}>
-                  <Button
-                    variant="contained"
-                    sx={{
-                      backgroundColor: '#E5E5E5', 
-                      color: '#6A0D91', 
-                      '&:hover': {
-                        backgroundColor: '#CCCCCC', 
-                        color: '#ffffff', 
-                      }
-                    }}
-                  >
-                    Learn More                 
-                  </Button>
-                </Box>
-              </Card>
+                            <Typography 
+                                variant="body1" 
+                                sx={{ 
+                                    color: 'white',
+                                    lineHeight: '1.6',
+                                }}
+                            >
+                                {card.description}
+                            </Typography>
+                        </CardContent>
+                        <Box sx={{ display: 'flex', justifyContent: 'center', width: '100%', marginTop: '16px' }}>
+                            {/* <Button
+                                variant="contained"
+                                sx={{
+                                    backgroundColor: '#E5E5E5', 
+                                    color: '#6A0D91', 
+                                    borderRadius: '8px',
+                                    fontWeight: 'bold',
+                                    padding: '10px 24px',
+                                    '&:hover': {
+                                        backgroundColor: '#CCCCCC', 
+                                        color: '#ffffff', 
+                                    }
+                                }}
+                            >
+                                Learn More                 
+                            </Button> */}
+                        </Box>
+                    </Card>
+                ))}
             </Box>
+
           </Box>
         </Container>
       </div>
