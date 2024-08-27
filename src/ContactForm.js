@@ -32,7 +32,7 @@ function ContactForm() {
             }
 
             const responseData = await response.json();
-            alert('Message sent successfully: ' + responseData.message);
+            alert(responseData.message);
         } catch (error) {
             console.error('Error sending email:', error);
             alert('Failed to send message. ' + error.message);

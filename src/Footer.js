@@ -1,5 +1,6 @@
 import React from 'react';
-import { Box, Typography, Link, Grid, Divider } from '@mui/material';
+import { Box, Typography, Grid, Divider } from '@mui/material';
+import { Link as RouterLink } from 'react-router-dom'; // Import RouterLink for internal navigation
 import { LinkedIn } from '@mui/icons-material';
 
 const Footer = () => {
@@ -19,27 +20,27 @@ const Footer = () => {
         <Grid container spacing={3} justifyContent="center">
           <Grid item xs={12} sm={6} md={5} lg={4} sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center' }}>
             <Typography variant="h6" gutterBottom sx={{ color: '#a7adba', width: '100%' }}>Quick Links</Typography>
-            <Link href="/" sx={{ color: 'inherit', textDecoration: 'none', mb: 1 }}>
+            <RouterLink to="/" style={{ color: 'inherit', textDecoration: 'none', marginBottom: '1rem' }}>
               Home
-            </Link>
-            <Link href="/tech" sx={{ color: 'inherit', textDecoration: 'none', mb: 1 }}>
+            </RouterLink>
+            <RouterLink to="/tech" style={{ color: 'inherit', textDecoration: 'none', marginBottom: '1rem' }}>
               Technology
-            </Link>
-            <Link href="/about" sx={{ color: 'inherit', textDecoration: 'none', mb: 1 }}>
+            </RouterLink>
+            <RouterLink to="/about" style={{ color: 'inherit', textDecoration: 'none', marginBottom: '1rem' }}>
               About Us
-            </Link>
-            <Link href="/contact" sx={{ color: 'inherit', textDecoration: 'none' }}>
+            </RouterLink>
+            <RouterLink to="/contact" style={{ color: 'inherit', textDecoration: 'none' }}>
               Contact Us
-            </Link>
+            </RouterLink>
           </Grid>
 
           <Grid item xs={12} sm={6} md={5} lg={4} sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center' }}>
             <Typography variant="h6" gutterBottom sx={{ color: '#a7adba', width: '100%' }}>Follow Us</Typography>
             <Box sx={{ display: 'flex', justifyContent: 'center' }}>
               
-              <Link href="https://www.linkedin.com/company/uninet-llc" target="_blank" rel="noopener" sx={{ mx: 1 }}>
+              <RouterLink to="https://www.linkedin.com/company/uninet-llc" target="_blank" rel="noopener" style={{ margin: '0 8px' }}>
                 <LinkedIn sx={{ color: 'primary.main' }} />
-              </Link>
+              </RouterLink>
             </Box>
           </Grid>
         </Grid>
@@ -55,4 +56,3 @@ const Footer = () => {
 };
 
 export default Footer;
-

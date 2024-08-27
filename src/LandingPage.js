@@ -223,7 +223,8 @@ const LandingPage = () => {
                   maxWidth: isMobile ? '80%' : '100%', 
                   margin: isMobile ? '0 auto' : '0', 
                   textAlign: isMobile ? 'left' : 'left',
-                  padding: isMobile ? '0 16px' : '0',  }}>
+                  padding: isMobile ? '0 16px' : '0',
+                    }}>
                 The rise of LEO satellite mega-constellations will greatly enhance network coverage and edge cloud resources, enabling transformative IoT applications like autonomous sensing and asset tracking. These applications require significant bandwidth, computation, and storage with strict QoS demands. 
                 
                 <p>To meet these needs, Uninet is developing advanced algorithms for routing, scheduling, and orchestration in the space domain.</p>
@@ -241,7 +242,7 @@ const LandingPage = () => {
                 alignItems: 'flex-start',
                 gap: '24px',
                 flexWrap: 'wrap',
-                maxWidth: '100%',
+                maxWidth: isMobile ? '80%' : '100%',
                 padding: { xs: '2rem 8px', sm: '2rem 16px' },
             }}>
 

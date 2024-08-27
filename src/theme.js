@@ -35,7 +35,7 @@ const theme = createTheme({
         padding: '0rem'
       },
     body1: {
-        fontSize: '1.3rem', // Sets a larger font size for all buttons
+        fontSize:'1.2rem', // Sets a larger font size for all buttons
         color: 'black',
 
     },
