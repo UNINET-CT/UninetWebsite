@@ -130,16 +130,16 @@ const Navbar = () => {
           {/* Centered Links for Desktop */}
           <Box sx={{ display: { xs: 'none', md: 'flex' }, justifyContent: 'center', flexGrow: 1 }}>
             <Link to="/" style={{ textDecoration: 'none', margin: '0 100px', color: 'white' }}>
-              <Typography variant="h6" component="span" className="learn-more-link">Home</Typography>
+              <Typography variant="h6" component="span" className="learn-more-link" sx={{ fontSize: '1.1rem' }}>Home</Typography>
             </Link>
             <Link to="/tech" style={{ textDecoration: 'none', margin: '0 100px', color: 'white' }}>
-              <Typography variant="h6" component="span" className="learn-more-link">Technology</Typography>
+              <Typography variant="h6" component="span" className="learn-more-link" sx={{ fontSize: '1.1rem' }}>Technology</Typography>
             </Link>
             <Link to="/about" style={{ textDecoration: 'none', margin: '0 100px', color: 'white' }}>
-              <Typography variant="h6" component="span" className="learn-more-link">About Us</Typography>
+              <Typography variant="h6" component="span" className="learn-more-link" sx={{ fontSize: '1.1rem' }}>About Us</Typography>
             </Link>
             <Link to="/contact" style={{ textDecoration: 'none', margin: '0 100px', color: 'white' }}>
-              <Typography variant="h6" component="span" className="learn-more-link">Contact Us</Typography>
+              <Typography variant="h6" component="span" className="learn-more-link" sx={{ fontSize: '1.1rem' }}>Contact Us</Typography>
             </Link>
           </Box>
 

@@ -5,9 +5,9 @@ import AOS from 'aos';
 import 'aos/dist/aos.css'; // Import the CSS for AOS
 import Footer from './Footer';
 import programmer from './programmer.jpg'
-import routingIcon from './routing_icon.png'
-import scheduleIcon from './schedule_icon.png'
-import cloudIcon from './cloud_icon.png'
+import routingIcon from './routing_icon.svg'
+import scheduleIcon from './schedule_icon.svg'
+import cloudIcon from './cloud_icon.svg'
 
 
 
