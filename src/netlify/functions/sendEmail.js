@@ -7,27 +7,28 @@ exports.handler = async (event) => {
     }
 
     const { name, email, message } = JSON.parse(event.body);
-    const transporter = nodemailer.createTransport({
-        host: 'smtp-mail.outlook.com',
-        port: 587,
-        secure: false,
-        auth: {
-            user: process.env.OUTLOOK_EMAIL,
-            pass: process.env.OUTLOOK_PASSWORD
-        },
-        tls: {
-            ciphers: 'SSLv3'
-        }
-    });
-
-    const mailOptions = {
-        from: email,
-        to: process.env.OUTLOOK_EMAIL,
-        subject: `New message from ${name}`,
-        text: message
-    };
 
     try {
+        const transporter = nodemailer.createTransport({
+            host: 'smtp-mail.outlook.com',
+            port: 587,
+            secure: false,
+            auth: {
+                user: process.env.OUTLOOK_EMAIL,
+                pass: process.env.OUTLOOK_PASSWORD
+            },
+            tls: {
+                ciphers: 'SSLv3'
+            }
+        });
+
+        const mailOptions = {
+            from: email,
+            to: process.env.OUTLOOK_EMAIL,
+            subject: `New message from ${name}`,
+            text: message
+        };
+
         await transporter.sendMail(mailOptions);
         return {
             statusCode: 200,
