@@ -31,7 +31,7 @@ const theme = createTheme({
     button: {
         textTransform: 'none',
         fontSize: '1.2rem', // Sets a larger font size for all buttons
-        color: 'black',//'#967bb6', // Ensures button text color is dark lavender
+        color: 'white',//'#967bb6', // Ensures button text color is dark lavender
         padding: '0rem'
       },
     body1: {

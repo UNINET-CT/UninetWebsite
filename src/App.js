@@ -41,6 +41,7 @@ function App() {
                       autoPlay
                       muted
                       loop
+                      playsInline // This prevents mobile browsers from showing controls
                       style={{
                         position: 'absolute',
                         top: 0,
@@ -49,11 +50,11 @@ function App() {
                         height: '100%',
                         objectFit: 'cover',
                         zIndex: -2,
+                        pointerEvents: 'none', // This ensures the video is not interactable
                       }}
                     >
                       <source src={banner} type="video/mp4" />
                     </video>
-
                     <Box sx={{
                       position: 'absolute',
                       top: 0,

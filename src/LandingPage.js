@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { Box, Typography, Container, useMediaQuery, Card, CardContent, Divider } from '@mui/material';
+import { Link } from 'react-router-dom';
 import AOS from 'aos';
 import 'aos/dist/aos.css'; // Import the CSS for AOS
 import Footer from './Footer';
@@ -116,9 +117,10 @@ const LandingPage = () => {
                 Founded in 2022, Uninet builds smart algorithms that enhance efficiency and reliability for the Internet of Space Things. Our advanced software solutions ensure low-latency communication and optimal resource management, driving innovation in satellite management.
                 <p>Our mission is to design customer-focused software that brings next-generation networking technology from terrestrial to non-terrestrial networks (NTNs).</p>
                 <p>
-                  <a href='/about' className="learn-more-link" style={{ color: 'black' }}>
+                  <Link to="/about" className="learn-more-link" style={{ color: 'black' }}>
                     <b>Learn more about us.</b>
-                  </a>
+                  </Link>
+                  
                 </p>
               </Typography>
             </Box>
@@ -226,9 +228,9 @@ const LandingPage = () => {
                 
                 <p>To meet these needs, Uninet is developing advanced algorithms for routing, scheduling, and orchestration in the space domain.</p>
                 <p>
-                  <a href='/tech' className="learn-more-link" style={{ color: 'black' }}>
+                  <Link to="/tech" className="learn-more-link" style={{ color: 'black' }}>
                     <b>Discover our technology.</b>
-                  </a>
+                  </Link>
                 </p>
                 </Typography>
             </Box>

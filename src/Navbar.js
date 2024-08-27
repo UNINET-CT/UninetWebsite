@@ -17,26 +17,39 @@ const Navbar = () => {
       sx={{ 
         textAlign: 'center', 
         width: 250, 
-        backgroundColor: 'rgba(0, 0, 0, 0.9)', // Black background for drawer
+        backgroundColor: 'rgba(0, 0, 0, 0.9)', 
         height: '100%',
-        color: 'white', // White text color for drawer items
+        color: 'white',
       }}
     >
       <List>
         <ListItem button component={Link} to="/" sx={{ color: 'white' }}>
-          <ListItemText primary="Home" />
+          <ListItemText 
+            primary="Home" 
+            primaryTypographyProps={{ color: 'white' }} 
+          />
         </ListItem>
         <ListItem button component={Link} to="/about" sx={{ color: 'white' }}>
-          <ListItemText primary="About" />
+          <ListItemText 
+            primary="About Us" 
+            primaryTypographyProps={{ color: 'white' }} 
+          />
         </ListItem>
         <ListItem button component={Link} to="/tech" sx={{ color: 'white' }}>
-          <ListItemText primary="Tech" />
+          <ListItemText 
+            primary="Technology" 
+            primaryTypographyProps={{ color: 'white' }} 
+          />
         </ListItem>
         <ListItem button component={Link} to="/contact" sx={{ color: 'white' }}>
-          <ListItemText primary="Contact" />
+          <ListItemText 
+            primary="Contact Us" 
+            primaryTypographyProps={{ color: 'white' }} 
+          />
         </ListItem>
       </List>
     </Box>
+
   );
 
   return (
@@ -89,7 +102,7 @@ const Navbar = () => {
 
           @media (max-width: 600px) {
             .navbar-logo {
-              width: 75px;
+              width: 100px;
             }
 
             .learn-more-link {

@@ -2,7 +2,7 @@ import React from 'react';
 import { Box, Typography, Container, useMediaQuery } from '@mui/material';
 import ContactForm from './ContactForm';
 import Navbar from './Navbar';
-import contact from './contact.jpg'
+import contact from './contact.jpg';
 import Footer from './Footer';
 
 function ContactPage() {
@@ -10,9 +10,8 @@ function ContactPage() {
 
   return (
     <div>
-      <div style={{ }}>  
-        <Navbar />
-      </div>
+      <Navbar />
+      
       <Box
         sx={{
           width: '100%',
@@ -45,47 +44,43 @@ function ContactPage() {
           </Typography>
         </Container>
       </Box>
-      <Container maxWidth="lg" sx={{ marginTop: 4, minHeight: '50vh' }}>
+      
+      <Container 
+        maxWidth="lg" 
+        sx={{ 
+          marginTop: 4, 
+          minHeight: '50vh',
+          display: 'flex',
+          justifyContent: 'center',
+        }}
+      >
         <Box
           sx={{
             display: 'flex',
             flexDirection: isMobile ? 'column' : 'row',
-            justifyContent: isMobile ? 'center' : 'flex-start',
-            alignItems: 'flex-start',  
+            justifyContent: 'center',
+            alignItems: 'center',
             marginBottom: '32px',
             padding: { xs: '0 8px', sm: '0 16px' },
-            textAlign: isMobile ? 'center' : 'left',
             paddingTop: { xs: '16px', sm: '32px' },
+            textAlign: isMobile ? 'center' : 'left',
+            width: '100%',
           }}
         >
-        
-          
-          <Box sx={{ flex: 1 }}>
-            {/* <Typography
-              variant={isMobile ? 'h4' : 'h3'}
-              component="h2"
-              gutterBottom
-              sx={{
-                fontWeight: 'bold',
-                fontSize: isMobile ? '1.8rem' : '2.5rem',
-                textAlign: isMobile ? 'center' : 'center',
-                maxWidth: isMobile ? '80%' : '100%',
-                //margin: isMobile ? '1rem auto' : '2rem auto',
-                background: '-webkit-linear-gradient(45deg, #6A0D91, #9a77cf)',
-                WebkitBackgroundClip: 'text',
-                WebkitTextFillColor: 'transparent',
-                marginBottom: '32px',
-
-              }}
-            >
-              Get in touch with us
-            </Typography> */}
-            <ContactForm></ContactForm>
+          <Box 
+            sx={{ 
+              flex: 1, 
+              maxWidth: '700px', // Ensures a max-width for the form, keeping it centered and well-sized
+              padding: isMobile ? '0 16px' : '0', 
+              width: '100%',
+            }}
+          >
+            <ContactForm />
           </Box>
         </Box>
       </Container>
+      
       <Footer />
-
     </div>
   );
 }
