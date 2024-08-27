@@ -38,6 +38,7 @@ function ContactPage() {
             sx={{
               fontWeight: 'bold',
               marginBottom: '16px',
+              paddingTop: '50px',
             }}
           >
             Get in touch with us

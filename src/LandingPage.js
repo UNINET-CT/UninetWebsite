@@ -271,7 +271,7 @@ const LandingPage = () => {
                         maxWidth: '400px',
                         borderRadius: '16px',
                         height: '500px',  // Set a fixed height for all cards
-                        background: 'linear-gradient(45deg, #6A0D91, #9a77cf)',
+                        background: 'linear-gradient(45deg, #967bb6ff, #9a77cf)',
                         boxShadow: '0 4px 20px rgba(0, 0, 0, 0.1)',
                         padding: '24px',
                         boxSizing: 'border-box',

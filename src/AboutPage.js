@@ -13,35 +13,36 @@ function AboutPage() {
       <Box
         sx={{
           width: '100%',
-          height: { xs: '200px', sm: '300px', md: '400px', lg: '500px' }, 
+          height: { xs: '200px', sm: '300px', md: '400px', lg: '500px' },
           backgroundImage: `url(${imageSrc})`,
-          backgroundSize: { xs: '150%', sm: '120%', md: 'cover' }, 
-          backgroundPosition: 'center', 
+          backgroundSize: { xs: '150%', sm: '120%', md: 'cover' },
+          backgroundPosition: 'center',
           backgroundRepeat: 'no-repeat',
           display: 'flex',
+          flexDirection: 'column', // Explicitly set the flex direction
           alignItems: 'center',
           justifyContent: 'center',
           color: 'white',
+          textAlign: 'center', // Ensure text is centered horizontally
+          padding: 0, // Remove any default padding
+          margin: 0, // Ensure no margins are affecting the layout
         }}
       >
-        <Container
+        <Typography
+          variant={isMobile ? 'h4' : 'h2'}
+          component="h1"
           sx={{
-            textAlign: 'center',
-            padding: { xs: '16px', sm: '24px' },
+            paddingTop: '50px',
+            fontWeight: 'bold',
+            width: '100%', // Ensure the Typography fills the flex container
+            textAlign: 'center', // Confirm text alignment
+            margin: 0, // Remove margin to ensure centering
           }}
         >
-          <Typography
-            variant={isMobile ? 'h4' : 'h2'}
-            component="h1"
-            sx={{
-              fontWeight: 'bold',
-              marginBottom: '16px',
-            }}
-          >
-            We are Uninet
-          </Typography>
-        </Container>
+          We are Uninet
+        </Typography>
       </Box>
+
 
       <Container maxWidth="lg" sx={{ marginTop: 4, minHeight: '50vh' }}>
         <Box
@@ -69,10 +70,12 @@ function AboutPage() {
                 textAlign: isMobile ? 'center' : 'center',
                 maxWidth: isMobile ? '80%' : '100%',
                 //margin: isMobile ? '1rem auto' : '2rem auto',
-                background: '-webkit-linear-gradient(45deg, #6A0D91, #9a77cf)',
+                background: '-webkit-linear-gradient(45deg, #967bb6ff, #9a77cf)',
                 WebkitBackgroundClip: 'text',
                 WebkitTextFillColor: 'transparent',
-                marginBottom: '32px',
+                
+                margin: isMobile ? '1rem auto' : '2rem auto', 
+                marginBottom: '2rem',
 
               }}
             >

@@ -39,8 +39,10 @@ function TechPage() {
             variant={isMobile ? 'h4' : 'h2'}
             component="h1"
             sx={{
+              paddingTop: '50px',
+
               fontWeight: 'bold',
-              marginBottom: '16px',
+              marginBottom: '0px',
             }}
           >
             Uninet technology overview
@@ -85,9 +87,11 @@ function TechPage() {
                 textAlign: isMobile ? 'center' : 'left',
                 maxWidth: isMobile ? '80%' : '100%',
                 //margin: isMobile ? '1rem auto' : '2rem auto',
-                background: '-webkit-linear-gradient(45deg, #6A0D91, #9a77cf)',
+                background: '-webkit-linear-gradient(45deg, #967bb6ff, #9a77cf)',
                 WebkitBackgroundClip: 'text',
                 WebkitTextFillColor: 'transparent',
+                margin: isMobile ? '1rem auto' : '2rem auto', 
+
               }}
             >
               How we address network challenges in space
@@ -134,9 +138,11 @@ function TechPage() {
                 textAlign: isMobile ? 'center' : 'left',
                 maxWidth: isMobile ? '80%' : '100%',
                 //margin: isMobile ? '1rem auto' : '2rem auto',
-                background: '-webkit-linear-gradient(45deg, #6A0D91, #9a77cf)',
+                background: '-webkit-linear-gradient(45deg, #967bb6ff, #9a77cf)',
                 WebkitBackgroundClip: 'text',
                 WebkitTextFillColor: 'transparent',
+                margin: isMobile ? '1rem auto' : '2rem auto', 
+
               }}
             >
               High-throughput, low-latency routing
@@ -212,9 +218,11 @@ function TechPage() {
                 textAlign: isMobile ? 'center' : 'left',
                 maxWidth: isMobile ? '80%' : '100%',
                 //margin: isMobile ? '1rem auto' : '2rem auto',
-                background: '-webkit-linear-gradient(45deg, #6A0D91, #9a77cf)',
+                background: '-webkit-linear-gradient(45deg, #967bb6ff, #9a77cf)',
                 WebkitBackgroundClip: 'text',
                 WebkitTextFillColor: 'transparent',
+                margin: isMobile ? '1rem auto' : '2rem auto', 
+
               }}
             >
             Edge-cloud scheduling for IoT
@@ -259,7 +267,7 @@ function TechPage() {
                 textAlign: isMobile ? 'center' : 'left',
                 maxWidth: isMobile ? '80%' : '100%',
                 margin: isMobile ? '1rem auto' : '2rem auto', 
-                background: '-webkit-linear-gradient(45deg, #6A0D91, #9a77cf)', 
+                background: '-webkit-linear-gradient(45deg, #967bb6ff, #9a77cf)', 
                 WebkitBackgroundClip: 'text', 
                 WebkitTextFillColor: 'transparent', 
               }}
@@ -304,7 +312,7 @@ function TechPage() {
           }}
         />
 
-<Divider sx={{ my: 4, bgcolor: '#2A2A2A', height: '1px', width: '100%', opacity: '25%' }} />
+        <Divider sx={{ my: 4, bgcolor: '#2A2A2A', height: '1px', width: '100%', opacity: '25%' }} />
         <Box
           display="flex"
           flexDirection={isMobile ? 'column' : 'row'}
@@ -324,7 +332,7 @@ function TechPage() {
                 textAlign: isMobile ? 'center' : 'left',
                 maxWidth: isMobile ? '80%' : '100%', 
                 margin: isMobile ? '1rem auto' : '2rem auto', 
-                background: '-webkit-linear-gradient(45deg, #6A0D91, #9a77cf)',
+                background: '-webkit-linear-gradient(45deg, #967bb6ff, #9a77cf)',
                 WebkitBackgroundClip: 'text', 
                 WebkitTextFillColor: 'transparent',
               }}

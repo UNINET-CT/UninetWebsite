@@ -19,7 +19,7 @@ const theme = createTheme({
         fontWeight: 'bold',
       },
     h3Purple: {
-      background: '-webkit-linear-gradient(45deg, #6A0D91, #9a77cf)', // Deeper gradient from dark lavender to a lighter shade
+      background: '-webkit-linear-gradient(45deg, #967bb6ff, #9a77cf)', // Deeper gradient from dark lavender to a lighter shade
       WebkitBackgroundClip: 'text',
       WebkitTextFillColor: 'transparent',
       //textShadow: '0px 3px 6px rgba(106, 69, 149, 0.6)', // Darker and more pronounced shadow
