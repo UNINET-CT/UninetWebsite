@@ -1,0 +1,65 @@
+import React, { useEffect } from 'react';
+import ReactDOM from 'react-dom';
+let globalModuleInstance = null; 
+let isScriptLoaded = false; 
+
+const OpenGLComponent = () => {
+  useEffect(() => {
+    const initializeCanvas = () => {
+      const canvas = document.getElementById('canvas');
+      if (canvas && globalModuleInstance) {
+        globalModuleInstance.canvas = canvas;
+        console.log(globalModuleInstance.canvas);
+        console.log('Canvas linked to Module');
+
+        if (!canvas.exitPointerLock) {
+          canvas.exitPointerLock = () => {
+            if (document.exitPointerLock) {
+              document.exitPointerLock();
+            }
+          };
+        }
+      } else {
+        console.error('Canvas element or module not found');
+      }
+    };
+
+    if (!isScriptLoaded) {
+      const script = document.createElement('script');
+      script.src = process.env.PUBLIC_URL + '/WebSat.js';
+      script.async = true;
+
+      script.onload = () => {
+        globalModuleInstance = window.Module; 
+        initializeCanvas(); 
+      };
+
+      document.body.appendChild(script);
+      isScriptLoaded = true;
+    } else if (globalModuleInstance) {
+      let s = document.querySelector(`script[src="${process.env.PUBLIC_URL + '/WebSat.js'}"]`);
+      if (s) {
+        document.body.removeChild(s);
+        console.log('Script removed, refreshing page...');
+        
+        globalModuleInstance.canvas = null;
+
+        s = document.querySelector(`script[src="${process.env.PUBLIC_URL + '/WebSat.js'}"]`);
+        if (!s) {
+          window.location.reload();
+        } else {
+          console.error('Script removal failed');
+        }
+      }
+    }
+
+  }, []);
+
+  return (
+    <div>
+      <canvas id="canvas" width="800" height="600"></canvas>
+    </div>
+  );
+};
+
+export default OpenGLComponent;
