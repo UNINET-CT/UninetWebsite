@@ -47,6 +47,12 @@ const Navbar = () => {
             primaryTypographyProps={{ color: 'white' }} 
           />
         </ListItem>
+        {/* <ListItem button component={Link} to="/demo" sx={{ color: 'white' }}>
+          <ListItemText 
+            primary="Demonstration" 
+            primaryTypographyProps={{ color: 'white' }} 
+          />
+        </ListItem> */}
       </List>
     </Box>
 
@@ -141,6 +147,9 @@ const Navbar = () => {
             <Link to="/contact" style={{ textDecoration: 'none', margin: '0 100px', color: 'white' }}>
               <Typography variant="h6" component="span" className="learn-more-link" sx={{ fontSize: '1.1rem' }}>Contact Us</Typography>
             </Link>
+            {/* <Link to="/demo" style={{ textDecoration: 'none', margin: '0 100px', color: 'orange' }}>
+              <Typography variant="h6" component="span" className="learn-more-link" sx={{ fontSize: '1.1rem' }}>Demonstration</Typography>
+            </Link> */}
           </Box>
 
           {/* Mobile Menu Button */}
