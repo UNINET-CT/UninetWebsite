@@ -1,12 +1,11 @@
-import React, { useRef, useEffect } from 'react';
+import React, { useRef } from 'react';
 import { Box, Typography, Container, useMediaQuery, Divider } from '@mui/material';
 import Navbar from './Navbar';
 import Footer from './Footer';
-import OpenGLComponent from './SatelliteVisualizer';
+// import OpenGLComponent from './SatelliteVisualizer';
 
 function DemoPage({ openGLComponent }) {
     const isMobile = useMediaQuery('(max-width:600px)');
-    const canvasRef = useRef(null);
 
     return (
         <div>
