@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React from 'react';
 import { Box, Typography, Container, useMediaQuery, Divider } from '@mui/material';
 import Navbar from './Navbar';
 import Footer from './Footer';
