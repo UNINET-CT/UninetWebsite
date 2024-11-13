@@ -105,8 +105,50 @@ function App() {
 
                   <style jsx global>{`
                     @keyframes typing {
-                      /* Define your animation as needed */
-                    }
+                      0% { content: ''; }
+                      1.5% { content: 'D'; }
+                      3% { content: 'De'; }
+                      4.5% { content: 'Des'; }
+                      6% { content: 'Desi'; }
+                      7.5% { content: 'Desig'; }
+                      9% { content: 'Design'; }
+                      22% { content: 'Design'; }
+
+                      23.5% { content: 'Desig'; }
+                      25% { content: 'Desi'; }
+                      27.5% { content: 'Des'; }
+                      29% { content: 'De'; }
+                      30.5% { content: 'D'; }
+                      32% { content: ''; }
+                      33.5% { content: 'B'; }
+                      35% { content: 'Bu'; }
+                      36.5% { content: 'Bui'; }
+                      38% { content: 'Buil'; }
+                      39.5% { content: 'Build'; }
+                      52.5% { content: 'Build'; }
+
+                      54% { content: 'Buil'; }
+                      55.5% { content: 'Bui'; }
+                      57% { content: 'Bu'; }
+                      58.5% { content: 'B'; }
+                      60% { content: ''; }
+                      61.5% { content: 'D'; }
+                      63% { content: 'De'; }
+                      64.5% { content: 'Dep'; }
+                      66% { content: 'Depl'; }
+                      67.5% { content: 'Deplo'; }
+                      69% { content: 'Deploy'; }
+                      82% { content: 'Deploy'; }
+                      83.5% { content: 'Deplo'; }
+                      85% { content: 'Depl'; }
+                      86.5% { content: 'Dep'; }
+                      88% { content: 'De'; }
+                      89.5% { content: 'D'; }
+                      91% { content: ''; }
+                      92.5% { content: ''; } /* Extra space to ensure a clean reset */
+                  }
+
+
                     .typing-text::before {
                       content: '';
                       display: inline-block;

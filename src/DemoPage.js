@@ -65,6 +65,8 @@ function DemoPage({ openGLComponent }) {
                             We present a demonstration of backpressure-based routing in a LEO constellation environment. 
                             The goal of this demonstration is to highlight the load-balancing characteristics of backpressure compared to shortest path routing. 
                         </Typography>
+
+                        {openGLComponent}
                     </Box>
                 </Box>
 
@@ -73,7 +75,7 @@ function DemoPage({ openGLComponent }) {
                 <div>
                     {/* <canvas ref={canvasRef} id="canvas" width="800" height="600"></canvas> */}
                     {/* <OpenGLComponent canvas={canvasRef.current} /> */}
-                    {openGLComponent}
+                    {/* {openGLComponent} */}
                 </div>
 
                 <Divider />
