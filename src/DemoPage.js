@@ -12,8 +12,12 @@ import dldr from './dldr.png';
 import controls from './controls.png';
 import demo from './demo.png';
 import metrics from './metrics.png';
+import flows from './flows.svg';
+import spr_flows from './spr_flows.svg';
+import bp_flows from './bp_flows.svg';
 import WarningAmberIcon from '@mui/icons-material/WarningAmber'
 import InfoIcon from '@mui/icons-material/Info';
+import LightbulbIcon from '@mui/icons-material/Lightbulb';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import { Button } from '@mui/material';
 
@@ -138,7 +142,7 @@ function DemoPage({ openGLComponent }) {
                         >
                             <strong>Instructions:</strong> Scroll down to learn more about the problem and solution. To skip to the interactive demo, click the button below.
                         </Typography>
-                        
+
 
                         <Button
                             variant="contained"
@@ -197,6 +201,138 @@ function DemoPage({ openGLComponent }) {
                                 padding: isMobile ? '0 16px' : '0',
                             }}
                         >
+                            <p>
+                                In non-terrestrial networks (NTNs), limited bandwidth resources leads to challenges in routing data efficiently.
+
+                                <p>
+                                    Sensing applications, such as Earth observation, require high-quality data flows with low latency so your data is delivered as quickly and efficiently as possible.
+                                </p>
+                                {/* Define data flows */}
+
+                            </p>
+                        </Typography>
+
+
+                        <Box
+                            sx={{
+                                maxWidth: isMobile ? '90%' : '80%', // Keep it centered and well-sized
+                                margin: '24px auto',
+                                padding: { xs: '20px', sm: '28px' },
+                                background: 'linear-gradient(135deg, #fffde7, #fff9c4)', // Soft yellow gradient
+                                borderRadius: '12px',
+                                boxShadow: '0px 8px 24px rgba(255, 193, 7, 0.2)', // Yellow glow-like shadow
+                                display: 'flex',
+                                flexDirection: 'column',
+                                gap: '16px',
+                                border: '1px solid #ffecb3', // Light yellow border for structure
+                            }}
+                        >
+                            <Box sx={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+                                <LightbulbIcon
+                                    sx={{
+                                        color: '#fbc02d', // Warm yellow for the lightbulb icon
+                                        fontSize: '2.5rem',
+                                    }}
+                                />
+                                <Typography
+                                    variant="h6"
+                                    sx={{
+                                        color: '#f57f17', // Darker amber for the title text
+                                        fontWeight: 'bold',
+                                        fontSize: '1.25rem',
+                                    }}
+                                >
+                                    What are data flows in space networks?
+                                </Typography>
+                            </Box>
+
+                            <Typography
+                                variant="body1"
+                                sx={{
+                                    color: '#5d4037', // Warm brown-gray for the text for better contrast
+                                    lineHeight: 1.6,
+                                    // fontSize: '1rem',
+                                }}
+                            >
+                                Data flows are the paths that packets take from the source to the destination.
+                                <p>
+
+                                    For satellite sensing applications, this may look like data packets moving from a sensor on a satellite to another satellite that will process the data.
+                                </p>
+                                <p>
+                                    In general, we map data flows to service function chains (SFCs) that represent the sequence of network functions that data packets must traverse.
+                                </p>
+                            </Typography>
+                        </Box>
+
+
+
+                        <Box
+                            sx={{
+                                display: 'flex',
+                                flexDirection: isMobile ? 'column' : 'row',
+                                justifyContent: 'center',
+                                alignItems: 'flex-start',
+                                marginBottom: '32px',
+                                padding: { xs: '0 8px', sm: '0 16px' },
+                                textAlign: isMobile ? 'center' : 'left',
+                                paddingTop: { xs: '16px', sm: '32px' },
+                            }}
+                        >
+                            {/* First Image with Caption */}
+                            <Box
+                                sx={{
+                                    display: 'flex',
+                                    flexDirection: 'column',
+                                    alignItems: isMobile ? 'center' : 'flex-start',
+                                    margin: isMobile ? '0 auto 16px' : '0 32px 0 0',
+                                    maxWidth: isMobile ? '80%' : '70%',
+                                }}
+                            >
+                                <Box
+                                    component="img"
+                                    src={flows}
+                                    alt="Illustration of network challenges in space"
+                                    sx={{
+                                        width: '100%',
+                                        borderRadius: '8px',
+                                        boxShadow: 1,
+                                    }}
+                                />
+                                <Typography
+                                    variant="caption"
+                                    sx={{
+                                        marginTop: '8px',
+                                        textAlign: isMobile ? 'center' : 'center',
+                                        fontSize: { xs: '0.8rem', sm: '1rem' },
+                                    }}
+                                >
+                                    Example of a flow in a satellite network.
+                                    Yellow satellites are endpoints of a flow, where one contains a sensor and the other a processor.
+                                    White satellites are intermediate nodes that relay data packets.
+                                    Blue lines indicate the path taken by data packets. Dotted gray lines represent potential paths.
+                                </Typography>
+                            </Box>
+
+                            {/* Second Image with Caption */}
+
+                        </Box>
+
+                        <Typography
+                            variant="body1"
+                            sx={{
+                                maxWidth: isMobile ? '80%' : '100%',
+                                margin: isMobile ? '0 auto' : '0',
+                                textAlign: 'left',
+                                padding: isMobile ? '0 16px' : '0',
+                            }}
+                        >
+
+                            <p>
+                                However, the dynamic nature of space networks makes it difficult to maintain high throughput and low latency.
+
+                            </p>
+
                             Shortest path routing (SPR) minimizes latency when bandwidth resources are abundant but causes hot-spots of overutilized links when bandwidth is scarce.
 
                             <p></p>
@@ -207,6 +343,8 @@ function DemoPage({ openGLComponent }) {
                         </Typography>
 
                         {/*  side by side images for spr and dldr */}
+
+
 
                         <Box
                             sx={{
@@ -289,7 +427,59 @@ function DemoPage({ openGLComponent }) {
                             >
                                 SPR may lead to packet loss and decreased throughput, which can be detrimental for mission-critical flows.
                             </Typography>
+
                         </Box>
+
+                        <Box
+                            sx={{
+                                display: 'flex',
+                                flexDirection: isMobile ? 'column' : 'row',
+                                justifyContent: 'center',
+                                alignItems: 'flex-start',
+                                marginBottom: '32px',
+                                padding: { xs: '0 8px', sm: '0 16px' },
+                                textAlign: isMobile ? 'center' : 'left',
+                                paddingTop: { xs: '16px', sm: '32px' },
+                            }}
+                        >
+                            {/* First Image with Caption */}
+                            <Box
+                                sx={{
+                                    display: 'flex',
+                                    flexDirection: 'column',
+                                    alignItems: isMobile ? 'center' : 'flex-start',
+                                    margin: isMobile ? '0 auto 16px' : '0 32px 0 0',
+                                    maxWidth: isMobile ? '80%' : '70%',
+                                }}
+                            >
+                                <Box
+                                    component="img"
+                                    src={spr_flows}
+                                    alt="Illustration of network challenges in space"
+                                    sx={{
+                                        width: '100%',
+                                        borderRadius: '8px',
+                                        boxShadow: 1,
+                                    }}
+                                />
+                                <Typography
+                                    variant="caption"
+                                    sx={{
+                                        marginTop: '8px',
+                                        textAlign: isMobile ? 'center' : 'center',
+                                        fontSize: { xs: '0.8rem', sm: '1rem' },
+                                    }}
+                                >
+                                    Example of a SPR flow with red links indicating congestion and packet loss. Shortest path routing does not consider these factors and thus affects flow quality.
+                                </Typography>
+                            </Box>
+
+                            {/* Second Image with Caption */}
+
+                        </Box>
+
+
+
                         <Divider sx={{ margin: '16px 0' }} />
 
 
@@ -408,6 +598,55 @@ function DemoPage({ openGLComponent }) {
                             </Typography>
                         </Box>
 
+                        <Box
+                            sx={{
+                                display: 'flex',
+                                flexDirection: isMobile ? 'column' : 'row',
+                                justifyContent: 'center',
+                                alignItems: 'flex-start',
+                                marginBottom: '32px',
+                                padding: { xs: '0 8px', sm: '0 16px' },
+                                textAlign: isMobile ? 'center' : 'left',
+                                paddingTop: { xs: '16px', sm: '32px' },
+                            }}
+                        >
+                            {/* First Image with Caption */}
+                            <Box
+                                sx={{
+                                    display: 'flex',
+                                    flexDirection: 'column',
+                                    alignItems: isMobile ? 'center' : 'flex-start',
+                                    margin: isMobile ? '0 auto 16px' : '0 32px 0 0',
+                                    maxWidth: isMobile ? '80%' : '70%',
+                                }}
+                            >
+                                <Box
+                                    component="img"
+                                    src={bp_flows}
+                                    alt="Illustration of network challenges in space"
+                                    sx={{
+                                        width: '100%',
+                                        borderRadius: '8px',
+                                        boxShadow: 1,
+                                    }}
+                                />
+                                <Typography
+                                    variant="caption"
+                                    sx={{
+                                        marginTop: '8px',
+                                        textAlign: isMobile ? 'center' : 'center',
+                                        fontSize: { xs: '0.8rem', sm: '1rem' },
+                                    }}
+                                >
+                                    Example of a backpressure-routed flow with green links that represent reroutes through less congested paths, and avoiding red links. Backpressure routing ensures that data flows are not affected by congestion.
+                                </Typography>
+                            </Box>
+
+                            {/* Second Image with Caption */}
+
+                        </Box>
+
+
                         <Divider sx={{ margin: '16px 0' }} />
 
 
@@ -440,8 +679,11 @@ function DemoPage({ openGLComponent }) {
                                 padding: isMobile ? '0 16px' : '0',
                             }}
                         >
-                            To begin, use the slider to control the number of tracking targets. This will begin to create data flows between randomly selected satellites. As you move the slider, you will see dashed lines appear in increasing thickness. As the congestion increases, the thickness of the dashed lines will increase.
+                            The Uninet Satellite Visualizer allows you to interact with a simulated LEO constellation network for sensor-to-processor satellite Earth observation applications.
 
+                            <p>
+                                To begin, use the slider to control the number of tracking targets. This will begin to create data flows between randomly selected satellites. As you move the slider, you will see dashed lines appear in increasing thickness. As the congestion increases, the thickness of the dashed lines will increase.
+                            </p>
                             <p>
                                 To toggle backpressure, click the "Enable backpressure" button so it turns green. To switch back to shortest path routing, click the button again.
                             </p>
@@ -523,7 +765,7 @@ function DemoPage({ openGLComponent }) {
                                     lineHeight: 1.5,
                                 }}
                             >
-                                Note: When backpressure is enabled, the link congestion will slowly converge to a balanced state. This may take a few seconds. To see the effects quickly, fast-forward with the <strong>L</strong> key.
+                                Note: When backpressure is enabled, the link congestion will quickly converge to a balanced state. This may take a few seconds. To see the effects quickly, fast-forward with the <strong>L</strong> key.
                             </Typography>
                         </Box>
 
@@ -682,7 +924,7 @@ function DemoPage({ openGLComponent }) {
                         </Typography>
 
 
-                        <Divider 
+                        <Divider
                             sx={{ margin: '16px 0' }} />
 
                         <Typography
@@ -785,15 +1027,19 @@ function DemoPage({ openGLComponent }) {
                                 justifyContent: 'center',
                                 alignItems: 'flex-start',
                                 marginBottom: '32px',
-                                padding: { xs: '0 8px', sm: '0 16px' },
+                                padding: { xs: '16px', sm: '24px' },
                                 textAlign: isMobile ? 'center' : 'left',
                                 paddingTop: { xs: '16px', sm: '32px' },
+                                border: '2px solid #2d2d2d', // Space gray border color
+                                borderRadius: '8px',          // Slight rounding for a window effect
+                                boxShadow: '0px 4px 12px rgba(45, 45, 45, 0.2)', // Soft shadow
+                                backgroundColor: '#1f1f1f',   // Optional background for contrast
+                                maxWidth: '100%',
                             }}
                         >
-
                             {openGLComponent}
-
                         </Box>
+
                     </Box>
                 </Box>
 
