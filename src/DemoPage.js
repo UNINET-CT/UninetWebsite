@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Card, CardContent, Typography, Container, useMediaQuery, Divider } from '@mui/material';
+import { Box, Card, CardContent, Typography, Container, useMediaQuery, Divider, CircularProgress } from '@mui/material';
 import SignalWifiBadIcon from '@mui/icons-material/SignalWifiBad';
 import SpeedIcon from '@mui/icons-material/Speed';
 import AccessTimeIcon from '@mui/icons-material/AccessTime'
@@ -21,10 +21,16 @@ import LightbulbIcon from '@mui/icons-material/Lightbulb';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import { Button } from '@mui/material';
 
+
+// const OpenGLComponent = React.lazy(() => import('./SatelliteVisualizer')); // Adjust path as needed
+
 // import OpenGLComponent from './SatelliteVisualizer';
 
-function DemoPage({ openGLComponent }) {
+function DemoPage( {openGLComponent} ) {
     const isMobile = useMediaQuery('(max-width:600px)');
+
+
+    
 
     return (
         <div>
@@ -83,7 +89,7 @@ function DemoPage({ openGLComponent }) {
                             }}
                         >
                             We present an interactive demonstration of backpressure-based routing in a LEO constellation environment.
-                            The goal of this demonstration is to highlight the load-balancing characteristics of backpressure compared to shortest path routing.
+                            The goal of this demonstration is to highlight the load-balancing characteristics of backpressure compared to open shortest path first routing.
                         </Typography>
 
                         <Box
@@ -189,7 +195,7 @@ function DemoPage({ openGLComponent }) {
                             }}
 
                         >
-                            Problem: Hot-spot congestion in space networks
+                            Hot-spot congestion in space networks
                         </Typography>
 
                         <Typography
@@ -333,7 +339,7 @@ function DemoPage({ openGLComponent }) {
 
                             </p>
 
-                            Shortest path routing (SPR) minimizes latency when bandwidth resources are abundant but causes hot-spots of overutilized links when bandwidth is scarce.
+                            Open shortest path first routing (OSPF) minimizes latency when bandwidth resources are abundant but causes hot-spots of overutilized links when bandwidth is scarce.
 
                             <p></p>
                             <br />
@@ -386,7 +392,7 @@ function DemoPage({ openGLComponent }) {
                                         fontSize: { xs: '0.8rem', sm: '1rem' },
                                     }}
                                 >
-                                    SPR causes hot-spots of overutilized links. The thickness of the lines represents the congestion level.
+                                    OSPF causes hot-spots of overutilized links. The thickness of the lines represents the congestion level.
                                 </Typography>
                             </Box>
 
@@ -425,7 +431,7 @@ function DemoPage({ openGLComponent }) {
                                     lineHeight: 1.6,
                                 }}
                             >
-                                SPR may lead to packet loss and decreased throughput, which can be detrimental for mission-critical flows.
+                                OSPF may lead to packet loss and decreased throughput, which can be detrimental for mission-critical flows.
                             </Typography>
 
                         </Box>
@@ -470,7 +476,7 @@ function DemoPage({ openGLComponent }) {
                                         fontSize: { xs: '0.8rem', sm: '1rem' },
                                     }}
                                 >
-                                    Example of a SPR flow with red links indicating congestion and packet loss. Shortest path routing does not consider these factors and thus affects flow quality.
+                                    Example of an OSPF flow with red links indicating congestion and packet loss. Open shortest path first routing does not consider these factors and thus affects flow quality.
                                 </Typography>
                             </Box>
 
@@ -682,10 +688,10 @@ function DemoPage({ openGLComponent }) {
                             The Uninet Satellite Visualizer allows you to interact with a simulated LEO constellation network for sensor-to-processor satellite Earth observation applications.
 
                             <p>
-                                To begin, use the slider to control the number of tracking targets. This will begin to create data flows between randomly selected satellites. As you move the slider, you will see dashed lines appear in increasing thickness. As the congestion increases, the thickness of the dashed lines will increase.
+                                To begin, use the slider to control the number of tracking targets. This will begin to create data flows between a randomly selected sensing satellite and its closest processing satellite. As you move the slider, you will see dashed lines appear in increasing thickness. As the congestion increases, the thickness of the dashed lines will increase.
                             </p>
                             <p>
-                                To toggle backpressure, click the "Enable backpressure" button so it turns green. To switch back to shortest path routing, click the button again.
+                                To toggle backpressure, click the "Enable backpressure" button so it turns green. To switch back to open shortest path first routing, click the button again.
                             </p>
 
                         </Typography>
@@ -981,16 +987,22 @@ function DemoPage({ openGLComponent }) {
                                 <Divider sx={{ my: 1 }} />
 
                                 <Typography variant="body2" sx={{ color: '#555', lineHeight: 1.6, mt: 1 }}>
-                                    <strong>Number of satellites:</strong>  144 (12 satellites in each of the 12 orbital planes)
+                                    <strong>Total number of satellites:</strong>  144 (12 satellites in each of the 12 orbital planes)
+                                </Typography>
+                                <Typography variant="body2" sx={{ color: '#555', lineHeight: 1.6, mt: 1 }}>
+                                    <strong>Number of sensing satellites:</strong>  114
+                                </Typography>
+                                <Typography variant="body2" sx={{ color: '#555', lineHeight: 1.6, mt: 1 }}>
+                                    <strong>Number of processor satellites:</strong>  30
                                 </Typography>
                                 <Typography variant="body2" sx={{ color: '#555', lineHeight: 1.6, mt: 0.5 }}>
-                                    <strong>Targets/Flows:</strong> Size 1.5 kB packets sent at a rate of 5 kBps.
+                                    <strong>Targets/Flows:</strong> Size 1.5 kB packets sent at a rate of 10 kBps.
                                 </Typography>
                                 <Typography variant="body2" sx={{ color: '#555', lineHeight: 1.6, mt: 0.5 }}>
-                                    <strong>Link capacity:</strong> 20 kBps
+                                    <strong>Link capacity:</strong> 80 kBps
                                 </Typography>
                                 <Typography variant="body2" sx={{ color: '#555', lineHeight: 1.6, mt: 0.5 }}>
-                                    <strong>Simulation Details:</strong> The simulation is done at the packet level. The topology is a mesh network.
+                                    <strong>Simulation Details:</strong> The simulation is done at the ethernet frame level. The topology is a mesh network.
                                 </Typography>
 
                             </Box>
@@ -1019,8 +1031,75 @@ function DemoPage({ openGLComponent }) {
                         </Box>
 
 
-
                         <Box
+                            sx={{
+                                display: 'flex',
+                                flexDirection: 'column',
+                                justifyContent: 'center',
+                                alignItems: 'center',
+                                marginBottom: '32px',
+                                padding: { xs: '16px', sm: '24px' },
+                                textAlign: 'center',
+                                paddingTop: { xs: '16px', sm: '32px' },
+                                border: '2px solid #2d2d2d',
+                                borderRadius: '8px',
+                                boxShadow: '0px 4px 12px rgba(45, 45, 45, 0.2)',
+                                backgroundColor: '#1f1f1f',
+                                maxWidth: '100%',
+                                minHeight: '300px',
+                                position: 'relative', // Relative positioning for stacking
+                                overflow: 'hidden', // Ensure child content stays contained
+                            }}
+                        >
+                            {/* Constant loading background */}
+                            <Box
+                                sx={{
+                                    display: 'flex',
+                                    flexDirection: 'column',
+                                    alignItems: 'center',
+                                    justifyContent: 'center',
+                                    position: 'absolute',
+                                    top: 0,
+                                    left: 0,
+                                    width: '100%',
+                                    height: '100%',
+                                    zIndex: 1, // Keep it behind the OpenGL component
+                                }}
+                            >
+                                <CircularProgress
+                                    sx={{
+                                        color: '#4caf50',
+                                    }}
+                                />
+                                <Typography
+                                    sx={{
+                                        color: '#ffffff',
+                                        marginTop: '16px',
+                                        fontSize: '1.2rem',
+                                    }}
+                                >
+                                    Loading Satellite Visualizer...
+                                </Typography>
+                            </Box>
+
+                            
+                                <Box
+                                    sx={{
+                                        width: '100%',
+                                        height: '100%',
+                                        display: 'flex',
+                                        alignItems: 'center',
+                                        justifyContent: 'center',
+                                        position: 'relative',
+                                        zIndex: 2, // Overlay the loader
+                                    }}
+                                >
+                                    {openGLComponent}
+                                </Box>
+                            
+                        </Box>
+
+                        {/* <Box
                             sx={{
                                 display: 'flex',
                                 flexDirection: isMobile ? 'column' : 'row',
@@ -1038,7 +1117,7 @@ function DemoPage({ openGLComponent }) {
                             }}
                         >
                             {openGLComponent}
-                        </Box>
+                        </Box> */}
 
                     </Box>
                 </Box>

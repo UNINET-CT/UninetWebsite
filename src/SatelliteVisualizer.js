@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
-let globalModuleInstance = null; 
-let isScriptLoaded = false; 
+
+let globalModuleInstance = null;
+let isScriptLoaded = false;
 
 const OpenGLComponent = () => {
   useEffect(() => {
@@ -25,25 +26,28 @@ const OpenGLComponent = () => {
 
     if (!isScriptLoaded) {
       const script = document.createElement('script');
-      script.src = process.env.PUBLIC_URL + '/WebSat.js';
+
+      // Append version to bust cache
+      const version = Date.now(); // Use timestamp as a unique version
+      script.src = `${process.env.PUBLIC_URL}/WebSat.js?v=${version}`;
       script.async = true;
 
       script.onload = () => {
-        globalModuleInstance = window.Module; 
-        initializeCanvas(); 
+        globalModuleInstance = window.Module;
+        initializeCanvas();
       };
 
       document.body.appendChild(script);
       isScriptLoaded = true;
     } else if (globalModuleInstance) {
-      let s = document.querySelector(`script[src="${process.env.PUBLIC_URL + '/WebSat.js'}"]`);
+      let s = document.querySelector(`script[src^="${process.env.PUBLIC_URL}/WebSat.js"]`);
       if (s) {
         document.body.removeChild(s);
         console.log('Script removed, refreshing page...');
-        
+
         globalModuleInstance.canvas = null;
 
-        s = document.querySelector(`script[src="${process.env.PUBLIC_URL + '/WebSat.js'}"]`);
+        s = document.querySelector(`script[src^="${process.env.PUBLIC_URL}/WebSat.js"]`);
         if (!s) {
           window.location.reload();
         } else {
@@ -51,7 +55,6 @@ const OpenGLComponent = () => {
         }
       }
     }
-
   }, []);
 
   return (
