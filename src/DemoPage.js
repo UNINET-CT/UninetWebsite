@@ -33,7 +33,7 @@ function DemoPage( {openGLComponent} ) {
     
 
     return (
-        <div>
+        <div style={{ backgroundColor: 'white' }}>
             <Navbar />
             <Container maxWidth="lg" sx={{ marginTop: 4, minHeight: '50vh' }}>
                 <Box
