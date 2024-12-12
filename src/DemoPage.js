@@ -1063,7 +1063,7 @@ function DemoPage( {openGLComponent} ) {
                                     left: 0,
                                     width: '100%',
                                     height: '100%',
-                                    zIndex: 1, // Keep it behind the OpenGL component
+                                    zIndex: -1, // Keep it behind the OpenGL component
                                 }}
                             >
                                 <CircularProgress
