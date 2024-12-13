@@ -1063,12 +1063,13 @@ function DemoPage( {openGLComponent} ) {
                                     left: 0,
                                     width: '100%',
                                     height: '100%',
-                                    zIndex: -1, // Keep it behind the OpenGL component
+                                    zIndex: 0, // Keep it behind the OpenGL component
                                 }}
                             >
                                 <CircularProgress
                                     sx={{
                                         color: '#4caf50',
+                                        zIndex: 1, // Keep it above the background
                                     }}
                                 />
                                 <Typography
@@ -1091,7 +1092,7 @@ function DemoPage( {openGLComponent} ) {
                                         alignItems: 'center',
                                         justifyContent: 'center',
                                         position: 'relative',
-                                        zIndex: 2, // Overlay the loader
+                                        zIndex: 5, // Overlay the loader
                                     }}
                                 >
                                     {openGLComponent}
