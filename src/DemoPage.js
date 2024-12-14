@@ -1,7 +1,7 @@
 import React from 'react';
 import { Box, Card, CardContent, Typography, Container, useMediaQuery, Divider, CircularProgress } from '@mui/material';
 import SignalWifiBadIcon from '@mui/icons-material/SignalWifiBad';
-import SpeedIcon from '@mui/icons-material/Speed';
+// import SpeedIcon from '@mui/icons-material/Speed';
 import AccessTimeIcon from '@mui/icons-material/AccessTime'
 
 import Navbar from './Navbar';
@@ -431,7 +431,7 @@ function DemoPage( {openGLComponent} ) {
                                     lineHeight: 1.6,
                                 }}
                             >
-                                OSPF may lead to packet loss and decreased throughput, which can be detrimental for mission-critical flows.
+                                OSPF may lead to packet loss, which can be detrimental for mission-critical flows.
                             </Typography>
 
                         </Box>
@@ -852,7 +852,7 @@ function DemoPage( {openGLComponent} ) {
                             {/* Packet Loss Card */}
                             <Card
                                 sx={{
-                                    width: isMobile ? '100%' : '250px',
+                                    width: isMobile ? '100%' : '300px',
                                     backgroundColor: '#2d2d2d', // Dark space gray
                                     color: '#ffffff',
                                     boxShadow: 3,
@@ -865,11 +865,11 @@ function DemoPage( {openGLComponent} ) {
                                         Packet Loss
                                     </Typography>
                                     <Typography variant="body1" sx={{ mt: 1, color: '#e0e0e0' }}>
-                                        Impacts data quality and disrupts communication, making it a key metric to monitor in network performance.                                    </Typography>
+                                        Impacts data quality and disrupts communication. High packet loss directly contributes to reduced throughput.                                   </Typography>
                                 </CardContent>
                             </Card>
 
-                            {/* Throughput Card */}
+                            {/* Throughput Card
                             <Card
                                 sx={{
                                     width: isMobile ? '100%' : '250px',
@@ -888,12 +888,12 @@ function DemoPage( {openGLComponent} ) {
                                         The amount of data that is transferred in a given amount of time.
                                     </Typography>
                                 </CardContent>
-                            </Card>
+                            </Card> */}
 
                             {/* Latency Card */}
                             <Card
                                 sx={{
-                                    width: isMobile ? '100%' : '250px',
+                                    width: isMobile ? '100%' : '300px',
                                     backgroundColor: '#2d2d2d', // Dark space gray
                                     color: '#ffffff',
                                     boxShadow: 3,
@@ -906,7 +906,7 @@ function DemoPage( {openGLComponent} ) {
                                         Latency
                                     </Typography>
                                     <Typography variant="body1" sx={{ mt: 1, color: '#e0e0e0' }}>
-                                        The time it takes for data to travel from the source to the destination.
+                                        The time it takes for data to travel from the source to the destination. Used to determine the responsiveness of a network.
                                     </Typography>
                                 </CardContent>
                             </Card>
