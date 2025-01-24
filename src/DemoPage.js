@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Card, CardContent, Typography, Container, useMediaQuery, Divider, CircularProgress } from '@mui/material';
+import { Box, Card, CardContent, Typography, Container, useMediaQuery, Divider } from '@mui/material';
 import SignalWifiBadIcon from '@mui/icons-material/SignalWifiBad';
 // import SpeedIcon from '@mui/icons-material/Speed';
 import AccessTimeIcon from '@mui/icons-material/AccessTime'
