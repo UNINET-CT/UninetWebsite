@@ -1066,12 +1066,12 @@ function DemoPage( {openGLComponent} ) {
                                     zIndex: 0, // Keep it behind the OpenGL component
                                 }}
                             >
-                                <CircularProgress
+                                {/* <CircularProgress
                                     sx={{
                                         color: '#4caf50',
-                                        zIndex: 1, // Keep it above the background
+                                        zIndex: 0, // Keep it above the background
                                     }}
-                                />
+                                /> */}
                                 <Typography
                                     sx={{
                                         color: '#ffffff',
