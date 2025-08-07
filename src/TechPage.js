@@ -99,6 +99,7 @@ function TechPage() {
             <Typography
               variant="body1"
               sx={{
+                color: 'white',
                 maxWidth: isMobile ? '80%' : '100%',
                 margin: isMobile ? '0 auto' : '0',
                 textAlign: 'left',
@@ -151,6 +152,7 @@ function TechPage() {
             <Typography
               variant="body1"
               sx={{
+                color: 'white',
                 maxWidth: isMobile ? '80%' : '100%',
                 margin: isMobile ? '0 auto' : '0',
                 textAlign: 'left',
@@ -170,7 +172,7 @@ function TechPage() {
             sx={{
               flex: isMobile ? '0 1 auto' : '0 0 40%',
               maxWidth: isMobile ? '80%' : '40%',
-              margin: isMobile ? '0 auto 16px' : '0 32px 0 0',
+              margin: isMobile ? '0 auto 16px' : '0 22px 0 0',
               borderRadius: '8px',
               //boxShadow: 3,
               alignSelf: 'flex-start', 

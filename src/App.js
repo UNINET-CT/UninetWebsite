@@ -47,6 +47,7 @@ function App() {
     <Router>
       <ThemeProvider theme={theme}>
         <Navbar />
+        <div id="header" style={{ height: '0px'}}></div>
         <Routes>
           <Route path="/" element={
             <div className="scroll-container">

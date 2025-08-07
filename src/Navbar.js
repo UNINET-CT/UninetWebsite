@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { useEffect, useState } from 'react';
 import { AppBar, Toolbar, Drawer, Box, List, ListItem, ListItemText, Typography, IconButton } from '@mui/material';
 import { Link } from 'react-router-dom'; // Import Link
 import logo from './logo.png';  // Make sure the path to your logo is correct
@@ -6,10 +7,38 @@ import MenuIcon from '@mui/icons-material/Menu';  // Import the Menu icon
 
 const Navbar = () => {
   const [drawerOpen, setDrawerOpen] = React.useState(false);
+  //IntersectionObserver
+  const [Visible, setVisible] = useState(true);
 
   const handleDrawerToggle = () => {
     setDrawerOpen(!drawerOpen);
   };
+
+  //IntersectionObserver Logic
+  useEffect(() => {
+    const target = document.querySelector('header');
+    if (!target) {
+      console.warn('No header found');
+      return;
+    }
+
+    const navObs = new IntersectionObserver(
+      ([entry]) => {
+        console.log('Header Visibility:', entry.isIntersecting);
+        
+        setVisible(entry.isIntersecting);
+      },
+      {
+        root: null,
+        threshold: 0,
+      }
+    );
+
+    navObs.observe(target);
+    return () => navObs.disconnect();
+  }, []);
+
+  
 
   const drawer = (
     <Box 
@@ -101,8 +130,9 @@ const Navbar = () => {
           }
 
           .navbar-logo {
-            width: 150px;
+            width: 400px;
             height: auto;
+            object-fit: contain;
             transition: all 0.3s ease-in-out;
           }
 
@@ -116,19 +146,28 @@ const Navbar = () => {
             }
           }
         `}
-      </style>
+      </style>   
 
-      <AppBar position="fixed" sx={{ width: '100%', background: '#2A2A2A', boxShadow: 'none', padding: '0px 0' }}>
+      <AppBar position="fixed" sx={{ width: '100%', backgroundColor: Visible ? 'transparent' : 'rgba(0, 0, 0, 0.9)', boxShadow: Visible ? 'none' : 3, backdropFilter: Visible ? 'none' : 'blur(6px)', padding: '0px 0' }}>
         <Toolbar sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
           
           {/* Logo */}
-          <Box sx={{ ml: 5 }}>
+          <Box
+            component="nav"
+            sx={{
+              display: 'flex',
+              alignItems: 'center',
+              height: 100,
+              px: 2,
+            }}
+          >
             <Link to="/" style={{ textDecoration: 'none' }}>
               <Box
                 component="img"
                 src={logo}
                 alt="Logo"
                 className="navbar-logo"
+                sx={{ml: -7, marginTop: 1}}
               />
             </Link>
           </Box>
@@ -160,7 +199,7 @@ const Navbar = () => {
               aria-label="menu"
               onClick={handleDrawerToggle}
               sx={{
-                backgroundColor: '#967bb6', // Purple background
+                backgroundColor: '#240f4dff', // Purple background
                 borderRadius: '10%', // Rounded corners
                 padding: '8px',
                 '&:hover': {
