@@ -9,7 +9,7 @@ const theme = createTheme({
       main: '#FFFFFF', //'#967bb6', // This is just an example of dark lavender
     },
     text: {
-      primary: '#cc1919ff', // Dark lavender for text
+      primary: '#FFFFFF', // Dark lavender for text
     }
   },
   typography: {
