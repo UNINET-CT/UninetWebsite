@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { useEffect, useState } from 'react';
-import { AppBar, Toolbar, Drawer, Box, List, ListItem, ListItemText, Typography, IconButton } from '@mui/material';
+import { AppBar, Toolbar, Drawer, Box, List, ListItem, ListItemText, Typography, IconButton, Hidden } from '@mui/material';
 import { Link } from 'react-router-dom'; // Import Link
 import logo from './logo.png';  // Make sure the path to your logo is correct
 import MenuIcon from '@mui/icons-material/Menu';  // Import the Menu icon
@@ -8,36 +8,45 @@ import MenuIcon from '@mui/icons-material/Menu';  // Import the Menu icon
 const Navbar = () => {
   const [drawerOpen, setDrawerOpen] = React.useState(false);
   //IntersectionObserver
-  const [Visible, setVisible] = useState(true);
+  const [isScrolled, setIsScrolled] = useState(false);
 
   const handleDrawerToggle = () => {
     setDrawerOpen(!drawerOpen);
   };
+  const NAV_HEIGHT = 200;
 
-  //IntersectionObserver Logic
   useEffect(() => {
-    const target = document.querySelector('header');
-    if (!target) {
-      console.warn('No header found');
-      return;
-    }
+    const trigger = document.getElementById('nav-trigger');
+    const scroller = document.querySelector('.scroll-container'); // your home uses this
 
-    const navObs = new IntersectionObserver(
+    if (!trigger) return;
+
+    const io = new IntersectionObserver(
       ([entry]) => {
-        console.log('Header Visibility:', entry.isIntersecting);
-        
-        setVisible(entry.isIntersecting);
+        setIsScrolled(!entry.isIntersecting); // black when sentinel is past the top line
       },
       {
-        root: null,
+        root: scroller || null,                 // IMPORTANT
         threshold: 0,
+        rootMargin: `-${NAV_HEIGHT + 1}px 0px 0px 0px`, // push the top boundary
       }
     );
 
-    navObs.observe(target);
-    return () => navObs.disconnect();
+    io.observe(trigger);
+    return () => io.disconnect();
   }, []);
 
+
+  //IntersectionObserver Logic
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPoint = 100;
+      setIsScrolled(window.scrollY > scrollPoint);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
   
 
   const drawer = (
@@ -58,30 +67,31 @@ const Navbar = () => {
             primaryTypographyProps={{ color: 'white' }} 
           />
         </ListItem>
-        <ListItem button component={Link} to="/about" sx={{ color: 'white' }}>
-          <ListItemText 
-            primary="About Us" 
-            primaryTypographyProps={{ color: 'white' }} 
-          />
-        </ListItem>
         <ListItem button component={Link} to="/tech" sx={{ color: 'white' }}>
           <ListItemText 
             primary="Technology" 
             primaryTypographyProps={{ color: 'white' }} 
           />
         </ListItem>
-        <ListItem button component={Link} to="/contact" sx={{ color: 'white' }}>
+                <ListItem button component={Link} to="/demo" sx={{ color: 'white' }}>
+          <ListItemText 
+            primary="Demo" 
+            primaryTypographyProps={{ color: 'white' }} 
+          />
+        </ListItem>
+        <ListItem button component={Link} to="/about" sx={{ color: 'white' }}>
+          <ListItemText 
+            primary="About Us" 
+            primaryTypographyProps={{ color: 'white' }} 
+          />
+        </ListItem>
+        {/* <ListItem button component={Link} to="/contact" sx={{ color: 'white' }}>
           <ListItemText 
             primary="Contact Us" 
             primaryTypographyProps={{ color: 'white' }} 
           />
-        </ListItem>
-        {/* <ListItem button component={Link} to="/demo" sx={{ color: 'white' }}>
-          <ListItemText 
-            primary="Demonstration" 
-            primaryTypographyProps={{ color: 'white' }} 
-          />
         </ListItem> */}
+
       </List>
     </Box>
 
@@ -148,51 +158,50 @@ const Navbar = () => {
         `}
       </style>   
 
-      <AppBar position="fixed" sx={{ width: '100%', backgroundColor: Visible ? 'transparent' : 'rgba(0, 0, 0, 0.9)', boxShadow: Visible ? 'none' : 3, backdropFilter: Visible ? 'none' : 'blur(6px)', padding: '0px 0' }}>
-        <Toolbar sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+      <AppBar position="fixed" sx={{background: isScrolled ? '#000000ff' :'transparent', boxShadow: isScrolled ? 3 : 'none', transition: 'background-color 0.9s ease, box-shadow 0.9s ease' }}>
+        <Toolbar sx={{ position: 'relative', px: 2, height: 155, display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
           
-          {/* Logo */}
-          <Box
-            component="nav"
-            sx={{
-              display: 'flex',
-              alignItems: 'center',
-              height: 100,
-              px: 2,
-            }}
-          >
+          {/* LEFT: logo (natural width) */}
+          <Box sx={{ display: 'flex', alignItems: 'center' }}>
             <Link to="/" style={{ textDecoration: 'none' }}>
+            
               <Box
                 component="img"
                 src={logo}
                 alt="Logo"
-                className="navbar-logo"
-                sx={{ml: -7, marginTop: 1}}
+                sx={{ width: 500, height: 'auto', display: 'block', marginTop: 2, marginLeft: -7}}  // adjust as needed
               />
             </Link>
           </Box>
 
-          {/* Centered Links for Desktop */}
-          <Box sx={{ display: { xs: 'none', md: 'flex' }, justifyContent: 'center', flexGrow: 1 }}>
-            <Link to="/" style={{ textDecoration: 'none', margin: '0 100px', color: 'white' }}>
-              <Typography variant="h6" component="span" className="learn-more-link" sx={{ fontSize: '1.1rem' }}>Home</Typography>
-            </Link>
-            <Link to="/tech" style={{ textDecoration: 'none', margin: '0 100px', color: 'white' }}>
-              <Typography variant="h6" component="span" className="learn-more-link" sx={{ fontSize: '1.1rem' }}>Technology</Typography>
-            </Link>
-            <Link to="/about" style={{ textDecoration: 'none', margin: '0 100px', color: 'white' }}>
-              <Typography variant="h6" component="span" className="learn-more-link" sx={{ fontSize: '1.1rem' }}>About Us</Typography>
-            </Link>
-            <Link to="/contact" style={{ textDecoration: 'none', margin: '0 100px', color: 'white' }}>
-              <Typography variant="h6" component="span" className="learn-more-link" sx={{ fontSize: '1.1rem' }}>Contact Us</Typography>
-            </Link>
-            {/* <Link to="/demo" style={{ textDecoration: 'none', margin: '0 100px', color: 'orange' }}>
-              <Typography variant="h6" component="span" className="learn-more-link" sx={{ fontSize: '1.1rem' }}>Demonstration</Typography>
-            </Link> */}
+          {/* CENTER: links (truly centered, unaffected by left/right widths) */}
+          <Box
+            sx={{
+              position: 'absolute',
+              left: '50%',
+              transform: 'translateX(-50%)',
+              display: { xs: 'none', lg: 'flex' }, 
+              gap: { lg: 10, xl: 20 },                 
+              alignItems: 'center',
+              whiteSpace: 'nowrap',
+            }}
+          >
+            <Link to="/" className="learn-more-link"><Typography variant="h6">Home</Typography></Link>
+            <Link to="/tech" className="learn-more-link"><Typography variant="h6">Technology</Typography></Link>
+            <Link to="/demo" className="learn-more-link"><Typography variant="h6">Demo</Typography></Link>
+            <Link to="/about" className="learn-more-link"><Typography variant="h6">About Us</Typography></Link>
+            {/* <Link to="/contact" className="learn-more-link"><Typography variant="h6">Contact Us</Typography></Link> */}
+            
           </Box>
 
-          {/* Mobile Menu Button */}
-          <Box sx={{ display: { xs: 'block', md: 'none' } }}>
+          {/* RIGHT: mobile menu (optional)
+          <Box sx={{ display: { xs: 'block', lg: 'none' } }}>
+            <IconButton onClick={handleDrawerToggle} sx={{ backgroundColor: '#240f4dff', p: 1, borderRadius: '10%' }}>
+              <MenuIcon sx={{ color: 'white' }} />
+            </IconButton>
+          </Box>
+        </Toolbar> */}
+          <Box sx={{ display: { xs: 'block', lg: 'none', display: 'flex'} }}>
             <IconButton
               edge="start"
               color="inherit"
@@ -203,20 +212,20 @@ const Navbar = () => {
                 borderRadius: '10%', // Rounded corners
                 padding: '8px',
                 '&:hover': {
-                  backgroundColor: '#7a539b', // Darker purple on hover
+                  backgroundColor: '#3c1982ff', // Darker purple on hover
                 },
               }}
             >
               <MenuIcon sx={{ color: 'white' }} />  {/* White color for MenuIcon */}
             </IconButton>
           </Box>
-        </Toolbar>
+          </Toolbar>
 
-        {/* Drawer for Mobile */}
         <Drawer anchor="left" open={drawerOpen} onClose={handleDrawerToggle}>
           {drawer}
         </Drawer>
       </AppBar>
+
     </>
   );
 };

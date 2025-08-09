@@ -8,51 +8,137 @@ import programmer from './programmer.png'
 import routingIcon from './routing_icon.svg'
 import scheduleIcon from './schedule_icon.svg'
 import cloudIcon from './cloud_icon.svg'
+import banner from './background.mp4'
 import demo from './demo.png'
+import Navbar from './Navbar';
 
 
 
-const LandingPage = () => {
-  useEffect(() => {
-    AOS.init({
-      duration: 800,
-      easing: 'ease-in-out',
-      once: false,
-      mirror: true,
-    });
-  }, []);
+// const LandingPage = () => {
+//   useEffect(() => {
+//     AOS.init({
+//       duration: 800,
+//       easing: 'ease-in-out',
+//       once: false,
+//       mirror: true,
+//     });
+//   }, []);
 
+
+function LandingPage() {
   const isMobile = useMediaQuery('(max-width:600px)');
 
   return (
     <>
-      <style>
-        {`
-          .learn-more-link {
-            text-decoration: none;
-            color: inherit;
-            position: relative;
-            display: inline-block;
-          }
-
-          .learn-more-link::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            bottom: -2px;
-            left: 0;
-            background-color: #967bb6;
-            transition: width 0.3s ease-in-out;
-          }
-
-          .learn-more-link:hover::after {
-            width: 100%;
-          }
-        `}
-      </style>
-
+ 
       <div className='scroll-section'>
+        <Box sx={{
+                  position: 'relative',
+                  width: '100vw',
+                  height: '100vh',
+                  overflow: 'hidden',
+                  paddingBottom: 0,
+                }}>
+                  <video
+                    autoPlay
+                    muted
+                    loop
+                    playsInline // This prevents mobile browsers from showing controls
+                    style={{
+                      position: 'absolute',
+                      top: 0,
+                      left: 0,
+                      width: '100%',
+                      height: '100%',
+                      objectFit: 'cover',
+                      zIndex: -2,
+                      pointerEvents: 'none', // This ensures the video is not interactable
+                    }}
+                  >
+                    <source src={banner} type="video/mp4" />
+                  </video>
+                  
+                  <Box sx={{
+                    position: 'absolute',
+                    top: 0,
+                    left: 0,
+                    right: 0,
+                    bottom: 0,
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    padding: isMobile ? '0 16px' : '0', // Add padding on mobile for better text alignment
+                    zIndex: 2,
+                    textAlign: 'center',  // Center text on mobile
+                  }}>
+                    <Typography
+                      variant={isMobile ? 'h4' : 'h2'}
+                      component="h2"
+                      sx={{
+                        color: 'white',
+                        textShadow: '2px 2px 8px rgba(0,0,0,0.7)',
+                        fontSize: isMobile ? '1.5rem' : '2.5rem',  // Adjust font size for mobile
+                      }}
+                    >
+                      We <u><span className="typing-text" color='Purple'></span></u> Smart Algorithms for Smart Satellites
+                    </Typography>
+                  </Box>
+                </Box>
+                
+
+                <style jsx global>{`
+                  @keyframes typing {
+                    0% { content: ''; }
+                    1.5% { content: 'D'; }
+                    3% { content: 'De'; }
+                    4.5% { content: 'Des'; }
+                    6% { content: 'Desi'; }
+                    7.5% { content: 'Desig'; }
+                    9% { content: 'Design'; }
+                    22% { content: 'Design'; }
+
+                    23.5% { content: 'Desig'; }
+                    25% { content: 'Desi'; }
+                    27.5% { content: 'Des'; }
+                    29% { content: 'De'; }
+                    30.5% { content: 'D'; }
+                    32% { content: ''; }
+                    33.5% { content: 'B'; }
+                    35% { content: 'Bu'; }
+                    36.5% { content: 'Bui'; }
+                    38% { content: 'Buil'; }
+                    39.5% { content: 'Build'; }
+                    52.5% { content: 'Build'; }
+
+                    54% { content: 'Buil'; }
+                    55.5% { content: 'Bui'; }
+                    57% { content: 'Bu'; }
+                    58.5% { content: 'B'; }
+                    60% { content: ''; }
+                    61.5% { content: 'D'; }
+                    63% { content: 'De'; }
+                    64.5% { content: 'Dep'; }
+                    66% { content: 'Depl'; }
+                    67.5% { content: 'Deplo'; }
+                    69% { content: 'Deploy'; }
+                    82% { content: 'Deploy'; }
+                    83.5% { content: 'Deplo'; }
+                    85% { content: 'Depl'; }
+                    86.5% { content: 'Dep'; }
+                    88% { content: 'De'; }
+                    89.5% { content: 'D'; }
+                    91% { content: ''; }
+                    92.5% { content: ''; } /* Extra space to ensure a clean reset */
+                }
+
+
+                  .typing-text::before {
+                    content: '';
+                    display: inline-block;
+                    color: #967bb6;
+                    animation: typing 10s steps(20) infinite;
+                  }
+                `}</style>
         <Container
           maxWidth={false}
           sx={{
@@ -146,7 +232,7 @@ const LandingPage = () => {
 
             }}>
               <Typography
-                variant={isMobile ? 'h4' : 'h3Purple'}
+                variant={isMobile ? 'h4' : 'h'}
                 component="h1"
                 gutterBottom
                 sx={{
@@ -172,7 +258,7 @@ const LandingPage = () => {
                   maxWidth: isMobile ? '80%' : '100%',
                   margin: isMobile ? '0 auto' : '0',
                   textAlign: isMobile ? 'left' : 'left',
-                  padding: isMobile ? '0 16px' : '0',
+                  padding: isMobile ? '0 16px' : '0 36px',
                 }}
               >
                 Founded in 2022, Uninet builds smart algorithms that enhance efficiency and reliability for the Internet of Space Things. Our advanced software solutions ensure low-latency communication and optimal resource management, driving innovation in satellite management.
@@ -186,7 +272,7 @@ const LandingPage = () => {
               </Typography>
             </Box>
 
-            <Divider sx={{ my: 4, bgcolor: '#967bb6', height: '1px', width: '100%', opacity: '25%' }} />
+            {/* <Divider sx={{ my: 4, bgcolor: '#967bb6', height: '1px', width: '100%', opacity: '25%' }} /> */}
 
 
             
@@ -298,6 +384,7 @@ const LandingPage = () => {
                     textAlign: isMobile ? 'center' : 'left',
                     maxWidth: isMobile ? '80%' : '100%',
                     margin: isMobile ? '1rem auto' : '2rem auto',
+                    padding: isMobile ? '0 16px' : '0 36px',
                   }}
                 >
                   Expertise in R&D
@@ -311,7 +398,7 @@ const LandingPage = () => {
                     maxWidth: isMobile ? '80%' : '100%',
                     margin: isMobile ? '0 auto' : '0',
                     textAlign: isMobile ? 'left' : 'left',
-                    padding: isMobile ? '0 16px' : '0',
+                    padding: isMobile ? '0 16px' : '0 36px',
                   }}
                 >
                   At Uninet, our R&D team brings together a wealth of knowledge and experience, working closely to solve complex challenges in networking technology. We pride ourselves on being agile, delivering solutions quickly and efficiently while adapting to the needs of each project.
@@ -357,12 +444,13 @@ const LandingPage = () => {
                 gutterBottom
                 sx={{
                   flex: 1,
-                  color: '#967bb6',
+                  color: '#b272ffff',
                   fontWeight: 'bold',
                   fontSize: isMobile ? '1.8rem' : '2.5rem',
                   textAlign: isMobile ? 'center' : 'left',
                   maxWidth: isMobile ? '80%' : '100%',
                   margin: isMobile ? '1rem auto' : '2rem auto',
+                  padding: isMobile ? '0 16px' : '0 36px',
                 }}
               >
                 Our Technology
@@ -373,7 +461,7 @@ const LandingPage = () => {
                 maxWidth: isMobile ? '80%' : '100%',
                 margin: isMobile ? '0 auto' : '0',
                 textAlign: isMobile ? 'left' : 'left',
-                padding: isMobile ? '0 16px' : '0',
+                padding: isMobile ? '0 16px' : '0 36px',
               }}>
                 The rise of LEO satellite mega-constellations will greatly enhance network coverage and edge cloud resources, enabling transformative IoT applications like autonomous sensing and asset tracking. These applications require significant bandwidth, computation, and storage with strict QoS demands.
 
@@ -442,7 +530,7 @@ const LandingPage = () => {
                   maxWidth: '400px',
                   borderRadius: '16px',
                   height: '500px',  // Set a fixed height for all cards
-                  background: 'linear-gradient(45deg, #967bb6ff, #9a77cf)',
+                  background: 'linear-gradient(45deg, #332d3bff, #A117F2)',
                   boxShadow: '0 4px 20px rgba(0, 0, 0, 0.1)',
                   padding: '24px',
                   boxSizing: 'border-box',

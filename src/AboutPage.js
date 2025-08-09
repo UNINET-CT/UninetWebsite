@@ -84,6 +84,7 @@ function AboutPage() {
             <Typography
               variant="body1"
               sx={{
+                color: 'white',
                 maxWidth: isMobile ? '80%' : '100%',
                 margin: isMobile ? '0 auto' : '0',
                 textAlign: 'left',
