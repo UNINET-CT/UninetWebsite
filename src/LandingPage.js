@@ -1,7 +1,7 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { Box, Typography, Container, useMediaQuery, Card, CardContent, Divider } from '@mui/material';
 import { Link } from 'react-router-dom';
-import AOS from 'aos';
+// import AOS from 'aos';
 import 'aos/dist/aos.css'; // Import the CSS for AOS
 import Footer from './Footer';
 import programmer from './programmer.png'
@@ -13,8 +13,8 @@ import darpa from './darpa.png'
 import sda from './sda.webp'
 import dod from './dod.png'
 import nsf from './nsf.png'
-import demo from './demo.png'
-import Navbar from './Navbar';
+// import demo from './demo.png'
+// import Navbar from './Navbar';
 
 
 
@@ -296,7 +296,19 @@ function LandingPage() {
 
                 }}
               >
-                PARTNERSHIPS
+                Collaborations
+                <Typography
+                  variant="body1"
+                  sx={{
+                    color: 'white',
+                    textAlign: 'center',
+                    marginTop: '8px',
+                    fontSize: isMobile ? '1rem' : '1rem',
+                    fontStyle: 'italic',
+                  }}
+                >
+                  Including agencies, institutions, and organizations that have funded or partnered with our work.
+                </Typography>
               </Typography>
               
               {/* <Divider sx={{ my: 4, bgcolor: '#967bb6', height: '1px', width: '100%', opacity: '25%' }} /> */}
