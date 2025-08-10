@@ -9,6 +9,10 @@ import routingIcon from './routing_icon.svg'
 import scheduleIcon from './schedule_icon.svg'
 import cloudIcon from './cloud_icon.svg'
 import banner from './background.mp4'
+import darpa from './darpa.png'
+import sda from './sda.webp'
+import dod from './dod.png'
+import nsf from './nsf.png'
 import demo from './demo.png'
 import Navbar from './Navbar';
 
@@ -27,7 +31,13 @@ import Navbar from './Navbar';
 
 function LandingPage() {
   const isMobile = useMediaQuery('(max-width:600px)');
-
+  
+  const logos = [
+    { src: darpa, alt: "darpa"},
+    { src: sda, alt: "sda"},
+    { src: dod, alt: "dod"},
+    { src: nsf, alt: "nsf"},
+  ]
   return (
     <>
  
@@ -270,12 +280,71 @@ function LandingPage() {
 
                 </p>
               </Typography>
+              <Typography
+                variant={isMobile ? 'h3' : 'h'}
+                component="h2"
+                gutterBottom
+                sx={{
+                  flex: 1,
+                  color: '#967bb6',
+                  fontWeight: 'bold',
+                  fontSize: isMobile ? '1.8rem' : '2.5 rem',
+                  textAlign: isMobile ? 'center' : 'center',
+                  maxWidth: isMobile ? '80%' : '100%',
+                  margin: isMobile ? '1rem auto' : '2rem auto',
+
+
+                }}
+              >
+                PARTNERSHIPS
+              </Typography>
+              
+              {/* <Divider sx={{ my: 4, bgcolor: '#967bb6', height: '1px', width: '100%', opacity: '25%' }} /> */}
+                  <Box
+                    sx={{
+                      display: "flex",
+                      justifyContent: "center", // center in row
+                      alignContent: 'center',
+                      textAlign: isMobile ? 'center' : 'center',
+                      gap:10, // space between logos
+                      flexWrap: "wrap", // wrap on small screens
+                      p: 2,
+                      maxWidth: isMobile ? '80%' : '100%',
+                      margin: isMobile ? '1rem auto' : '2rem auto'
+                    }}
+
+                    // sx={{
+                    //   flex: 1,
+                    //   color: '#967bb6',
+                    //   fontWeight: 'bold',
+                    //   fontSize: isMobile ? '1.8rem' : '2.5 rem',
+                    //   textAlign: isMobile ? 'center' : 'center',
+                    //   maxWidth: isMobile ? '80%' : '100%',
+                    //   margin: isMobile ? '1rem auto' : '2rem auto',
+                    // }}
+                      >
+                    {logos.map((logo) => (
+                      <Box
+                        key={logo.alt}
+                        component="img"
+                        src={logo.src}
+                        alt={logo.alt}
+                        sx={{
+                          width: 150, // fixed width
+                          height: 100, // fixed height
+                          objectFit: "contain", // keep aspect ratio inside the box
+                          borderRadius: 1, // optional rounded corners
+                        }}
+                      />
+                    ))}
+                </Box>
+                
             </Box>
 
             {/* <Divider sx={{ my: 4, bgcolor: '#967bb6', height: '1px', width: '100%', opacity: '25%' }} /> */}
 
 
-            
+{/*             
             {!isMobile && (
               <Box
                 sx={{
@@ -338,7 +407,7 @@ function LandingPage() {
               
 
             )}
-              
+               */}
               <Divider sx={{ my: 4, bgcolor: '#967bb6', height: '1px', width: '100%', opacity: '25%' }} />
 
 
