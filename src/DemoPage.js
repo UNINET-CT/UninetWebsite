@@ -12,9 +12,9 @@ import dldr from './dldr.png';
 import controls from './controls.png';
 import demo from './demo.png';
 import metrics from './metrics.png';
-import flows from './flows.svg';
-import spr_flows from './spr_flows.svg';
-import bp_flows from './bp_flows.svg';
+import flows from './flows.png';
+import spr_flows from './flows2.png';
+import bp_flows from './bp_flows.png';
 import WarningAmberIcon from '@mui/icons-material/WarningAmber'
 import InfoIcon from '@mui/icons-material/Info';
 import LightbulbIcon from '@mui/icons-material/Lightbulb';
@@ -33,9 +33,9 @@ function DemoPage( {openGLComponent} ) {
     
 
     return (
-        <div style={{ backgroundColor: 'white' }}>
+        <div>
             <Navbar />
-            <Container maxWidth="lg" sx={{ marginTop: 4, minHeight: '50vh' }}>
+            <Container maxWidth="lg" sx={{minHeight: '50vh'}}>
                 <Box
                     sx={{
                         display: 'flex',
@@ -54,6 +54,7 @@ function DemoPage( {openGLComponent} ) {
                             component="h2"
                             gutterBottom
                             sx={{
+                                color: 'white',
                                 fontWeight: 'bold',
                                 fontSize: isMobile ? '1.8rem' : '2.5rem',
                                 textAlign: isMobile ? 'center' : 'center',
@@ -61,7 +62,8 @@ function DemoPage( {openGLComponent} ) {
                                 background: '-webkit-linear-gradient(45deg, #967bb6ff, #9a77cf)',
                                 WebkitBackgroundClip: 'text',
                                 WebkitTextFillColor: 'transparent',
-                                margin: isMobile ? '1rem auto' : '2rem auto',
+                                margin: isMobile ? '2rem auto' : '2rem auto',
+                                marginTop: '150px',
                             }}
                         >
                             Welcome to the Uninet routing demo
@@ -69,6 +71,7 @@ function DemoPage( {openGLComponent} ) {
                         <Typography
                             variant="body1"
                             sx={{
+                                color: 'white',
                                 maxWidth: isMobile ? '80%' : '100%',
                                 margin: isMobile ? '0 auto' : '0',
                                 textAlign: 'left',
@@ -82,6 +85,7 @@ function DemoPage( {openGLComponent} ) {
                         <Typography
                             variant="body1"
                             sx={{
+                                color: 'white',
                                 maxWidth: isMobile ? '80%' : '100%',
                                 margin: isMobile ? '0 auto' : '0',
                                 textAlign: 'left',
@@ -140,6 +144,7 @@ function DemoPage( {openGLComponent} ) {
                         <Typography
                             variant="body1"
                             sx={{
+                                color: 'white',
                                 maxWidth: isMobile ? '80%' : '100%',
                                 margin: isMobile ? '0 auto' : '0',
                                 textAlign: 'left',
@@ -201,6 +206,7 @@ function DemoPage( {openGLComponent} ) {
                         <Typography
                             variant="body1"
                             sx={{
+                                color: 'white',
                                 maxWidth: isMobile ? '80%' : '100%',
                                 margin: isMobile ? '0 auto' : '0',
                                 textAlign: 'left',
@@ -308,6 +314,7 @@ function DemoPage( {openGLComponent} ) {
                                 <Typography
                                     variant="caption"
                                     sx={{
+                                        color: 'white',
                                         marginTop: '8px',
                                         textAlign: isMobile ? 'center' : 'center',
                                         fontSize: { xs: '0.8rem', sm: '1rem' },
@@ -327,6 +334,7 @@ function DemoPage( {openGLComponent} ) {
                         <Typography
                             variant="body1"
                             sx={{
+                                color: 'white',
                                 maxWidth: isMobile ? '80%' : '100%',
                                 margin: isMobile ? '0 auto' : '0',
                                 textAlign: 'left',
@@ -387,6 +395,7 @@ function DemoPage( {openGLComponent} ) {
                                 <Typography
                                     variant="caption"
                                     sx={{
+                                        color: 'white',
                                         marginTop: '8px',
                                         textAlign: isMobile ? 'center' : 'center',
                                         fontSize: { xs: '0.8rem', sm: '1rem' },
@@ -471,6 +480,7 @@ function DemoPage( {openGLComponent} ) {
                                 <Typography
                                     variant="caption"
                                     sx={{
+                                        color: 'white',
                                         marginTop: '8px',
                                         textAlign: isMobile ? 'center' : 'center',
                                         fontSize: { xs: '0.8rem', sm: '1rem' },
@@ -511,6 +521,7 @@ function DemoPage( {openGLComponent} ) {
                         <Typography
                             variant="body1"
                             sx={{
+                                color: 'white',
                                 maxWidth: isMobile ? '80%' : '100%',
                                 margin: isMobile ? '0 auto' : '0',
                                 textAlign: 'left',
@@ -556,6 +567,7 @@ function DemoPage( {openGLComponent} ) {
                                 <Typography
                                     variant="caption"
                                     sx={{
+                                        color: 'white',
                                         marginTop: '8px',
                                         textAlign: isMobile ? 'center' : 'center',
                                         fontSize: { xs: '0.8rem', sm: '1rem' },
@@ -639,6 +651,7 @@ function DemoPage( {openGLComponent} ) {
                                 <Typography
                                     variant="caption"
                                     sx={{
+                                        color: 'white',
                                         marginTop: '8px',
                                         textAlign: isMobile ? 'center' : 'center',
                                         fontSize: { xs: '0.8rem', sm: '1rem' },
@@ -679,6 +692,7 @@ function DemoPage( {openGLComponent} ) {
                         <Typography
                             variant="body1"
                             sx={{
+                                color: 'white',
                                 maxWidth: isMobile ? '80%' : '100%',
                                 margin: isMobile ? '0 auto' : '0',
                                 textAlign: 'left',
@@ -779,6 +793,7 @@ function DemoPage( {openGLComponent} ) {
                         <Typography
                             variant="body1"
                             sx={{
+                                color: 'white',
                                 maxWidth: isMobile ? '80%' : '100%',
                                 margin: isMobile ? '0 auto' : '0',
                                 textAlign: 'left',

@@ -33,9 +33,12 @@ const Footer = () => {
             <RouterLink to="/about" style={{ color: 'inherit', textDecoration: 'none', marginBottom: '1rem' }} onClick={scrollToTop}>
               About Us
             </RouterLink>
-            <RouterLink to="/contact" style={{ color: 'inherit', textDecoration: 'none' }} onClick={scrollToTop}>
-              Contact Us
+            <RouterLink to="/demo" style={{ color: 'inherit', textDecoration: 'none', marginBottom: '1rem' }} onClick={scrollToTop}>
+              Demo
             </RouterLink>
+            {/* <RouterLink to="/contact" style={{ color: 'inherit', textDecoration: 'none' }} onClick={scrollToTop}>
+              Contact Us
+            </RouterLink> */}
           </Grid>
 
           <Grid item xs={12} sm={6} md={5} lg={4} sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center' }}>

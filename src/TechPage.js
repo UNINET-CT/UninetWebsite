@@ -3,10 +3,11 @@ import { Box, Typography, Container, useMediaQuery, Divider } from '@mui/materia
 import Navbar from './Navbar';
 import imageSrc from './dish.jpg';
 import Footer from './Footer';
-import constellation from './constellation.gif'
+import constellation from './constellation.png'
 import edge from "./edge.png"
 import edge_schedule from "./edge_schedule.png"
 import chain from "./chain.png"
+import chain1 from "./chain1.png"
 
 function TechPage() {
   const isMobile = useMediaQuery('(max-width:600px)');
@@ -99,6 +100,7 @@ function TechPage() {
             <Typography
               variant="body1"
               sx={{
+                color: 'white',
                 maxWidth: isMobile ? '80%' : '100%',
                 margin: isMobile ? '0 auto' : '0',
                 textAlign: 'left',
@@ -151,6 +153,7 @@ function TechPage() {
             <Typography
               variant="body1"
               sx={{
+                color: 'white',
                 maxWidth: isMobile ? '80%' : '100%',
                 margin: isMobile ? '0 auto' : '0',
                 textAlign: 'left',
@@ -170,7 +173,7 @@ function TechPage() {
             sx={{
               flex: isMobile ? '0 1 auto' : '0 0 40%',
               maxWidth: isMobile ? '80%' : '40%',
-              margin: isMobile ? '0 auto 16px' : '0 32px 0 0',
+              margin: isMobile ? '0 auto 16px' : '0 22px 0 0',
               borderRadius: '8px',
               //boxShadow: 3,
               alignSelf: 'flex-start', 
@@ -232,6 +235,7 @@ function TechPage() {
             <Typography
               variant="body1"
               sx={{
+                color: 'white',
                 maxWidth: isMobile ? '80%' : '100%',
                 margin: isMobile ? '0 auto' : '0',
                 textAlign: 'left',
@@ -281,6 +285,7 @@ function TechPage() {
               variant="body1"
               sx={{
                 flex: 1,
+                color: 'white',
                 maxWidth: isMobile ? '80%' : '100%', 
                 margin: isMobile ? '0 auto' : '0', 
                 textAlign: isMobile ? 'left' : 'left',
@@ -294,8 +299,60 @@ function TechPage() {
           </Box>
 
           
-          
+        
         </Box>
+            <Typography
+              component="h2"
+              gutterBottom
+              sx={{
+                flex: 1,
+                
+                fontSize: isMobile ? '1.8rem' : '2.5rem',
+                textAlign: isMobile ? 'center' : 'center',
+                maxWidth: isMobile ? '80%' : '100%',
+                margin: isMobile ? '1rem auto' : '2rem auto', 
+                background: '-webkit-linear-gradient(45deg, #967bb6ff, #9a77cf)', 
+                WebkitBackgroundClip: 'text', 
+                WebkitTextFillColor: 'transparent', 
+              }}
+            >
+            Virtual
+            </Typography>
+
+        <Box
+          component="img"
+          src={chain1}
+          alt="Illustration of network challenges in space"
+          sx={{
+            flex: isMobile ? '0 1 auto' : '0 0 40%',
+            maxWidth: isMobile ? '80%' : '80%',
+            margin: isMobile ? '0 auto 16px' : '0 auto 0',
+            borderRadius: '8px',
+            alignSelf: 'center', 
+            display: 'block', 
+            marginLeft: 'auto',
+            marginRight: 'auto', 
+          }}
+        />
+        <Divider sx={{ my: 4, bgcolor: '#967bb6', height: '1px', width: '100%', opacity: '25%' }} />
+            <Typography
+              component="h2"
+              gutterBottom
+              sx={{
+                flex: 1,
+                
+                fontSize: isMobile ? '1.8rem' : '2.5rem',
+                textAlign: isMobile ? 'center' : 'center',
+                maxWidth: isMobile ? '80%' : '100%',
+                margin: isMobile ? '1rem auto' : '2rem auto', 
+                background: '-webkit-linear-gradient(45deg, #967bb6ff, #9a77cf)', 
+                WebkitBackgroundClip: 'text', 
+                WebkitTextFillColor: 'transparent', 
+              }}
+            >
+            Physical
+            </Typography>
+
         <Box
           component="img"
           src={chain}
@@ -346,6 +403,7 @@ function TechPage() {
               variant="body1"
               sx={{
                 flex: 1,
+                color: 'white',
                 maxWidth: isMobile ? '80%' : '100%',
                 margin: isMobile ? '0 auto' : '0', 
                 textAlign: isMobile ? 'left' : 'left',

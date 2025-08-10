@@ -58,8 +58,19 @@ const OpenGLComponent = () => {
   }, []);
 
   return (
-    <div>
-      <canvas id="canvas" width="800" height="600"></canvas>
+    <div style={{ width: '100%', height: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+      <canvas 
+        id="canvas" 
+        width="800" 
+        height="600"
+        style={{
+          maxWidth: '100%',
+          maxHeight: '100%',
+          width: 'auto',
+          height: 'auto',
+          display: 'block'
+        }}
+      ></canvas>
     </div>
   );
 };

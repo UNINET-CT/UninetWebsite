@@ -2,6 +2,9 @@ import { createTheme } from '@mui/material/styles';
 
 const theme = createTheme({
   palette: {
+    background: {
+      default: '#000000ff',
+    },
     primary: {
       main: '#FFFFFF', //'#967bb6', // This is just an example of dark lavender
     },
