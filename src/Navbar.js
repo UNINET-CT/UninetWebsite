@@ -1,11 +1,14 @@
 import * as React from 'react';
+
 import { useEffect, useState } from 'react';
-import { AppBar, Toolbar, Drawer, Box, List, ListItem, ListItemText, Typography, IconButton } from '@mui/material';
+import { AppBar, Toolbar, Drawer, useMediaQuery, Box, List, ListItem, ListItemText, Typography, IconButton, Hidden } from '@mui/material';
+
 import { Link } from 'react-router-dom'; // Import Link
 import logo from './logo.png';  // Make sure the path to your logo is correct
 import MenuIcon from '@mui/icons-material/Menu';  // Import the Menu icon
 
 const Navbar = () => {
+  const isMobile = useMediaQuery('(max-width:600px)');
   const [drawerOpen, setDrawerOpen] = React.useState(false);
   //IntersectionObserver
   const [isScrolled, setIsScrolled] = useState(false);
@@ -40,7 +43,7 @@ const Navbar = () => {
   //IntersectionObserver Logic
   useEffect(() => {
     const handleScroll = () => {
-      const scrollPoint = 100;
+      const scrollPoint = isMobile ? 25 : 100;
       setIsScrolled(window.scrollY > scrollPoint);
     };
 
@@ -159,17 +162,17 @@ const Navbar = () => {
       </style>   
 
       <AppBar position="fixed" sx={{background: isScrolled ? '#000000ff' :'transparent', boxShadow: isScrolled ? 3 : 'none', transition: 'background-color 0.9s ease, box-shadow 0.9s ease' }}>
-        <Toolbar sx={{ position: 'relative', px: 2, height: 155, display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+        <Toolbar sx={{ position: 'relative', px: 2, height:{xs: 75, sm: 110, md: 125, lg: 155}, display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
           
           {/* LEFT: logo (natural width) */}
-          <Box sx={{ display: 'flex', alignItems: 'center' }}>
-            <Link to="/" style={{ textDecoration: 'none' }}>
+          <Box sx={{ display: 'flex', alignItems: 'center', flex: '0 0 auto', minWidth: 0 }}>
+            <Link to="/" style={{ textDecoration: 'none', display: 'block', lineHeight: 0 }}>
             
               <Box
                 component="img"
                 src={logo}
                 alt="Logo"
-                sx={{ width: 500, height: 'auto', display: 'block', marginTop: 2, marginLeft: -7}}  // adjust as needed
+                sx={{ width: {xs: 240, sm: 300, md: 360}, maxWidth: {xs: '45vw', md: 360}, height: 'auto', display: 'block', ml: {xs: -3}, mt: {xs: 0, sm: 0}}}  // adjust as needed
               />
             </Link>
           </Box>
@@ -202,7 +205,7 @@ const Navbar = () => {
             </IconButton>
           </Box>
         </Toolbar> */}
-          <Box sx={{ display: { xs: 'block', lg: 'none', display: 'flex'} }}>
+          <Box sx={{ ml: 'auto', display: { xs: 'flex', lg: 'none'}, alignItem: 'center'}}>
             <IconButton
               edge="start"
               color="inherit"

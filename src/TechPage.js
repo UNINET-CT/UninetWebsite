@@ -15,13 +15,14 @@ function TechPage() {
   return (
     <div>
       <Navbar />
-
       <Box
         sx={{
+          mt: 0,
+          pt: 0,
           width: '100%',
-          height: { xs: '200px', sm: '300px', md: '400px', lg: '500px' }, 
+          height: {xs: '150px', sm: '300px', md: '400px', lg: '500px' }, 
           backgroundImage: `url(${imageSrc})`,
-          backgroundSize: { xs: '150%', sm: '120%', md: 'cover' }, 
+          backgroundSize: 'cover', 
           backgroundPosition: 'center', 
           backgroundRepeat: 'no-repeat',
           display: 'flex',

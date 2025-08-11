@@ -13,8 +13,11 @@ import darpa from './darpa.png'
 import sda from './sda.webp'
 import dod from './dod.png'
 import nsf from './nsf.png'
-// import demo from './demo.png'
-// import Navbar from './Navbar';
+import nexcepta from './nexcepta.png'
+import a2labs from './a2labs.png'
+import rtx from './raytheon.png'
+import demo from './demo.png'
+import Navbar from './Navbar';
 
 
 
@@ -37,6 +40,9 @@ function LandingPage() {
     { src: sda, alt: "sda"},
     { src: dod, alt: "dod"},
     { src: nsf, alt: "nsf"},
+    { src: rtx, alt: 'rtx'},
+    { src: nexcepta, alt: 'nexcepta'},
+    { src: a2labs, alt: 'a2labs'},
   ]
   return (
     <>
@@ -281,7 +287,7 @@ function LandingPage() {
                 </p>
               </Typography>
               <Typography
-                variant={isMobile ? 'h3' : 'h'}
+                variant={isMobile ? 'h' : 'h'}
                 component="h2"
                 gutterBottom
                 sx={{
@@ -292,23 +298,13 @@ function LandingPage() {
                   textAlign: isMobile ? 'center' : 'center',
                   maxWidth: isMobile ? '80%' : '100%',
                   margin: isMobile ? '1rem auto' : '2rem auto',
+                  position: 'relative',
+                  zIndex: 2,
 
 
                 }}
               >
                 Collaborations
-                <Typography
-                  variant="body1"
-                  sx={{
-                    color: 'white',
-                    textAlign: 'center',
-                    marginTop: '8px',
-                    fontSize: isMobile ? '1rem' : '1rem',
-                    fontStyle: 'italic',
-                  }}
-                >
-                  Including agencies, institutions, and organizations that have funded or partnered with our work.
-                </Typography>
               </Typography>
               
               {/* <Divider sx={{ my: 4, bgcolor: '#967bb6', height: '1px', width: '100%', opacity: '25%' }} /> */}
