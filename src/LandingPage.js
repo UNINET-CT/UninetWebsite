@@ -287,7 +287,7 @@ function LandingPage() {
                 </p>
               </Typography>
               <Typography
-                variant={isMobile ? 'h3' : 'h'}
+                variant={isMobile ? 'h' : 'h'}
                 component="h2"
                 gutterBottom
                 sx={{
@@ -298,11 +298,13 @@ function LandingPage() {
                   textAlign: isMobile ? 'center' : 'center',
                   maxWidth: isMobile ? '80%' : '100%',
                   margin: isMobile ? '1rem auto' : '2rem auto',
+                  position: 'relative',
+                  zIndex: 2,
 
 
                 }}
               >
-                COLLABORATIONS
+                Collaborations
               </Typography>
               
               {/* <Divider sx={{ my: 4, bgcolor: '#967bb6', height: '1px', width: '100%', opacity: '25%' }} /> */}
