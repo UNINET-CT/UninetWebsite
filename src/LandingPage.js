@@ -1,4 +1,4 @@
-import React from 'react';
+// import React, { useEffect } from 'react';
 import { Box, Typography, Container, useMediaQuery, Card, CardContent, Divider } from '@mui/material';
 import { Link } from 'react-router-dom';
 // import AOS from 'aos';
@@ -16,8 +16,7 @@ import nsf from './nsf.png'
 import nexcepta from './nexcepta.png'
 import a2labs from './a2labs.png'
 import rtx from './raytheon.png'
-import demo from './demo.png'
-import Navbar from './Navbar';
+
 
 
 
@@ -287,7 +286,7 @@ function LandingPage() {
                 </p>
               </Typography>
               <Typography
-                variant={isMobile ? 'h' : 'h'}
+                variant={isMobile ? 'h' : 'h4'}
                 component="h2"
                 gutterBottom
                 sx={{

@@ -1,5 +1,5 @@
 import React, { useRef, useEffect } from 'react';
-import { ThemeProvider } from '@mui/material';
+import { Box, Typography, ThemeProvider, useMediaQuery } from '@mui/material';
 import Navbar from './Navbar';
 import LandingPage from './LandingPage';
 import AboutPage from './AboutPage';
