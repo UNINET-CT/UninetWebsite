@@ -20,7 +20,7 @@ function TechPage() {
           mt: 0,
           pt: 0,
           width: '100%',
-          height: {xs: '150px', sm: '300px', md: '400px', lg: '500px' }, 
+          height: {xs: '200px', sm: '300px', md: '400px', lg: '500px' }, 
           backgroundImage: `url(${imageSrc})`,
           backgroundSize: 'cover', 
           backgroundPosition: 'center', 
