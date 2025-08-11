@@ -1,7 +1,7 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { Box, Typography, Container, useMediaQuery, Card, CardContent, Divider } from '@mui/material';
 import { Link } from 'react-router-dom';
-import AOS from 'aos';
+// import AOS from 'aos';
 import 'aos/dist/aos.css'; // Import the CSS for AOS
 import Footer from './Footer';
 import programmer from './programmer.png'

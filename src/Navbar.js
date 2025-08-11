@@ -2,6 +2,7 @@ import * as React from 'react';
 
 import { useEffect, useState } from 'react';
 import { AppBar, Toolbar, Drawer, useMediaQuery, Box, List, ListItem, ListItemText, Typography, IconButton, Hidden } from '@mui/material';
+
 import { Link } from 'react-router-dom'; // Import Link
 import logo from './logo.png';  // Make sure the path to your logo is correct
 import MenuIcon from '@mui/icons-material/Menu';  // Import the Menu icon
@@ -190,8 +191,9 @@ const Navbar = () => {
           >
             <Link to="/" className="learn-more-link"><Typography variant="h6">Home</Typography></Link>
             <Link to="/tech" className="learn-more-link"><Typography variant="h6">Technology</Typography></Link>
-            <Link to="/demo" className="learn-more-link"><Typography variant="h6">Demo</Typography></Link>
             <Link to="/about" className="learn-more-link"><Typography variant="h6">About Us</Typography></Link>
+            <Link to="/demo" className="learn-more-link"><Typography variant="h6">Demo</Typography></Link>
+
             {/* <Link to="/contact" className="learn-more-link"><Typography variant="h6">Contact Us</Typography></Link> */}
             
           </Box>
