@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 import { useEffect, useState } from 'react';
-import { AppBar, Toolbar, Drawer, useMediaQuery, Box, List, ListItem, ListItemText, Typography, IconButton, Hidden } from '@mui/material';
+import { AppBar, Toolbar, Drawer, useMediaQuery, Box, List, ListItem, ListItemText, Typography, IconButton} from '@mui/material';
 import { Link } from 'react-router-dom'; // Import Link
 import logo from './logo.png';  // Make sure the path to your logo is correct
 import MenuIcon from '@mui/icons-material/Menu';  // Import the Menu icon
@@ -48,7 +48,7 @@ const Navbar = () => {
 
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
-    }, []);
+    }, );
   
 
   const drawer = (

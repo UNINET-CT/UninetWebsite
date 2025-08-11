@@ -1,11 +1,11 @@
 import React, { useRef, useEffect } from 'react';
-import { Box, Typography, ThemeProvider, useMediaQuery } from '@mui/material';
+import {ThemeProvider} from '@mui/material';
 import Navbar from './Navbar';
 import LandingPage from './LandingPage';
 import AboutPage from './AboutPage';
 import ContactPage from './ContactPage';
 import theme from './theme';
-import banner from './background.mp4';
+// import banner from './background.mp4';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './styles.css'; // Import the CSS file
 import TechPage from './TechPage';
@@ -15,7 +15,7 @@ import OpenGLComponent from './SatelliteVisualizer';
 
 function App() {
   const videoRef = useRef(null);
-  const isMobile = useMediaQuery('(max-width:600px)');
+  // const isMobile = useMediaQuery('(max-width:600px)');
   const openGLComponent = <OpenGLComponent />;
 
   useEffect(() => {
