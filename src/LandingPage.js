@@ -576,7 +576,7 @@ function LandingPage() {
               alignItems: 'flex-start',
               gap: '24px',
               flexWrap: 'wrap',
-              maxWidth: isMobile ? '80%' : '100%',
+              maxWidth: isMobile ? '90%' : '100%',
               padding: { xs: '2rem 8px', sm: '2rem 16px' },
             }}>
 
