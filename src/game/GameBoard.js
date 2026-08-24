@@ -20,6 +20,9 @@ import { createRng, SEED } from './rng';
 import './GameBoard.css';
 
 let nextCircleId = 0;
+const BOARD_BORDER_WIDTH = 2;
+const BOARD_OUTER_WIDTH = BOARD_WIDTH + BOARD_BORDER_WIDTH * 2;
+const BOARD_OUTER_HEIGHT = BOARD_HEIGHT + BOARD_BORDER_WIDTH * 2;
 
 export default function GameBoard() {
   const [paddleX, setPaddleX] = useState((BOARD_WIDTH - PADDLE_WIDTH) / 2);
@@ -28,7 +31,9 @@ export default function GameBoard() {
   const [timeLeft, setTimeLeft] = useState(ROUND_DURATION_SECONDS);
   const [gameOver, setGameOver] = useState(false);
   const [running, setRunning] = useState(false);
+  const [boardScale, setBoardScale] = useState(1);
 
+  const boardViewportRef = useRef(null);
   const paddleXRef = useRef(paddleX);
   const keysRef = useRef(new Set());
   const lastSpawnRef = useRef(0);
@@ -45,6 +50,29 @@ export default function GameBoard() {
   useEffect(() => {
     gameOverRef.current = gameOver;
   }, [gameOver]);
+
+  useEffect(() => {
+    const viewport = boardViewportRef.current;
+    if (!viewport) return undefined;
+
+    const updateScale = (width) => {
+      setBoardScale(Math.min(1, width / BOARD_OUTER_WIDTH));
+    };
+
+    const resizeObserver = new ResizeObserver(([entry]) => {
+      updateScale(entry.contentRect.width);
+    });
+
+    const handleWindowResize = () => updateScale(viewport.clientWidth);
+
+    updateScale(viewport.clientWidth);
+    resizeObserver.observe(viewport);
+    window.addEventListener('resize', handleWindowResize);
+    return () => {
+      resizeObserver.disconnect();
+      window.removeEventListener('resize', handleWindowResize);
+    };
+  }, []);
 
   const start = useCallback(() => {
     setPaddleX((BOARD_WIDTH - PADDLE_WIDTH) / 2);
@@ -190,53 +218,66 @@ export default function GameBoard() {
         <span>Time: {Math.max(0, Math.ceil(timeLeft))}s</span>
       </div>
 
-      <div className="board" style={{ width: BOARD_WIDTH, height: BOARD_HEIGHT }}>
-        <div className="observation-line" style={{ top: P2_Y + PADDLE_HEIGHT2 }} />
+      <div
+        ref={boardViewportRef}
+        className="board-viewport"
+        style={{ height: BOARD_OUTER_HEIGHT * boardScale }}
+      >
+        <div
+          className="board"
+          style={{
+            width: BOARD_WIDTH,
+            height: BOARD_HEIGHT,
+            transform: `scale(${boardScale})`,
+          }}
+        >
+          <div className="observation-line" style={{ top: P2_Y + PADDLE_HEIGHT2 }} />
 
-        {circles.map((c) => (
+          {circles.map((c) => (
+            <div
+              key={c.id}
+              className={`circle circle--${c.state}`}
+              style={{
+                width: CIRCLE_RADIUS * 2,
+                height: CIRCLE_RADIUS * 2,
+                left: c.x - CIRCLE_RADIUS,
+                top: c.y - CIRCLE_RADIUS,
+              }}
+            />
+          ))}
+
           <div
-            key={c.id}
-            className={`circle circle--${c.state}`}
+            className="paddle paddle--p2"
             style={{
-              width: CIRCLE_RADIUS * 2,
-              height: CIRCLE_RADIUS * 2,
-              left: c.x - CIRCLE_RADIUS,
-              top: c.y - CIRCLE_RADIUS,
+              width: PADDLE_WIDTH2,
+              height: PADDLE_HEIGHT2,
+              left: paddleX + (PADDLE_WIDTH - PADDLE_WIDTH2) / 2,
+              top: P2_Y,
             }}
           />
-        ))}
 
-        <div
-          className="paddle paddle--p2"
-          style={{
-            width: PADDLE_WIDTH2,
-            height: PADDLE_HEIGHT2,
-            left: paddleX + (PADDLE_WIDTH - PADDLE_WIDTH2) / 2,
-            top: P2_Y,
-          }}
-        />
+          <div
+            className="paddle paddle--p1"
+            style={{ width: PADDLE_WIDTH, height: PADDLE_HEIGHT, left: paddleX, top: P1_Y }}
+          />
 
-        <div
-          className="paddle paddle--p1"
-          style={{ width: PADDLE_WIDTH, height: PADDLE_HEIGHT, left: paddleX, top: P1_Y }}
-        />
-
-        {(!running || gameOver) && (
-          <div className="overlay">
-            <h1>Beat the Agent</h1>
-            <br />
-            {gameOver && <p>Time&apos;s Up - final score: {score}</p>}
-            <p className="instructions">
-              Move with left/right arrows. The look ahead sensor (P2) observes falling circles halfway
-              down the screen, revealing if they are green or red circles. Your mission is to catch as
-              many green ones as possible with the paddle (P1) on the bottom before the timer runs out.
+          {(!running || gameOver) && (
+            <div className="overlay">
+              <h1>Beat the Agent</h1>
               <br />
-              <br />
-              Heads up: moving P1 also moves P2!
-            </p>
-            <button onClick={start}>{gameOver ? 'Play Again' : 'Start'}</button>
-          </div>
-        )}
+              {gameOver && <p>Time&apos;s Up - final score: {score}</p>}
+              <p className="instructions">
+                Move with left/right arrows. The look ahead sensor (P2) observes falling circles halfway
+                down the screen, revealing if they are green or red circles. Your mission is to catch as
+                many green ones as possible with the paddle (P1) on the bottom before the timer runs out.
+                <br />
+                <br />
+                Heads up: moving P1 also moves P2!
+              </p>
+              <button onClick={start}>{gameOver ? 'Play Again' : 'Start'}</button>
+            </div>
+          )}
+        </div>
       </div>
 
       <div className="touch-controls">
