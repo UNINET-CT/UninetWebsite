@@ -81,6 +81,12 @@ const Navbar = () => {
             primaryTypographyProps={{ color: 'white' }} 
           />
         </ListItem>
+                <ListItem button component={Link} to="/game" sx={{ color: 'white' }}>
+                  <ListItemText
+                    primary="Game"
+                    primaryTypographyProps={{ color: 'white' }}
+                  />
+                </ListItem>
         <ListItem button component={Link} to="/about" sx={{ color: 'white' }}>
           <ListItemText 
             primary="About Us" 
@@ -192,6 +198,7 @@ const Navbar = () => {
             <Link to="/tech" className="learn-more-link"><Typography variant="h6">Technology</Typography></Link>
             <Link to="/about" className="learn-more-link"><Typography variant="h6">About Us</Typography></Link>
             <Link to="/demo" className="learn-more-link"><Typography variant="h6">Demo</Typography></Link>
+            <Link to="/game" className="learn-more-link"><Typography variant="h6">Game</Typography></Link>
 
             {/* <Link to="/contact" className="learn-more-link"><Typography variant="h6">Contact Us</Typography></Link> */}
             

@@ -1,0 +1,15 @@
+export const BOARD_WIDTH = 500;
+export const BOARD_HEIGHT = 700;
+export const PADDLE_WIDTH = 90;
+export const PADDLE_WIDTH2 = 140;
+export const PADDLE_HEIGHT = 14;
+export const PADDLE_HEIGHT2 = 200;
+export const PADDLE_SPEED = 380;
+export const P1_Y = BOARD_HEIGHT - 30;
+export const P2_Y = BOARD_HEIGHT - 550;
+export const CIRCLE_RADIUS = 10;
+export const CIRCLE_SPAWN_INTERVAL = 60;
+export const CIRCLE_MIN_SPEED = 110;
+export const CIRCLE_MAX_SPEED = 110;
+export const GREEN_PROBABILITY = 0.55;
+export const ROUND_DURATION_SECONDS = 60;

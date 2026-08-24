@@ -1,5 +1,6 @@
 import React, { useRef, useEffect } from 'react';
-import { Box, Typography, ThemeProvider, useMediaQuery } from '@mui/material';
+import { ThemeProvider } from '@mui/material';
+import GamePage from './GamePage';
 import Navbar from './Navbar';
 import LandingPage from './LandingPage';
 import AboutPage from './AboutPage';
@@ -53,6 +54,8 @@ function App() {
           <Route path="/tech" element={<TechPage />} />
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/demo" element={<DemoPage openGLComponent={openGLComponent} />} />
+          <Route path="/game" element={<GamePage />} />
+          <Route path="*" element={<LandingPage />} />
         </Routes>
       </ThemeProvider>
     </Router>

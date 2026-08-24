@@ -1,0 +1,15 @@
+.game-page {
+  min-height: 100vh;
+  padding: 140px 24px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+@media (max-width: 600px) {
+  .game-page {
+    padding-top: 96px;
+    align-items: flex-start;
+  }
+}

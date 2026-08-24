@@ -1,0 +1,134 @@
+.game-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  color: #f0f0f5;
+  font-family: system-ui, sans-serif;
+}
+
+.hud {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.board {
+  position: relative;
+  overflow: hidden;
+  background: radial-gradient(ellipse at top, #1b1035 0%, #05030d 70%);
+  border: 2px solid #6b3fa0;
+  border-radius: 8px;
+  box-shadow: 0 0 24px rgba(147, 51, 234, 0.4);
+}
+
+.observation-line {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: rgba(180, 140, 255, 0.35);
+  box-shadow: 0 0 8px rgba(180, 140, 255, 0.6);
+}
+
+.paddle {
+  position: absolute;
+  border-radius: 6px;
+}
+
+.paddle--p1 {
+  background: #4fd1c5;
+  box-shadow: 0 0 10px #4fd1c5;
+}
+
+.paddle--p2 {
+  background: #a78bfa;
+  box-shadow: 0 0 10px #a78bfa;
+  opacity: 0.5;
+}
+
+.circle {
+  position: absolute;
+  border-radius: 50%;
+  transition: background-color 0.15s ease;
+}
+
+.circle--unobserved {
+  background: #8b5cf6;
+  box-shadow: 0 0 10px #8b5cf6;
+}
+
+.circle--green {
+  background: #34d399;
+  box-shadow: 0 0 10px #34d399;
+}
+
+.circle--red {
+  background: #f87171;
+  box-shadow: 0 0 10px #f87171;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  padding: 24px;
+  text-align: center;
+  background: rgba(5, 3, 13, 0.85);
+}
+
+.overlay h1 {
+  margin: 0;
+  color: #c4b5fd;
+}
+
+.instructions {
+  max-width: 380px;
+  line-height: 1.5;
+  color: #ddd;
+}
+
+.overlay button {
+  padding: 10px 24px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #05030d;
+  background: #a78bfa;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.overlay button:hover {
+  background: #c4b5fd;
+}
+
+.touch-controls {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  touch-action: none;
+}
+
+.touch-controls__btn {
+  width: 88px;
+  height: 56px;
+  font-size: 1.5rem;
+  color: #f0f0f5;
+  background: rgba(167, 139, 250, 0.15);
+  border: 2px solid #6b3fa0;
+  border-radius: 8px;
+  cursor: pointer;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.touch-controls__btn:active {
+  background: rgba(167, 139, 250, 0.4);
+}
